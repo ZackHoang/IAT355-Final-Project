@@ -1,8 +1,13 @@
 :root {
-    --nav: #313131;
+    --gray: #313131;
+    --gray-2: #575757;
+    --gray-3: #AEABAB;
+    --gray-4: #8F8F8F;
+    --gray-5: #BFBCBC;
+    --gray-6: #D9D9D9;
     --blue: #075AA8;
     --blue-2: #002641;
-    --section-1: #191919;
+    --black: #191919;
 }
 
 body {
@@ -32,7 +37,7 @@ a:link, a:visited {
 }
 
 .nav-link {
-    background-color: var(--nav);
+    background-color: var(--gray);
     font-size: 2rem;
     padding: 1rem;
     padding-left: 1.5rem;
@@ -56,7 +61,12 @@ section {
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center;
+    align-items: center; */
+    padding: 3rem;
+}
+
+#head-section {
     align-items: center;
 }
 
@@ -79,12 +89,64 @@ section .header-para {
 .section-1 {
     display: flex;
     flex-direction: column;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--section-1);
+    align-items: start;
+    background-color: var(--black);
     color: white;
-    padding: 3rem;
+}
+
+.data-highlight {
+    background-color: var(--gray);
+    color: white;
+}
+
+.data-highlight p {
+    overflow-wrap: anywhere;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stats {
+    background-color: var(--gray-2);
+    padding: 1rem;
+}
+
+.stats h3 {
+    font-size: 1rem;
+    color: var(--gray-3);
+}
+
+.stats p {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.call-to-action {
+    display: flex;
+    align-items: center;
+    background-color: var(--gray-4);
+    color: white;
+}
+
+.data {
+    background-color: var(--blue);
+}
+
+.data h2 {
+    color: white;
+}
+
+.data p {
+    color: var(--gray-5);
+}
+
+.data div {
+    align-self: center;
+    background-color: var(--gray-6);
+    margin-top: 1rem;
 }
 
 img {
