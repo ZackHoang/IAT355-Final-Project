@@ -52,12 +52,20 @@ a:link, a:visited {
     align-content: center;
 }
 
-hgroup {
-    max-width: 50%;
+section {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
-    justify-self: center;
-    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+section .header-para {
+    max-width: 50%;
+}
+
+.button {
+    margin: 2rem 0;
 }
 
 #get-started {
