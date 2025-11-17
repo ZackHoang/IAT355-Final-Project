@@ -16,7 +16,7 @@ body {
 
 header {
     text-align: center;
-    background: url(../img/258kVX.jpeg);
+    background: url(../img/background.png);
     background-size: cover;
     background-position: center;
     color: white;
@@ -27,8 +27,10 @@ header {
 
 .nav-header {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     padding: 1rem;
+    gap: 1rem;
+    margin: 2rem 5%;
 }
 
 a:link, a:visited {
@@ -45,16 +47,24 @@ a:link, a:visited {
     border-radius: 50px;
 }
 
+h1 {
+    font-size: 4rem;
+}
+
 .link-container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: 3rem;
+    /*position: fixed; fixed position can fix for later iterations, but I want to implement a movable nav bar */
 }
 
 .info-container {
     flex: 1;
     align-content: center;
+    justify-content: center;
+    margin: 0 20vw;
+    margin-bottom: 3rem;
 }
 
 section {
@@ -71,7 +81,8 @@ section {
 }
 
 section .header-para {
-    max-width: 50%;
+    max-width: 80%;
+    font-size: 2rem;
 }
 
 .button {
@@ -81,7 +92,7 @@ section .header-para {
 #get-started {
     background-color: var(--blue);
     border-top: 1rem;
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 1rem;
     border-radius: 50px;
 }
@@ -91,56 +102,123 @@ section .header-para {
     flex-direction: column;
     align-items: start;
     background-color: var(--black);
+    padding: 8rem 0;
+}
+
+.section-1 h2 {
+    font-size: 5rem;
     color: white;
 }
+
+.section-1 p {
+    font-size: 2rem;
+    color: #AEABAB;
+    font-weight: 300;
+}
+
+.textbox, .textbox-small, .data {
+    margin: 0 15vw;
+}
+
+
 
 .data-highlight {
     background-color: var(--gray);
     color: white;
+    padding: 8rem 0;
 }
 
 .data-highlight p {
-    overflow-wrap: anywhere;
+    margin: 0;
+}
+
+.subtitleTitle {
+    margin-bottom: 3rem;
+}
+
+.data-highlight h2 {
+    margin: 0;
+    font-size: 4rem;
+}
+
+.subtitleTitle p {
+    font-size: 1rem;
+    color: var(--gray-3)
 }
 
 .stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 5rem;
+    display: flex;
     gap: 2rem;
+    justify-content: space-between;
 }
 
 .stats {
     background-color: var(--gray-2);
-    padding: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    
 }
 
 .stats h3 {
-    font-size: 1rem;
+    font-size: 2.5rem;
     color: var(--gray-3);
+    font-weight: 300;
+    margin: 1rem 0 2rem 0;
+
 }
 
 .stats p {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 600;
 }
 
 .call-to-action {
     display: flex;
-    align-items: center;
+    text-align: center;
     background-color: var(--gray-4);
     color: white;
 }
 
-.data {
-    background-color: var(--blue);
+.call-to-action h2 {
+    font-size: 4rem;
 }
+
+.divider{
+    border-radius: 1rem;
+    margin: 10rem 5vw 5rem 5vw;
+    width: 90%;
+    background-color: var(--gray-3);
+    height: 0.5rem;
+}
+
+.data-findings {
+    background-color: var(--blue);
+    padding-bottom: 10rem;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.data section {
+    padding: 3rem 0;
+}
+
 
 .data h2 {
     color: white;
+    font-size: 4rem;
+    margin-bottom: 0;
 }
 
 .data p {
+    margin-top: 1rem;
     color: var(--gray-5);
+    font-size: 2rem;
 }
 
 .data div {
@@ -154,25 +232,29 @@ img {
 }
 
 footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
     color: white;
     background-color: var(--blue-2);
+    padding: 2rem 5vw;
+    padding-top: 3rem;
+}
+
+footer a {
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .nav-footer {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    gap: 1rem;
 }
 
+
+/* Need for tmmrw: Scale down all font sizes based on different viewports */
+
 @media (min-width: 48em) {
-    .nav-header {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
 
     .link-container {
         flex-direction: row;

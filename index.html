@@ -18,7 +18,6 @@
 <body>
     <header>
         <nav class="nav-header" id="anchor">
-            <div></div>
             <div class="link-container">
                 <a href="#" class="nav-link">Home</a>
                 <a href="./process.html" class="nav-link">Process</a>
@@ -35,19 +34,22 @@
             </div>
         </div>
     </header>
-    <main>
+    <main> 
         <section class="section-1">
-            <h2>Analytics</h2>
-            <p>This should just include some basic instructions on how to interact with the visualizations. Each of the categories should be organized into categories which could make things easier to read idk. This paragraph should be more centered around talking about anime and how it has become a bigger trend overtime, and how its influence is osmething that should not be overlooked.</p>
+            <div class="textbox">
+                <h2>Analytics</h2>
+                <p>This should just include some basic instructions on how to interact with the visualizations. Each of the categories should be organized into categories which could make things easier to read idk. This paragraph should be more centered around talking about anime and how it has become a bigger trend overtime, and how its influence is osmething that should not be overlooked.</p>
+            </div>
         </section>
         <section class="data-highlight">
-            <hgroup>
+            <div class="textbox-small">
+            <div class="subtitleTitle">
                 <h2>36% of viewers worldwide enjoyed watching anime, prompting us to conduct this research.</h2>
                 <p>*Source: https://headphonesaddict.com/anime-statistics</p>
-            </hgroup>
+            </div>
             <h2>We gathered results from datasets to help formulate an answer, which consisted of over:</h2>
             <div class="stats-container">
-                <article class="stats">
+                <article class="stats"> <!-- Does not semantically make sense to be an article-->
                     <h3>Total anime's submitted</h3>
                     <p>1000</p>
                 </article>
@@ -64,35 +66,44 @@
                     <p>1000</p>
                 </article>  
             </div>
+        </div>
         </section>
         <section class="call-to-action">
-            <h2>We then set off to answer 3 questions based on our findings and results</h2>
+            <div class="textbox">
+                <h2>We then set off to answer 3 questions based on our findings and results</h2>
+            </div>
         </section>
-        <section class="data">
-            <hgroup>
-                <h2>Which Genre’s ranked the highest based on key factors found within the dataset?</h2>
-                <p>This acts as a subtitle and should briefly explain what our visualization is about. </p>
-            </hgroup>
-            <div id="scatterPlot"></div>
-            <!-- <img src="./img/chart.png"> -->
-            <div>Filter box</div>
-        </section>
-        <section class="data">
-            <hgroup>
-                <h2>How did user  ratings and rankings flucuate over the lifetime of an anime?</h2>
-                <p>This acts as a subtitle and should briefly explain what our visualization is about. </p>
-            </hgroup>
-            <img src="./img/chart.png">
-            <div>Filter box</div>
-        </section>
-        <section class="data">
-            <hgroup>
-                <h2>What was the spread between genders between a specific genre or title?</h2>
-                <p>This acts as a subtitle and should briefly explain what our visualization is about. </p>
-            </hgroup>
-            <img src="./img/chart.png">
-            <div>Filter box</div>
-        </section>
+        <div class="data-findings">
+            <div class="data">
+                <section> 
+                    <h2>Which Genre’s ranked the highest based on key factors found within the dataset?</h2>
+                    <p>This acts as a subtitle and should briefly explain what our visualization is about. </p>
+                </section>
+                <div id="scatterPlot"></div>
+                <!-- <img src="./img/chart.png"> -->
+                <div>Filter box</div>
+            </div>
+            <div class="divider">
+            </div>
+            <div class="data">
+                <section>
+                    <h2>How did user  ratings and rankings flucuate over the lifetime of an anime?</h2>
+                    <p>This acts as a subtitle and should briefly explain what our visualization is about. </p>
+                </section>
+                <img src="./img/chart.png">
+                <div>Filter box</div>
+            </div>
+            <div class="divider">
+            </div>
+            <div class="data">
+                <section>
+                    <h2>What was the spread between genders between a specific genre or title?</h2>
+                    <p>This acts as a subtitle and should briefly explain what our visualization is about. </p>
+                </section>
+                <img src="./img/chart.png">
+                <div>Filter box</div>
+            </div>
+        </div>
         <!-- Commented out if not needed for now -->
         <!-- <section class="section-1">
             <section>
