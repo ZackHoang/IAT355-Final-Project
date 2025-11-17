@@ -35,16 +35,24 @@ var scatterSpec = {
     { calculate: "round(datum.AverageScore * 100) / 100", as: "AverageScore" }
   ],
 
+  mark: "point",
+
   //allows for particular selection of categories
   selection: {
-    genreFilter: {
-      type: "multi",
-      fields: ["OneGenre"],
-      bind: "legend"
+    // genreFilter: {
+    //   type: "multi",
+    //   fields: ["OneGenre"],
+    //   bind: { input: "checkbox" }  // creates checkboxes for each genre
+    // }
+    pointSelect: {
+      type: "multi",      
+      fields: ["OneGenre"],    
+      on: "click",         
+      toggle: true         
     }
   },
 
-  mark: "point",
+
 
   //view model of the scatterplot
   encoding: {
@@ -59,7 +67,10 @@ var scatterSpec = {
       { field: "AnimeCount", type: "quantitative", title: "Number of Anime" }
     ],
     opacity: {
-      condition: { selection: "genreFilter", value: 1 },
+      condition: [
+        // { selection: "genreFilter", value: 1 },
+        { selection: "pointSelect", value: 1 }
+      ],
       value: 0.1
     }
   }
