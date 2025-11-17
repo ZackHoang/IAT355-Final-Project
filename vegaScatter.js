@@ -1,6 +1,6 @@
 var scatterSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-  description: "Average Score vs Popularity by Genre with interactive legend filtering",
+  description: "Average Score vs Popularity by Genre",
 
   data: { url: "./data/anime-dataset-2023.csv" },
 
