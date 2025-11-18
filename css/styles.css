@@ -10,8 +10,12 @@
     --black: #191919;
 }
 
+* {
+    /*transition: font-size 1s ease-in; */
+}
+
 body {
-    font-family: sans-serif, poppins;
+    font-family: poppins, sans-serif;
 }
 
 header {
@@ -259,5 +263,128 @@ footer a {
     .link-container {
         flex-direction: row;
         justify-content: space-around;
+    }
+}
+
+@media (max-width: 90.625rem) {
+
+    .stats-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .stats {
+        max-width: 50%;
+        min-width: 13rem;
+    }
+}
+
+
+@media (max-width: 45rem) {
+
+    .data-highlight h2 {
+        font-size: 3rem;
+    }
+
+    .subtitleTitle p {
+        font-size: 0.8rem;
+    }
+
+    .stats h3 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .section-1 h2 {
+        font-size: 4rem;
+    }
+
+    .section-1 p {
+        font-size: 1.5rem;
+    }
+
+    .call-to-action h2, .data h2{
+        font-size: 3rem;
+    }
+
+    #get-started {
+        font-size: 1.5rem;
+    }
+
+    section .header-para {
+        font-size: 1.5rem;
+    }
+
+    .data p {
+        font-size: 1.5rem;
+    }
+
+    footer a {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 25rem) {
+    .nav-header{
+        justify-content: center;
+    }
+
+    .info-container{
+        margin: 0 5vw;
+    }
+
+    section .header-para {
+        max-width: 100%;
+        font-size: 1.3rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .section-1 h2 {
+        font-size: 3rem;
+    }
+
+    .section-1 p {
+        font-size: 1.3rem;
+    }
+
+    .data-highlight h2 {
+        font-size: 2rem;
+    }
+
+    .textbox, .textbox-small {
+        margin: 0 7vw;
+    }
+
+    .call-to-action h2, .data h2 {
+        font-size: 2rem;
+    }
+
+    .data-p {
+        font-size: 1.3rem;
+    }
+
+    footer {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #anchor {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .nav-footer {
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
     }
 }
