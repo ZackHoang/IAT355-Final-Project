@@ -1,392 +1,393 @@
 :root {
-    --gray: #313131;
-    --gray-2: #575757;
-    --gray-3: #AEABAB;
-    --gray-4: #8F8F8F;
-    --gray-5: #BFBCBC;
-    --gray-6: #D9D9D9;
-    --blue: #075AA8;
-    --blue-2: #002641;
-    --black: #191919;
+  --gray: #313131;
+  --gray-2: #575757;
+  --gray-3: #aeabab;
+  --gray-4: #8f8f8f;
+  --gray-5: #bfbcbc;
+  --gray-6: #d9d9d9;
+  --blue: #075aa8;
+  --blue-2: #002641;
+  --black: #191919;
 }
 
-* {
-    /*transition: font-size 1s ease-in; */
-}
+/* * {
+  transition: font-size 1s ease-in;
+} */
 
 body {
-    font-family: poppins, sans-serif;
+  font-family: poppins, sans-serif;
 }
 
 header {
-    text-align: center;
-    background: url(../img/background.png);
-    background-size: cover;
-    background-position: center;
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  text-align: center;
+  background: url(../img/background.png);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-header {
-    display: flex;
-    justify-content: right;
-    padding: 1rem;
-    gap: 1rem;
-    margin: 2rem 5%;
+  display: flex;
+  justify-content: right;
+  padding: 1rem;
+  gap: 1rem;
+  margin: 2rem 5%;
 }
 
-a:link, a:visited {
-    color: unset;
-    text-decoration: none;
+a:link,
+a:visited {
+  color: unset;
+  text-decoration: none;
 }
 
 .nav-link {
-    background-color: var(--gray);
-    font-size: 2rem;
-    padding: 1rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    border-radius: 50px;
+  background-color: var(--gray);
+  font-size: 2rem;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 50px;
 }
 
 h1 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 .link-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 3rem;
-    /*position: fixed; fixed position can fix for later iterations, but I want to implement a movable nav bar */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 3rem;
+  /*position: fixed; fixed position can fix for later iterations, but I want to implement a movable nav bar */
 }
 
 .info-container {
-    flex: 1;
-    align-content: center;
-    justify-content: center;
-    margin: 0 20vw;
-    margin-bottom: 3rem;
+  flex: 1;
+  align-content: center;
+  justify-content: center;
+  margin: 0 20vw;
+  margin-bottom: 3rem;
 }
 
 section {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
     align-items: center; */
-    padding: 3rem;
+  padding: 3rem;
 }
 
 #head-section {
-    align-items: center;
+  align-items: center;
 }
 
 section .header-para {
-    max-width: 80%;
-    font-size: 2rem;
+  max-width: 80%;
+  font-size: 2rem;
 }
 
 .button {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 
 #get-started {
-    background-color: var(--blue);
-    border-top: 1rem;
-    font-size: 2rem;
-    padding: 1rem;
-    border-radius: 50px;
+  background-color: var(--blue);
+  border-top: 1rem;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 50px;
 }
 
 .section-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    background-color: var(--black);
-    padding: 8rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: var(--black);
+  padding: 8rem 0;
 }
 
 .section-1 h2 {
-    font-size: 5rem;
-    color: white;
+  font-size: 5rem;
+  color: white;
 }
 
 .section-1 p {
-    font-size: 2rem;
-    color: #AEABAB;
-    font-weight: 300;
+  font-size: 2rem;
+  color: #aeabab;
+  font-weight: 300;
 }
 
-.textbox, .textbox-small, .data {
-    margin: 0 15vw;
+.textbox,
+.textbox-small,
+.data {
+  margin: 0 15vw;
 }
-
-
 
 .data-highlight {
-    background-color: var(--gray);
-    color: white;
-    padding: 8rem 0;
+  background-color: var(--gray);
+  color: white;
+  padding: 8rem 0;
 }
 
 .data-highlight p {
-    margin: 0;
+  margin: 0;
 }
 
 .subtitleTitle {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .data-highlight h2 {
-    margin: 0;
-    font-size: 4rem;
+  margin: 0;
+  font-size: 4rem;
 }
 
 .subtitleTitle p {
-    font-size: 1rem;
-    color: var(--gray-3)
+  font-size: 1rem;
+  color: var(--gray-3);
 }
 
 .stats-container {
-    margin-top: 5rem;
-    display: flex;
-    gap: 2rem;
-    justify-content: space-between;
+  margin-top: 5rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
 .stats {
-    background-color: var(--gray-2);
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    
+  background-color: var(--gray-2);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
 }
 
 .stats h3 {
-    font-size: 2.5rem;
-    color: var(--gray-3);
-    font-weight: 300;
-    margin: 1rem 0 2rem 0;
-
+  font-size: 2.5rem;
+  color: var(--gray-3);
+  font-weight: 300;
+  margin: 1rem 0 2rem 0;
 }
 
 .stats p {
-    font-size: 5rem;
-    font-weight: 600;
+  font-size: 5rem;
+  font-weight: 600;
 }
 
 .call-to-action {
-    display: flex;
-    text-align: center;
-    background-color: var(--gray-4);
-    color: white;
+  display: flex;
+  text-align: center;
+  background-color: var(--gray-4);
+  color: white;
 }
 
 .call-to-action h2 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
-.divider{
-    border-radius: 1rem;
-    margin: 10rem 5vw 5rem 5vw;
-    width: 90%;
-    background-color: var(--gray-3);
-    height: 0.5rem;
+.divider {
+  border-radius: 1rem;
+  margin: 10rem 5vw 5rem 5vw;
+  width: 90%;
+  background-color: var(--gray-3);
+  height: 0.5rem;
 }
 
 .data-findings {
-    background-color: var(--blue);
-    padding-bottom: 10rem;
+  background-color: var(--blue);
+  padding-bottom: 10rem;
 }
 
 .data {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
     align-items: center; */
 }
 
 .data section {
-    padding: 3rem 0;
+  padding: 3rem 0;
 }
 
-
 .data h2 {
-    color: white;
-    font-size: 4rem;
-    margin-bottom: 0;
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 0;
 }
 
 .data p {
-    margin-top: 1rem;
-    color: var(--gray-5);
-    font-size: 2rem;
+  margin-top: 1rem;
+  color: var(--gray-5);
+  font-size: 2rem;
 }
 
 .data div {
-    align-self: center;
-    background-color: var(--gray-6);
-    margin-top: 1rem;
+  align-self: center;
+  background-color: var(--gray-6);
+  margin-top: 1rem;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    background-color: var(--blue-2);
-    padding: 2rem 5vw;
-    padding-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: var(--blue-2);
+  padding: 2rem 5vw;
+  padding-top: 3rem;
 }
 
 footer a {
-    font-size: 2rem;
-    font-weight: 500;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 .nav-footer {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-
 
 /* Need for tmmrw: Scale down all font sizes based on different viewports */
 
 @media (min-width: 48em) {
-
-    .link-container {
-        flex-direction: row;
-        justify-content: space-around;
-    }
+  .link-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 @media (max-width: 90.625rem) {
+  .stats-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .stats-container{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .stats {
-        max-width: 50%;
-        min-width: 13rem;
-    }
+  .stats {
+    max-width: 50%;
+    min-width: 13rem;
+  }
 }
 
-
 @media (max-width: 45rem) {
+  .data-highlight h2 {
+    font-size: 3rem;
+  }
 
-    .data-highlight h2 {
-        font-size: 3rem;
-    }
+  .subtitleTitle p {
+    font-size: 0.8rem;
+  }
 
-    .subtitleTitle p {
-        font-size: 0.8rem;
-    }
+  .stats h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
 
-    .stats h3 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
+  .section-1 h2 {
+    font-size: 4rem;
+  }
 
-    .section-1 h2 {
-        font-size: 4rem;
-    }
+  .section-1 p {
+    font-size: 1.5rem;
+  }
 
-    .section-1 p {
-        font-size: 1.5rem;
-    }
+  .call-to-action h2,
+  .data h2 {
+    font-size: 3rem;
+  }
 
-    .call-to-action h2, .data h2{
-        font-size: 3rem;
-    }
+  #get-started {
+    font-size: 1.5rem;
+  }
 
-    #get-started {
-        font-size: 1.5rem;
-    }
+  section .header-para {
+    font-size: 1.5rem;
+  }
 
-    section .header-para {
-        font-size: 1.5rem;
-    }
+  .data p {
+    font-size: 1.5rem;
+  }
 
-    .data p {
-        font-size: 1.5rem;
-    }
+  footer a {
+    font-size: 1.5rem;
+  }
 
-    footer a {
-        font-size: 1.5rem;
-    }
-
-    .nav-link {
-        font-size: 1.5rem;
-    }
+  .nav-link {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 25rem) {
-    .nav-header{
-        justify-content: center;
-    }
+  .nav-header {
+    justify-content: center;
+  }
 
-    .info-container{
-        margin: 0 5vw;
-    }
+  .info-container {
+    margin: 0 5vw;
+  }
 
-    section .header-para {
-        max-width: 100%;
-        font-size: 1.3rem;
-    }
+  section .header-para {
+    max-width: 100%;
+    font-size: 1.3rem;
+  }
 
-    h1 {
-        font-size: 3.5rem;
-    }
+  h1 {
+    font-size: 3.5rem;
+  }
 
-    .section-1 h2 {
-        font-size: 3rem;
-    }
+  .section-1 h2 {
+    font-size: 3rem;
+  }
 
-    .section-1 p {
-        font-size: 1.3rem;
-    }
+  .section-1 p {
+    font-size: 1.3rem;
+  }
 
-    .data-highlight h2 {
-        font-size: 2rem;
-    }
+  .data-highlight h2 {
+    font-size: 2rem;
+  }
 
-    .textbox, .textbox-small {
-        margin: 0 7vw;
-    }
+  .textbox,
+  .textbox-small {
+    margin: 0 7vw;
+  }
 
-    .call-to-action h2, .data h2 {
-        font-size: 2rem;
-    }
+  .call-to-action h2,
+  .data h2 {
+    font-size: 2rem;
+  }
 
-    .data-p {
-        font-size: 1.3rem;
-    }
+  .data-p {
+    font-size: 1.3rem;
+  }
 
-    footer {
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
+  footer {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-    #anchor {
-        text-align: left;
-        margin-bottom: 1rem;
-    }
+  #anchor {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
 
-    .nav-footer {
-        justify-content: center;
-        align-items: center;
-        margin-top: 1rem;
-    }
+  .nav-footer {
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+}
+
+#crunchyroll-subscriptions {
+  width: 100%;
+  height: 100%;
 }
 
 #scatterPlot {
