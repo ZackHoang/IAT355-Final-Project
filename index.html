@@ -1,112 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Home</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="nav-header" id="anchor">
-            <div class="link-container">
-                <a href="#" class="nav-link">Home</a>
-                <a href="./process.html" class="nav-link">Process</a>
-                <a href="./analytics.html" class="nav-link">Analytics</a>
-            </div>
-        </nav>
-        <div class="info-container">
-            <section id="head-section">
-                <h1>Find your next anime obsession based on analytics</h1>
-                <p class="header-para">Built upon Vega-Lite visualizations,  information provided by myanimelist.net, supporting decisions through interactive and thoughtfully created visualizations, we provide you the steps into your next anime adventure.</p>
-            </section>
-            <div class="button">
-                    <a href="./analytics.html" id="get-started">Get Started</a>
-            </div>
+      <nav class="nav-header" id="anchor">
+        <div class="link-container">
+          <a href="#" class="nav-link">Home</a>
+          <a href="./process.html" class="nav-link">Process</a>
+          <a href="./analytics.html" class="nav-link">Analytics</a>
         </div>
+      </nav>
+      <div class="info-container">
+        <section id="head-section">
+          <h1>Find your next anime obsession based on analytics</h1>
+          <p class="header-para">
+            Built upon Vega-Lite visualizations, information provided by
+            myanimelist.net, supporting decisions through interactive and
+            thoughtfully created visualizations, we provide you the steps into
+            your next anime adventure.
+          </p>
+        </section>
+        <div class="button">
+          <a href="./analytics.html" id="get-started">Get Started</a>
+        </div>
+      </div>
     </header>
-    <main> 
-        <section class="section-1">
-            <div class="textbox">
-                <h2>Analytics</h2>
-                <p>This should just include some basic instructions on how to interact with the visualizations. Each of the categories should be organized into categories which could make things easier to read idk. This paragraph should be more centered around talking about anime and how it has become a bigger trend overtime, and how its influence is osmething that should not be overlooked.</p>
-            </div>
-        </section>
-        <section class="data-highlight">
-            <div class="textbox-small">
-            <div class="subtitleTitle">
-                <h2>36% of viewers worldwide enjoyed watching anime, prompting us to conduct this research.</h2>
-                <p>*Source: https://headphonesaddict.com/anime-statistics</p>
-            </div>
-            <h2>We gathered results from datasets to help formulate an answer, which consisted of over:</h2>
-            <div class="stats-container">
-                <article class="stats"> <!-- Does not semantically make sense to be an article-->
-                    <h3>Total anime's submitted</h3>
-                    <p>1000</p>
-                </article>
-                <article class="stats">
-                    <h3>Total anime’s submitted</h3>
-                    <p>1000</p>
-                </article>
-                <article class="stats">
-                    <h3>Total anime’s submitted</h3>
-                    <p>1000</p>
-                </article>
-                <article class="stats">
-                    <h3>Total anime’s submitted</h3>
-                    <p>1000</p>
-                </article>  
-            </div>
+    <main>
+      <section class="section-1">
+        <div class="textbox">
+          <h2>Analytics</h2>
+          <p>
+            This should just include some basic instructions on how to interact
+            with the visualizations. Each of the categories should be organized
+            into categories which could make things easier to read idk. This
+            paragraph should be more centered around talking about anime and how
+            it has become a bigger trend overtime, and how its influence is
+            osmething that should not be overlooked.
+          </p>
         </div>
-        </section>
-        <section class="call-to-action">
-            <div class="textbox">
-                <h2>We then set off to answer 3 questions based on our findings and results</h2>
+      </section>
+      <section class="data-highlight">
+        <div class="textbox-small">
+          <div class="subtitleTitle">
+            <h2>
+              36% of viewers worldwide enjoyed watching anime, prompting us to
+              conduct this research.
+            </h2>
+            <p>*Source: https://headphonesaddict.com/anime-statistics</p>
+          </div>
+          <figure>
+            <div id="crunchyroll-subscriptions"></div>
+            <figcaption>
+              source:
+              <a
+                href="https://www.statista.com/statistics/594952/crunchyroll-users/"
+                >https://www.statista.com/statistics/594952/crunchyroll-users/</a
+              >
+            </figcaption>
+          </figure>
+          <h2>
+            We gathered results from datasets to help formulate an answer, which
+            consisted of over:
+          </h2>
+          <div class="stats-container">
+            <div class="stats">
+              <!-- Does not semantically make sense to be an div-->
+              <h3>Number of animes</h3>
+              <p>24901</p>
             </div>
-        </section>
-        <div class="data-findings">
-            <div class="data">
-                <section> 
-                    <h2>Which Genre’s ranked the highest based on key factors found within the dataset?</h2>
-                    <p>This acts as a subtitle and should briefly explain what our visualization is about. </p>
-                </section>
-                <div id="scatterPlot"></div>
-                <!-- <img src="./img/chart.png"> -->
-                <div>Filter box</div>
+            <div class="stats">
+              <h3>Number of reviewers</h3>
+              <p>270033</p>
             </div>
-            <div class="divider">
+            <div class="stats">
+              <h3>Number of anime genres</h3>
+              <p>14</p>
             </div>
-            <div class="data">
-                <section>
-                    <h2>How did user  ratings and rankings flucuate over the lifetime of an anime?</h2>
-                    <p>This acts as a subtitle and should briefly explain what our visualization is about. </p>
-                </section>
-                <div id="animePieChart"></div>
-                <!-- <img src="./img/chart.png"> -->
-                <div>Filter box</div>
+            <div class="stats">
+              <h3>Total users on MyAnimeList</h3>
+              <p>731290</p>
             </div>
-            <div class="divider">
-            </div>
-            <div class="data">
-                <section>
-                    <h2>What was the spread between genders between a specific genre or title?</h2>
-                    <p>This acts as a subtitle and should briefly explain what our visualization is about. </p>
-                </section>
-                <img src="./img/chart.png">
-                <div>Filter box</div>
-            </div>
+          </div>
         </div>
-        <!-- Commented out if not needed for now -->
-        <!-- <section class="section-1">
+      </section>
+      <section class="call-to-action">
+        <div class="textbox">
+          <h2>
+            We then set off to answer 3 questions based on our findings and
+            results
+          </h2>
+        </div>
+      </section>
+      <div class="data-findings">
+        <div class="data">
+          <section>
+            <h2>
+              Which Genre’s ranked the highest based on key factors found within
+              the dataset?
+            </h2>
+            <p>
+              This acts as a subtitle and should briefly explain what our
+              visualization is about.
+            </p>
+          </section>
+          <div id="scatterPlot"></div>
+          <!-- <img src="./img/chart.png"> -->
+          <div>Filter box</div>
+        </div>
+        <div class="divider"></div>
+        <div class="data">
+          <section>
+            <h2>
+              How did user ratings and rankings flucuate over the lifetime of an
+              anime?
+            </h2>
+            <p>
+              This acts as a subtitle and should briefly explain what our
+              visualization is about.
+            </p>
+          </section>
+          <img src="./img/chart.png" />
+          <div>Filter box</div>
+        </div>
+        <div class="divider"></div>
+        <div class="data">
+          <section>
+            <h2>
+              What was the spread between genders between a specific genre or
+              title?
+            </h2>
+            <p>
+              This acts as a subtitle and should briefly explain what our
+              visualization is about.
+            </p>
+          </section>
+          <div id="animePieChart"></div>
+          <div>Filter box</div>
+        </div>
+      </div>
+      <!-- Commented out if not needed for now -->
+      <!-- <section class="section-1">
             <section>
                 <h2>Built and based on numbers and qualified users</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum vehicula quam, in volutpat sapien. Cras elit sem, finibus vitae aliquam vel, commodo vehicula magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam condimentum eleifend sem in tincidunt. Integer varius, nunc eget cursus tristique, ligula nunc egestas lacus, ac consequat est nulla nec lacus. Pellentesque facilisis nisl nec ligula mattis, et cursus diam eleifend. Praesent auctor quis turpis et facilisis. Maecenas finibus lacinia convallis. Aliquam dapibus posuere venenatis. </p>
@@ -115,15 +165,14 @@
         </section> -->
     </main>
     <footer>
-        <a href="#anchor">Back To Top</a>
-        <nav class="nav-footer">
-            <a href="#">Home</a>
-            <a href="./process.html">Process</a>
-            <a href="./analytics.html">Visualizations</a>
-        </nav>
+      <a href="#anchor">Back To Top</a>
+      <nav class="nav-footer">
+        <a href="#">Home</a>
+        <a href="./process.html">Process</a>
+        <a href="./analytics.html">Visualizations</a>
+      </nav>
     </footer>
-
     <script src="./vegaScatter.js"></script>
     <script src="./vegaAnimePie.js"></script>
-</body>
+  </body>
 </html>
