@@ -9,13 +9,9 @@ var scatterSpec = {
   },
   width: "container",
 
-  data: { url: "./data/anime-dataset-2023.csv" },
+  data: { url: "./data/anime-dataset-2023-user-gender.csv" },
 
   transform: [
-    // counting only the first genre in the csv file
-    // { calculate: "trim(split(datum.Genres, ',')[0])", as: "OneGenre" },
-
-    // countring each anime for each genre it specified -> used chatGPT to do array version
     {
       calculate: "split(replace(datum.Genres, '\"', ''), ',')",
       as: "GenreArray",
@@ -23,18 +19,11 @@ var scatterSpec = {
     { flatten: ["GenreArray"] },
     { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
     { filter: "datum.OneGenre != ''" },
-
-    //numbers are not stored as calculable numbers so had to convert for score and popularity
     { calculate: "toNumber(datum.Score)", as: "ScoreNum" },
     { calculate: "toNumber(datum.Popularity)", as: "PopularityNum" },
-    //filters out invalid values in score and popularity
     { filter: "isValid(datum.ScoreNum) && isValid(datum.PopularityNum)" },
-    //filtered out nsfw or offensive genres as well as genres that are not the ones we would consider on the list
-    {
-      filter:
-        "datum.OneGenre != 'Ecchi' && datum.OneGenre != 'Hentai' && datum.OneGenre != 'Erotica' && datum.OneGenre != 'Avant Garde' && datum.OneGenre != 'Award Winning' && datum.OneGenre != 'UNKNOWN' && datum.OneGenre != 'Girls Love' && datum.OneGenre != 'Boys Love'",
-    },
-    //averages out score and popularity, giving the final values for each Genre
+    // the dataset no longer has those directly
+    // { filter: "datum.OneGenre != 'Ecchi' && datum.OneGenre != 'Hentai' && datum.OneGenre != 'Erotica' && datum.OneGenre != 'Avant Garde' && datum.OneGenre != 'Award Winning' && datum.OneGenre != 'UNKNOWN' && datum.OneGenre != 'Girls Love' && datum.OneGenre != 'Boys Love'" },
     {
       aggregate: [
         { op: "mean", field: "ScoreNum", as: "AverageScore" },
@@ -43,20 +32,13 @@ var scatterSpec = {
       ],
       groupby: ["OneGenre"],
     },
-    //round numbers for score and popularity
     { calculate: "round(datum.AveragePopularity)", as: "AveragePopularity" },
     { calculate: "round(datum.AverageScore * 100) / 100", as: "AverageScore" },
   ],
 
   mark: "point",
 
-  //allows for particular selection of categories
   selection: {
-    // genreFilter: {
-    //   type: "multi",
-    //   fields: ["OneGenre"],
-    //   bind: { input: "checkbox" }  // creates checkboxes for each genre
-    // }
     pointSelect: {
       type: "multi",
       fields: ["OneGenre"],
@@ -65,7 +47,6 @@ var scatterSpec = {
     },
   },
 
-  //view model of the scatterplot
   encoding: {
     x: {
       field: "AverageScore",
@@ -98,10 +79,7 @@ var scatterSpec = {
       { field: "AnimeCount", type: "quantitative", title: "Number of Anime" },
     ],
     opacity: {
-      condition: [
-        // { selection: "genreFilter", value: 1 },
-        { selection: "pointSelect", value: 1 },
-      ],
+      condition: [{ selection: "pointSelect", value: 1 }],
       value: 0.1,
     },
   },
