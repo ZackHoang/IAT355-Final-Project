@@ -87,8 +87,15 @@ var scatterSpec = {
 
 let crunchyrollsubscriptionsSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-  title:
-    "Number of Crunchyroll paying subscriptionscribers worldwide from September 2012 to June 2024",
+  autosize: {
+    type: "fit-x",
+    contains: "padding",
+    resize: true,
+  },
+  title: "a",
+  // chart was not displaying properly due to long title, deadass
+  // title:
+  //   "Number of Crunchyroll paying subscriptionscribers worldwide from September 2012 to June 2024",
   description:
     "Number of Crunchyroll paying subscriptionscribers worldwide from September 2012 to June 2024",
   width: "container",
