@@ -1,0 +1,409 @@
+/* Additional stuff idk*/
+
+:root {
+    --lightgrey1: #C3C3C3;
+    --lightgrey: #AEABAB;
+    --lightgrey3: #8F8F8F;
+    --lightgrey4: #BFBCBC;
+    --darkgrey1: #272525;
+    --darkgrey2: #191919;
+    --darkgrey3: #A6A6A6;
+    --darkgrey4: #313131;
+    --darkgrey5: #575757;
+    --darkgrey6: #414141;
+    --lightBlue: #008EF3;
+    --orange: #FF5E00;
+}
+
+
+
+
+
+/* Main styling*/
+
+* {
+  font-family: poppins, sans-serif;
+}
+
+
+.paddingWrapper{
+    margin: 0 15vw;
+}
+
+h2{
+    margin: 0;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+/* Header styling */
+
+header {
+  text-align: center;
+  background: url(../img/background.png);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexTitle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: end;
+    height: 100vh;
+    gap: 30vh;
+}
+
+
+.headerTitle h1 {
+    font-size: 5rem;
+    margin-bottom: 0;
+}
+
+.headerTitle p {
+    color: var(--lightgrey1);
+    font-size: 2rem;
+}
+
+.headerScroll {
+    color: var(--lightgrey1);
+    align-self: end;
+    width: 100%;
+}
+
+.headerScroll p {
+    font-size: 2rem;
+}
+
+.headerArrow{ /* Reference: https://www.w3schools.com/howto/howto_css_arrows.asp */
+  border: solid var(--lightgrey1);
+  border-width: 0 0.2rem 0.2rem 0;
+  display: inline-block;
+  padding: 1rem;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  /* For later, add hover states and make arrow bigger or something */
+}
+
+
+
+/* nav bar */
+
+
+nav { /* Change nav functionality when viewport drops*/
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.navWrapper{
+    width: 8vw;
+}
+
+.navTitle {
+    background-color: rgba(0, 0, 0, 0);
+    position:sticky;
+    padding: 0.5rem;
+    height: auto;
+    top: 0;
+    left: 5vw;
+    width: 8vw;
+}
+
+
+
+
+
+
+
+
+/* Body Content */
+
+.mainContainer {
+    height: 100vh;
+    height: 100dvh; /*For mobile device scrolling */
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+
+}
+
+.mainSection{
+    padding: 15vh 0;
+    height: 100%;
+    scroll-snap-align: start;
+}
+
+.part1, .part2, .part3, .part4 {
+    background-color: var(--darkgrey2) ;
+}
+
+.part5, .part6, .part7 {
+    background-color: var(--darkgrey4);
+}
+
+.part1 h2, .part2 h2 {
+    color: white;
+    font-size: 5rem;
+    font-style: italic;
+}
+
+.titleBlue {
+    color: var(--lightBlue);
+}
+
+.part1 p, .part2 p {
+    font-size: 2rem;
+    color: white;
+}
+
+.part4 h2, .part5 h2, .part6 h2, .part9 h2, .part10 h2, .part11 h2 {
+    font-size: 3rem;
+    color: white;
+}
+
+.part4 p, .part5 p, .part6 p {
+    font-size: 2rem;
+    color: var(--darkgrey3);
+}
+
+.part9, .part10, .part11 {
+    background-color: var(--lightBlue);
+}
+
+.part9 h3, .part10 h3, .part11 h3 {
+    color: white;
+    font-size: 2rem;
+}
+
+.visualizationContent p, .visualizationDescription p{
+    font-size: 2rem;
+    color: var(--lightgrey4);
+}
+
+
+
+
+.divider {
+  border-radius: 1rem;
+  margin: 10rem 5vw 5rem 5vw;
+  width: 90%;
+  background-color: var(--gray-3);
+  height: 0.5rem;
+}
+
+
+
+
+
+
+
+/*mainsection 2*/
+
+.part2 img {
+    display: block;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 1rem;
+    background-color: var(--lightBlue);
+    border-radius: 0.5rem;
+}
+
+
+/*mainSection 3*/
+
+
+#crunchyroll-subscriptions {
+  width: 100%;
+  height: 60vh;
+  background-color: white; /* Temp fix, I just need to see where this is*/
+}
+
+.part3 p {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: auto;
+    max-width: 60%;
+    color: white;
+
+
+}
+
+
+/*mainSection 4*/
+
+.part4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.part4 figure {
+    width: 100%;
+    height: 50vh;
+}
+
+.part4 h2 {
+    margin-bottom: 5vh;
+}
+
+.part4 p {
+    max-width: 80%;
+    margin:auto;
+}
+
+/*mainSection 5*/
+
+
+.part5 h3 {
+    margin-top: 20vh;
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 300;
+}
+
+/*dataset stats*/
+
+.visNumbers {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.visStats {
+    background-color: var(--darkgrey5);
+    max-width: 30rem;
+    width: 100%;
+    height: 13rem;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.visStats h3 {
+    font-weight: 500;
+    font-size: 6rem;
+    margin: 0;
+}
+
+.visStats p {
+    font-size: 2.25rem;
+    margin: 0;
+}
+
+/*Mainsection 6*/
+
+.part7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: white;
+}
+
+
+
+/* Data cleaning tree */
+
+
+
+.part7 .downArrow {
+    margin-bottom: 1rem;
+    border-color: white;
+}
+
+.details, .processStart, .processEnd {
+    border-radius: 0.5rem;
+    background-color: var(--darkgrey5);
+    max-width: 30rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.processStart, .processEnd {
+    padding: 2rem;
+}
+
+.detailsSummary{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    max-width: 80%;
+    margin: auto;
+}
+
+.detailsContent {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    background-color: var(--darkgrey6);
+    text-align: left;
+}
+
+.processStart {
+    background-color: var(--orange);
+}
+
+.processEnd {
+    background-color: var(--lightBlue);
+}
+
+
+
+/*Part 8 */
+.part8 {
+    background-color: var(--lightgrey3);
+}
+
+.part8 h2 {
+    color: white;
+    font-size: 4rem;
+    line-height: 6rem;
+}
+
+.part8 .paddingWrapper {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+
+.part8 h2 {
+    text-align: center;
+}
+
+
+/*Part 9 */
+
+
+
+
+
+
+/*Details/Section content */
+
+.downArrow{ /* Reference: https://www.w3schools.com/howto/howto_css_arrows.asp */
+  border: solid black;
+  border-width: 0 0.2rem 0.2rem 0;
+  display: inline-block;
+  padding: 1rem;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  /* For later, add hover states and make arrow bigger or something */
+}
+
