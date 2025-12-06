@@ -45,13 +45,13 @@ h2{
 
 /* Header styling */
 
-header {
+.headerMaterial {
   text-align: center;
   background: url(../img/background.png);
   background-size: cover;
   background-position: center;
   color: white;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,6 +97,14 @@ header {
   /* For later, add hover states and make arrow bigger or something */
 }
 
+.headerMaterial h1 {
+    margin-top: 0;
+}
+
+.mainSection.headerMaterial {
+    padding: 0;
+}
+
 
 
 /* nav bar */
@@ -133,12 +141,12 @@ nav { /* Change nav functionality when viewport drops*/
     height: 100vh;
     height: 100dvh; /*For mobile device scrolling */
     overflow-y: scroll;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
 
 }
 
 .mainSection{
-    padding: 15vh 0;
+    padding-top: 10vh;
     height: 100%;
     scroll-snap-align: start;
 }
@@ -244,7 +252,6 @@ nav { /* Change nav functionality when viewport drops*/
 .part4 {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .part4 figure {
@@ -257,8 +264,16 @@ nav { /* Change nav functionality when viewport drops*/
 }
 
 .part4 p {
-    max-width: 80%;
+    max-width: 70%;
     margin:auto;
+}
+
+.pieChartComparison {
+    margin: auto;
+    height: 60vh;
+    width: 50vw;
+    color: white;
+    background-color: white;
 }
 
 /*mainSection 5*/
@@ -314,6 +329,7 @@ nav { /* Change nav functionality when viewport drops*/
     flex-direction: column;
     gap: 0.5rem;
     color: white;
+    padding-top: 0;
 }
 
 
@@ -367,6 +383,7 @@ nav { /* Change nav functionality when viewport drops*/
 /*Part 8 */
 .part8 {
     background-color: var(--lightgrey3);
+    padding-top: 0;
 }
 
 .part8 h2 {
