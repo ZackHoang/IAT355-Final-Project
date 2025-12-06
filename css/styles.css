@@ -411,6 +411,10 @@ footer a {
   height: 100%;
 }
 
+#brands-vis {
+  min-width: 100%;
+  min-height: 100%;
+}
 
 #crunchyroll-source {
   overflow-wrap: anywhere;
