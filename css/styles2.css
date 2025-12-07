@@ -424,3 +424,19 @@ nav { /* Change nav functionality when viewport drops*/
   /* For later, add hover states and make arrow bigger or something */
 }
 
+
+#scatterPlot {
+  width: 100%;
+  height: 100%;
+}
+
+#animePieChart {
+  width: 100%;
+  height: 100%;
+}
+
+
+#lineChart {
+  width: 100%;
+  height: 100%;
+}
