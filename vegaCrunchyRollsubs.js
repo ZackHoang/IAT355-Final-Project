@@ -1,10 +1,10 @@
 let crunchyrollsubscriptionsSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-  autosize: {
-    type: "fit-x",
-    contains: "padding",
-    resize: true,
-  },
+  // autosize: {
+  //   type: "fit-x",
+  //   contains: "padding",
+  //   resize: true,
+  // },
   background: "#191919",
   description:
     "Number of Crunchyroll paying subscriptionscribers worldwide from September 2012 to June 2024",
@@ -42,8 +42,8 @@ let crunchyrollsubscriptionsSpec = {
             title: "Year",
             labelColor: "white",
             titleColor: "white",
-            labelFontSize: 32,
-            titleFontSize: 32,
+            labelFontSize: 18,
+            titleFontSize: 18,
           },
           scale: {
             padding: 0.25,
@@ -58,8 +58,8 @@ let crunchyrollsubscriptionsSpec = {
             labelColor: "white",
             titleColor: "white",
             tickCount: 12,
-            labelFontSize: 32,
-            titleFontSize: 32,
+            labelFontSize: 18,
+            titleFontSize: 18,
           },
         },
         color: {
@@ -67,6 +67,7 @@ let crunchyrollsubscriptionsSpec = {
             test: "datum.year !== 'Jun 2024'",
             value: "white",
           },
+          value: "#008EF3",
         },
         tooltip: [
           {
@@ -88,7 +89,7 @@ let crunchyrollsubscriptionsSpec = {
         align: "left",
         baseline: "middle",
         dx: 4,
-        fontSize: 32,
+        fontSize: 18,
         color: "white",
       },
       encoding: {
@@ -104,4 +105,6 @@ let crunchyrollsubscriptionsSpec = {
   ],
 };
 
-vegaEmbed("#crunchyroll-subscriptions", crunchyrollsubscriptionsSpec);
+vegaEmbed("#crunchyroll-subscriptions", crunchyrollsubscriptionsSpec, {
+  actions: false,
+});
