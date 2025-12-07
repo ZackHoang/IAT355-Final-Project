@@ -401,6 +401,11 @@ footer a {
   height: 100%;
 }
 
+#brands-vis {
+  min-width: 100%;
+  min-height: 100%;
+}
+
 
 #lineChart {
   width: 100%;

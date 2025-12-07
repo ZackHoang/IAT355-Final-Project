@@ -76,7 +76,7 @@ var searchPieSpec = {
         input: "select",
         options: [
           "Action", "Adventure", "Sci-Fi", "Comedy","Drama", "Fantasy", "Gourmet", "Horror","Mystery","Romance",
-          "Romance","Sci-Fi","Slice of Life","Sports","Supernatural","Suspense"
+          "Sci-Fi","Slice of Life","Sports","Supernatural","Suspense"
         ]
       }
     }
