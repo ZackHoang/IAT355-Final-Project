@@ -9,7 +9,7 @@ let crunchyrollsubscriptionsSpec = {
   description:
     "Number of Crunchyroll paying subscriptionscribers worldwide from September 2012 to June 2024",
   width: "container",
-  height: 300,
+  height: 500,
   data: {
     values: [
       { year: "Sep 2012", subscriptions: 0.1 },
@@ -32,7 +32,7 @@ let crunchyrollsubscriptionsSpec = {
     {
       mark: {
         type: "bar",
-        size: 20,
+        size: 35,
       },
       encoding: {
         y: {
@@ -42,6 +42,8 @@ let crunchyrollsubscriptionsSpec = {
             title: "Year",
             labelColor: "white",
             titleColor: "white",
+            labelFontSize: 32,
+            titleFontSize: 32,
           },
           scale: {
             padding: 0.25,
@@ -55,12 +57,15 @@ let crunchyrollsubscriptionsSpec = {
             title: "Subscribers in millions",
             labelColor: "white",
             titleColor: "white",
+            tickCount: 12,
+            labelFontSize: 32,
+            titleFontSize: 32,
           },
         },
         color: {
           condition: {
             test: "datum.year !== 'Jun 2024'",
-            value: "#D3D3D3",
+            value: "white",
           },
         },
         tooltip: [
@@ -80,10 +85,11 @@ let crunchyrollsubscriptionsSpec = {
     {
       mark: {
         type: "text",
-        align: "right",
+        align: "left",
         baseline: "middle",
         dx: 4,
-        fill: "black",
+        fontSize: 32,
+        color: "white",
       },
       encoding: {
         x: { field: "subscriptions", type: "quantitative" },

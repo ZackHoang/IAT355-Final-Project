@@ -7,7 +7,7 @@ let topVODBrands = {
     resize: true,
   },
   width: "container",
-  height: 250,
+  height: 500,
   background: "#191919",
 
   data: {
@@ -29,7 +29,7 @@ let topVODBrands = {
     {
       mark: {
         type: "bar",
-        size: 20,
+        size: 35,
       },
 
       encoding: {
@@ -40,6 +40,9 @@ let topVODBrands = {
             title: "Percentages of respondents",
             labelColor: "white",
             titleColor: "white",
+            tickCount: 12,
+            labelFontSize: 32,
+            titleFontSize: 32,
           },
         },
         y: {
@@ -49,6 +52,8 @@ let topVODBrands = {
             title: "Brand",
             labelColor: "white",
             titleColor: "white",
+            labelFontSize: 32,
+            titleFontSize: 32,
           },
           scale: {
             padding: 0.2,
@@ -58,7 +63,7 @@ let topVODBrands = {
         color: {
           condition: {
             test: "datum.brand !== 'Crunchyroll'",
-            value: "#D3D3D3",
+            value: "white",
           },
         },
         tooltip: [
@@ -82,6 +87,7 @@ let topVODBrands = {
         baseline: "middle",
         dx: -4,
         fill: "black",
+        fontSize: 32,
       },
       encoding: {
         x: { field: "percentage", type: "quantitative" },
