@@ -644,6 +644,12 @@ a {
 
 @media (max-width: 68.063rem) {
 
+
+  .mainContainer {
+  overflow-x: hidden;
+
+}
+
   .paddingWrapper {
   margin: 0 10vw;
   }
