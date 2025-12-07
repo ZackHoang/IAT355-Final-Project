@@ -47,7 +47,7 @@ let topVODBrands = {
       scale: {
         padding: 0.25,
       },
-      sort: { field: "subscriptions", order: "descending" },
+      sort: { field: "percentage", order: "descending" },
     },
     color: {
       condition: {
