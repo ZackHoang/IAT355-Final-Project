@@ -45,7 +45,6 @@ h2 {
   background-size: cover;
   background-position: center;
   color: white;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +55,6 @@ h2 {
   justify-content: center;
   flex-direction: column;
   align-items: end;
-  height: 100vh;
   gap: 30vh;
 }
 
@@ -133,8 +131,7 @@ nav {
 /* Body Content */
 
 .mainContainer {
-  height: 100vh;
-  height: 100dvh; /*For mobile device scrolling */
+  min-height: 100dvh; /*For mobile device scrolling */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
@@ -298,7 +295,8 @@ a {
 
 .part4 figure {
   width: 100%;
-  height: 50vh;
+  min-height: 50vh;
+  height: auto;
 }
 
 .part4 h2 {
@@ -645,7 +643,7 @@ a {
 @media (max-width: 68.063rem) {
 
 
-  .mainContainer {
+.mainContainer {
   overflow-x: hidden;
 
 }
