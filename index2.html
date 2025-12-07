@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styles2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Scrolljourney: Anime</title>
+  </head>
+  <body>
+    <main>
+        <div class="mainContainer">
+            <div class="mainSection headerMaterial"> <!-- Fix for later: Add this scroll functionality to the main content-->
+                <div class="paddingWrapper flexTitle">
+                    <section class="headerTitle" id="Title">
+                        <h1>What do anime fans prefer or think about their favorite anime?</h1>
+                        <p>A deep dive into anime and its user preferences.</p>
+                    </section>
+                    <div class="headerScroll">
+                        <p>Scroll down to begin</p>
+                        <div class="headerArrow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainSection part1">
+                <section class="paddingWrapper">
+                    <h2>So, what exactly is <span class="titleBlue">anime?</span></h2>
+                    <p>Japanese animation, or known better as anime, is a style of animation that focuses on bright and distinct colors, along with a storytelling narrative representative of Japanese culture. </p>
+                    <p>Over the last few years, anime has become widespread all around the world, quickly capturing the hearts of many fans. Its widespread popularity has led its media to be translated to other languages and spread across many different genres, such as being adapted into game titles.</p>
+                </section>
+            </div>
+            <div class="mainSection part2">
+                <section class="paddingWrapper">
+                    <h2>Cool, so how big has <span class="titleBlue">anime become today?</span></h2>
+                    <p>A great way to examine the size of anime would be to compare how much its market is worth compared to other mediums like Drama or Film.  </p>
+                    <p>Lets take a look at Crunchyroll, one of Anime’s top streaming services available!</p>
+                    <img src="img/crunchyroll.png" alt="Image showing crunchyroll's landing page">
+                </section>
+            </div>
+            <div class="mainSection part3">
+                <section class="paddingWrapper">
+                    <figure>
+                        <div id="crunchyroll-subscriptions"></div>
+                    </figure>
+                    <p>This section should be to convert the amount of subscribers to a price amount, as it will make comparisons a lot easier to perform (if you do the math, 7.99+8.33+12.49/3 = 9.60 per sub)</p>
+                </section>
+            </div>
+            <div class="mainSection part4">
+                <section class="paddingWrapper">
+                    <h2>Crunchyroll gathered big subscription and sales numbers, so much in fact that...</h2>
+                    <div class="pieChartComparison">
+                        
+                    </div>
+                    <p>Idk insert some random stat here that compares the number of people with something</p>
+                </section>
+            </div>
+            <div class="mainSection part5">
+                <section class="paddingWrapper">
+                    <h2>Based on these findings, our group wanted to explore anime’s relevance further through hard numbers.</h2>
+                    <p>We explored datasets containing information that talked about Anime search trends and genres, along with how users thought of each of the anime’s. </p>
+                    <h3>Combining 3 Datasets later, we had a grand total of...</h3>
+                    <div class="visNumbers">
+                        <section class="visStats">
+                        <h3>14</h3>
+                        <p>Number of anime genres</p>
+                    </section>
+                    <section class="visStats">
+                        <h3>270033</h3>
+                        <p>Number of reviewers</p>
+                    </section>
+                    <section class="visStats">
+                        <h3>731290</h3>
+                        <p>Total users on MyAnimeList</p>
+                    </section>
+                    </div>
+                </section>
+            </div>
+            <div class="mainSection part6">
+                    <section class="paddingWrapper">
+                        <h2>Our data was a start, but it required polishing to narrow down on key points.</h2>
+                        <p>Currently, our main dataset data issues that could potentially skew results and show our findings incorrectly. We fixed these areas through evaluation and filtering to create a fair and unbiased judgement and visualizations. </p>
+                        <p>Here is a simple process of what that looked like below!</p>
+                    </section>
+            </div>
+            <div class="mainSection part7">
+                    <section class="paddingWrapper">
+                        <div class="processStart">
+                            <h2>Unorganized Dataset</h2>
+                        </div>
+                    </section>
+                    <div class="downArrow"></div>
+                    <details class="details" name="detailDiagram">
+                        <summary class="detailsSummary">Removed inappropiate and bloated categories</summary>
+                        <div class="detailsContent">
+                            <p>It was important to make sure that data was safe for all users and organized correctly to ensure precise evaluations, leading to us filtering out these columns</p>
+                        </div>
+                    </details>
+                    <div class="downArrow"></div>
+                    <details class="details" name="detailDiagram">
+                        <summary class="detailsSummary">Removed Unnecessary User Data </summary>
+                        <div class="detailsContent">
+                            <p>It was important to make sure that data was safe for all users and organized correctly to ensure precise evaluations, leading to us filtering out these columns</p>
+                        </div>
+                    </details>
+                    <div class="downArrow"></div>
+                    <details class="details" name="detailDiagram">
+                        <summary class="detailsSummary">Removed duplicate values through cross referencing</summary>
+                        <div class="detailsContent">
+                            <p>It was important to make sure that data was safe for all users and organized correctly to ensure precise evaluations, leading to us filtering out these columns</p>
+                        </div>
+                    </details>
+                    <div class="downArrow"></div>
+                    <div class="processEnd">
+                        <h2>Filtered Dataset</h2>
+                    </div>
+            </div>
+            <div class="mainSection part8">
+                    <section class="paddingWrapper">
+                        <h2>Once our data was organized, we then set off to answer <span class="titleBlue">three different questions</span> to understand and evaluate anime preferences between users. </h2>
+                    </section>
+            </div>
+            <div class="mainSection part9">
+                    <section class="paddingWrapper">
+                        <section class="visualizationContent">
+                            <h2>Which Genre’s ranked the highest based on key factors found within the dataset?</h2>
+                            <p>This acts as a subtitle and should briefly explain what our visualization is about.</p>
+                            <div id="scatterPlot"></div>
+                        </section>
+                        <section class="visualizationDescription">
+                            <h3>So, why did we did we want to explore this?</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dolor sem, pulvinar sed placerat nec, tempus convallis ex. Vestibulum condimentum ac urna id interdum. Proin nibh dolor, imperdiet a arcu hendrerit, condimentum dignissim massa. In hac habitasse platea dictumst. 
+                            </p>
+                        </section>
+                    </section>
+            </div>
+            <div class="mainSection part10">
+                    <section class="paddingWrapper">
+                        <section class="visualizationContent">
+                            <h2>Which Genre’s ranked the highest based on key factors found within the dataset?</h2>
+                            <p>This acts as a subtitle and should briefly explain what our visualization is about.</p>
+                            <div id="lineChart"></div>
+                        </section>
+                        <section class="visualizationDescription">
+                            <h3>So, why did we did we want to explore this?</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dolor sem, pulvinar sed placerat nec, tempus convallis ex. Vestibulum condimentum ac urna id interdum. Proin nibh dolor, imperdiet a arcu hendrerit, condimentum dignissim massa. In hac habitasse platea dictumst. 
+                            </p>
+                        </section>
+                    </section>
+            </div>
+            <div class="mainSection part11">
+                    <section class="paddingWrapper">
+                        <section class="visualizationContent">
+                            <h2>Which Genre’s ranked the highest based on key factors found within the dataset?</h2>
+                            <p>This acts as a subtitle and should briefly explain what our visualization is about.</p>
+                            <div id="animePieChart"></div>
+                        </section>
+                        <section class="visualizationDescription">
+                            <h3>So, why did we did we want to explore this?</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dolor sem, pulvinar sed placerat nec, tempus convallis ex. Vestibulum condimentum ac urna id interdum. Proin nibh dolor, imperdiet a arcu hendrerit, condimentum dignissim massa. In hac habitasse platea dictumst. 
+                            </p>
+                        </section>
+                    </section>
+            </div>
+        </div>
+
+    </main>
+    <script src="./vegaScatter.js"></script>
+    <script src="./vegaAnimePie.js"></script>
+    <script src="./vegaLine.js"></script>
+  </body>
+</html>
