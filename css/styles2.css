@@ -5,6 +5,7 @@
   --lightgrey: #aeabab;
   --lightgrey3: #8f8f8f;
   --lightgrey4: #bfbcbc;
+  --lightgrey5: #D9D9D9;
   --darkgrey1: #272525;
   --darkgrey2: #191919;
   --darkgrey3: #a6a6a6;
@@ -98,6 +99,10 @@ h2 {
   padding: 0;
 }
 
+
+
+
+
 /* nav bar */
 
 nav {
@@ -118,6 +123,12 @@ nav {
   left: 5vw;
   width: 8vw;
 }
+
+
+
+
+
+
 
 /* Body Content */
 
@@ -161,15 +172,18 @@ nav {
 .part1 p,
 .part2 p {
   font-size: 2rem;
-  color: white;
+  color: var(--darkgrey3);
 }
 
 .part4 h2,
 .part5 h2,
 .part6 h2,
 .part9 h2,
+.part9a h2,
 .part10 h2,
-.part11 h2 {
+.part10a h2,
+.part11 h2,
+.part11a h2 {
   font-size: 3rem;
   color: white;
 }
@@ -182,14 +196,20 @@ nav {
 }
 
 .part9,
+.part9a,
 .part10,
-.part11 {
+.part10a,
+.part11, 
+.part11a {
   background-color: var(--lightBlue);
 }
 
 .part9 h3,
+.part9a h3,
 .part10 h3,
-.part11 h3 {
+.part10a h3,
+.part11 h3,
+.part11a h3 {
   color: white;
   font-size: 2rem;
 }
@@ -208,16 +228,45 @@ nav {
   height: 0.5rem;
 }
 
+
+figcaption {
+  font-style:italic;
+  color: var(--lightgrey3);
+  max-width: 90%;
+  margin: auto;
+}
+
+a {
+  font-style:italic;
+  color: var(--lightgrey3);
+  text-decoration: underline;
+  width: 80%;
+}
+
+
+
+
+
+
 /*mainsection 2*/
 
-.part2 img {
+.part2 picture {
   display: block;
+  width: 55vw;
   margin: auto;
   margin-top: 10vh;
   padding: 1rem;
   background-color: var(--lightBlue);
   border-radius: 0.5rem;
 }
+
+.part2 img {
+  width: 100%;
+}
+
+
+
+
 
 /*mainSection 3*/
 
@@ -232,8 +281,13 @@ nav {
   text-align: center;
   margin: auto;
   max-width: 60%;
-  color: white;
+  color: var(--darkgrey3);
 }
+
+
+
+
+
 
 /*mainSection 4*/
 
@@ -251,9 +305,23 @@ nav {
   margin-bottom: 5vh;
 }
 
-.part4 p {
-  max-width: 70%;
+.part4 h3 {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  max-width: 80%;
   margin: auto;
+  margin-top: 2rem;
+}
+
+.part4 p {
+  max-width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-style:normal;
+  margin-top: 5rem;
 }
 
 .pieChartComparison {
@@ -264,10 +332,17 @@ nav {
   background-color: white;
 }
 
+
+
+
+
+
+
+
 /*mainSection 5*/
 
 .part5 h3 {
-  margin-top: 20vh;
+  margin-top: 15vh;
   font-size: 2.5rem;
   color: white;
   font-weight: 300;
@@ -284,8 +359,7 @@ nav {
 
 .visStats {
   background-color: var(--darkgrey5);
-  max-width: 30rem;
-  width: 100%;
+  min-width: 25rem;
   height: 13rem;
   border-radius: 0.5rem;
   padding: 2rem;
@@ -299,11 +373,13 @@ nav {
   font-weight: 500;
   font-size: 6rem;
   margin: 0;
+  width: 100%;
 }
 
 .visStats p {
   font-size: 2.25rem;
   margin: 0;
+  width: 100%;
 }
 
 /*Mainsection 6*/
@@ -341,15 +417,14 @@ nav {
 }
 
 .detailsSummary {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   max-width: 80%;
   margin: auto;
 }
 
 .detailsContent {
-  margin-top: 1rem;
-  padding: 1.5rem;
+  padding: 1rem 10% 1rem 10%;
   border-radius: 0 0 0.5rem 0.5rem;
   background-color: var(--darkgrey6);
   text-align: left;
@@ -401,6 +476,11 @@ nav {
   /* For later, add hover states and make arrow bigger or something */
 }
 
+
+
+
+/* Visualization styling */
+
 #scatterPlot {
   width: 100%;
   height: 100%;
@@ -420,11 +500,392 @@ nav {
   width: 100%;
 }
 
-figcaption {
-  color: white;
+
+
+
+/* Responsiveness ---------------------------------------------------- */
+
+
+@media (max-width: 107.75rem) {
+  .visStats h3 {
+    font-size: 5rem;
+  }
+  .visStats p {
+    font-size: 1.75rem;
+  }
+  .visStats {
+    height: 10rem;
+  }
+
+  .visStats {
+    min-width: 17rem;
+  }
+  
+  .visNumbers {
+    gap: 2rem;
+  }
 }
 
-a {
+@media (max-width: 87.75rem) {
+
+
+
+  /* Part 5 stuff */
+
+  .part5 h3 {
+    margin-top: 5vh;
+    font-size: 2.25rem;
+  }
+
+  .visStats h3 {
+    margin-top: 0;
+    font-size: 4rem;
+  }
+  .visNumbers {
+    flex-direction: column;
+  }
+
+  .visStats {
+    display: flex;
+    justify-content: flex-start;
+    width: 30vw;
+    height: 8vh;
+    gap: 0;
+  }
+
+  .visStats h3, .visStats p {
+    width: auto;
+    display: inline-block;
+  }
+
+  .visStats p {
+    margin-top: auto;
+    font-size: 1.5rem;
+  }
+
+
+/* Main styling */
+
+
+
+
+.part1 h2,
+.part2 h2 {
   color: white;
-  text-decoration: none;
+  font-size: 5rem;
+  font-style: italic;
 }
+
+
+.part1 p,
+.part2 p {
+  font-size: 2rem;
+  color: var(--darkgrey3);
+}
+
+.part4 h2,
+.part5 h2,
+.part6 h2,
+.part9 h2,
+.part9a h2,
+.part10 h2,
+.part10a h2,
+.part11 h2,
+.part11a h2 {
+  font-size: 2.5rem;
+}
+
+.part4 p,
+.part5 p,
+.part6 p {
+  font-size: 1.5rem;
+}
+
+
+.part9 h3,
+.part9a h3,
+.part10 h3,
+.part10a h3,
+.part11 h3,
+.part11a h3 {
+  font-size: 2rem;
+}
+
+.visualizationContent p,
+.visualizationDescription p {
+  font-size: 1.7rem;
+}
+
+.part8 h2 {
+  font-size: 3.5rem;
+}
+
+.part2 picture {
+  width: 70vw;
+}
+
+.part3 p {
+  max-width: 70%;
+}
+
+.part4 p{
+  max-width: 70%;
+}
+
+.detailsSummary {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.detailsContent {
+  padding-left: 10%;
+}
+
+}
+
+@media (max-width: 68.063rem) {
+
+  .paddingWrapper {
+  margin: 0 10vw;
+  }
+
+  /* Main styling */
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .part1 h2,
+  .part2 h2 {
+  font-size: 4rem;
+  }
+
+  .part1 p,
+  .part2 p {
+  font-size: 1.75rem;
+  }
+
+  .part4 h2,
+  .part5 h2,
+  .part6 h2,
+  .part9 h2,
+  .part9a h2,
+  .part10 h2,
+  .part10a h2,
+  .part11 h2,
+  .part11a h2 {
+    font-size: 2.25rem;
+  }
+
+   .part4 p,
+    .part5 p,
+    .part6 p {
+    font-size: 1.5rem;
+    }
+
+
+
+  /*Part 1 */
+
+  .headerTitle h1 {
+    font-size: 4rem;
+  }
+
+
+  /* part 2 */
+
+
+  .part2 {
+    overflow:hidden;
+  }
+
+  .part2 img {
+    display: block;
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+
+  .part2 picture {
+    display: block;
+    height: 50vh;
+  }
+
+
+  /* part 4 */
+
+  figcaption {
+    width: 90vw;
+  }
+
+  .part4 p {
+    width:auto;
+  }
+
+  .part4 h2 {
+    width: 80vw;
+    margin: auto;
+  }
+
+  .part4 h3 {
+    font-size: 1.5rem;
+  }
+
+  /*part 5 */
+
+  .part5 h3 {
+    font-size: 2rem;
+  }
+
+  .visStats h3 {
+    font-size: 3rem;
+  }
+
+  .visTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .part5 p {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .visStats {
+    padding: 2rem;
+  }
+
+  .visStats p {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media (max-width: 49.5rem) {
+  .part5 .visTitle {
+    margin-top: 1rem
+  }
+
+}
+
+@media (max-width: 40.563rem) {
+  .mainSection.part5 {
+    padding-top: 5vw;
+  }
+
+  .visStats p {
+    font-size: 1.3rem;
+  }
+
+}
+
+
+@media (max-width: 33.75rem) {
+
+    .mainSection{
+      padding-top: 5vh;
+    }
+
+
+    .part1 h2,
+    .part2 h2 {
+    font-size: 3rem;
+    }
+
+
+    .part4 h2,
+    .part5 h2,
+    .part6 h2,
+    .part9 h2,
+    .part9a h2,
+    .part10 h2,
+    .part10a h2,
+    .part11 h2,
+    .part11a h2 {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .part4 p,
+    .part5 p,
+    .part6 p {
+      font-size: 1.5rem;
+    }
+
+
+    /* Part 1*/
+
+    .headerTitle h1 {
+      font-size: 3rem;
+    }
+
+    .part1 p,
+    .part2 p {
+      font-size: 1.5rem;
+    }
+
+
+    /*part 4*/
+
+
+
+    /*part 5*/
+
+    .mainSection.part5 {
+      padding-top: 10vw;
+    }
+
+    .part5 h3 {
+      font-size: 1.5rem;
+    }
+
+    .part5 p {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .visStats h3 {
+      font-size: 2rem;
+    }
+
+    .visStats {
+      padding: 1rem;
+    }
+
+    /*part 7*/
+
+    .mainSection.part7 {
+      padding-top: 0;
+    }
+
+    .details,
+    .processStart,
+    .processEnd {
+      font-size: 1.3rem;
+      max-width: 20rem;
+    }
+
+    .processStart {
+      max-width: 15rem;
+    }
+
+
+
+    /*Part 8*/
+
+    .part8 h2 {
+      font-size: 2rem;
+      line-height: 4rem;
+    }
+
+
+    .visualizationContent p,
+    .visualizationDescription p {
+      font-size: 1.5rem;
+    }
+
+
+
+
+  }
