@@ -9,8 +9,20 @@ var genreLineSpec = {
 
   params: [
     {
-      name: "selectedGenre",
+      name: "selectedGenre1",
       value: "Action",
+      bind: {
+        input: "select",
+        options: [
+          "Action", "Adventure", "Sci-Fi", "Comedy", "Drama", "Fantasy",
+          "Gourmet", "Horror", "Mystery", "Romance", "Slice of Life",
+          "Sports", "Supernatural", "Suspense"
+        ]
+      }
+    },
+    {
+      name: "selectedGenre2",
+      value: "Comedy",
       bind: {
         input: "select",
         options: [
@@ -28,10 +40,7 @@ var genreLineSpec = {
       as: "Year"
     },
     { filter: "isValid(datum.Year)" },
-
-    // Limit year range to 1975–2023
     { filter: "datum.Year >= 1975 && datum.Year <= 2023" },
-
     {
       calculate: "split(replace(datum.Genres, '\"', ''), ',')",
       as: "GenreArray"
@@ -39,8 +48,9 @@ var genreLineSpec = {
     { flatten: ["GenreArray"] },
     { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
     { filter: "datum.OneGenre != ''" },
-
-    { filter: "datum.OneGenre === selectedGenre" },
+    
+    // Only keep rows matching either selected genre
+    { filter: "datum.OneGenre === selectedGenre1 || datum.OneGenre === selectedGenre2" },
 
     {
       aggregate: [{ op: "count", as: "AnimeCount" }],
@@ -56,22 +66,18 @@ var genreLineSpec = {
       type: "quantitative",
       title: "Year",
       scale: { domain: [1975, 2023] },
-      axis: { format: "d" }
+      axis: { format: "d" } // removes commas
     },
-
     y: {
       field: "AnimeCount",
       type: "quantitative",
       title: "Number of Anime Released"
     },
-
-    // Legend removed by setting legend: null
     color: {
       field: "OneGenre",
       type: "nominal",
-      legend: null
+      title: "Genre"
     },
-
     tooltip: [
       { field: "OneGenre", type: "nominal" },
       { field: "Year", type: "quantitative" },
