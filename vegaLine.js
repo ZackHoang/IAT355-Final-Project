@@ -1,82 +1,83 @@
-// vegaLine.js (rewritten clean)
-// Line chart: Action anime produced per year (1980–2025)
-// vegaLine.js (rewritten clean)
-// Line chart: Action anime produced per year (1980–2025)
-
-// vegaLine.js
-// Line chart showing how many anime per genre were released each year
-
-// vegaLine.js
-// Working Line chart: Number of anime released per genre per year
-
 var genreLineSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
   description: "Anime count per genre per year",
 
-  autosize: {
-    type: "fit-x",
-    contains: "padding",
-    resize: true,
-  },
+  autosize: { type: "fit-x", contains: "padding", resize: true },
   width: "container",
 
   data: { url: "./data/anime-dataset-2023-user-gender.csv" },
 
-  transform: [
-    // Extract year from Aired column (format: "Sep 1, 2001")
+  params: [
     {
-      calculate: "year(toDate(datum.Aired, '%b %d, %Y'))",
-      as: "Year",
+      name: "selectedGenre",
+      value: "Action",
+      bind: {
+        input: "select",
+        options: [
+          "Action", "Adventure", "Sci-Fi", "Comedy", "Drama", "Fantasy",
+          "Gourmet", "Horror", "Mystery", "Romance", "Slice of Life",
+          "Sports", "Supernatural", "Suspense"
+        ]
+      }
+    }
+  ],
+
+  transform: [
+    {
+      calculate: "year(toDate(split(datum.Aired, ' to ')[0], '%b %d, %Y'))",
+      as: "Year"
     },
     { filter: "isValid(datum.Year)" },
 
-    // Split multi-genre strings into array
+    // Limit year range to 1975–2023
+    { filter: "datum.Year >= 1975 && datum.Year <= 2023" },
+
     {
       calculate: "split(replace(datum.Genres, '\"', ''), ',')",
-      as: "GenreArray",
+      as: "GenreArray"
     },
     { flatten: ["GenreArray"] },
     { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
     { filter: "datum.OneGenre != ''" },
 
-    // Group by year + genre, count number of anime
+    { filter: "datum.OneGenre === selectedGenre" },
+
     {
       aggregate: [{ op: "count", as: "AnimeCount" }],
-      groupby: ["Year", "OneGenre"],
-    },
+      groupby: ["Year", "OneGenre"]
+    }
   ],
 
-  mark: {
-    type: "line",
-    point: true,
-  },
+  mark: { type: "line", point: true },
 
   encoding: {
     x: {
       field: "Year",
       type: "quantitative",
       title: "Year",
+      scale: { domain: [1975, 2023] },
+      axis: { format: "d" }
     },
 
     y: {
       field: "AnimeCount",
       type: "quantitative",
-      title: "Number of Anime Released",
+      title: "Number of Anime Released"
     },
 
+    // Legend removed by setting legend: null
     color: {
       field: "OneGenre",
       type: "nominal",
-      title: "Genre",
+      legend: null
     },
 
     tooltip: [
-      { field: "OneGenre", type: "nominal", title: "Genre" },
-      { field: "Year", type: "quantitative", title: "Year" },
-      { field: "AnimeCount", type: "quantitative", title: "Anime Count" }
-    ],
+      { field: "OneGenre", type: "nominal" },
+      { field: "Year", type: "quantitative" },
+      { field: "AnimeCount", type: "quantitative" }
+    ]
   }
 };
 
-// Embed the chart with container 'lineChart'
 vegaEmbed("#lineChart", genreLineSpec, { actions: false });
