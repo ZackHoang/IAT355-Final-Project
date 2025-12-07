@@ -68,10 +68,10 @@
               Lets take a look at Crunchyroll, one of Anime’s top streaming
               services available!
             </p>
-            <img
-              src="img/crunchyroll.png"
-              alt="Image showing crunchyroll's landing page"
-            />
+            <picture>
+              <source media="(max-width: 52.5rem)" srcset="img/CrunchyrollMobile.png">
+              <img src="img/crunchyroll.png" alt="Image showing crunchyroll's landing page">
+            </picture>
           </section>
         </div>
         <div class="mainSection part3">
@@ -92,18 +92,18 @@
               Crunchyroll gathered big subscription and sales numbers, so much
               in fact that...
             </h2>
-            <figure>
-              <p>
+            <h3>
                 Crunchyroll has 50% of brand recognition amongst the top
                 video-on-demand services
-              </p>
+              </h3>
+            <figure>
               <div id="brands-vis"></div>
               <figcaption>
-                Source:
-                <a
+                Source: <a
                   href="https://www.statista.com/statistics/1307141/most-well-known-video-on-demand-brands-in-the-united-states/"
                   >https://www.statista.com/statistics/1307141/most-well-known-video-on-demand-brands-in-the-united-states/</a
                 >
+                <p>This section should be to convert the amount of subscribers to a price amount, as it will make comparisons a lot easier to perform (if you do the math, 7.99+8.33+12.49/3 = 9.60 per sub)</p>
               </figcaption>
             </figure>
           </section>
@@ -119,7 +119,7 @@
               Anime search trends and genres, along with how users thought of
               each of the anime’s.
             </p>
-            <h3>Combining 3 Datasets later, we had a grand total of...</h3>
+            <h3 class="visTitle">Combining 3 Datasets later, we had a grand total of...</h3>
             <div class="visNumbers">
               <section class="visStats">
                 <h3>14</h3>
@@ -217,14 +217,7 @@
                 Which Genre’s ranked the highest based on key factors found
                 within the dataset?
               </h2>
-              <p>
-                This acts as a subtitle and should briefly explain what our
-                visualization is about.
-              </p>
-              <div id="scatterPlot"></div>
-            </section>
             <section class="visualizationDescription">
-              <h3>So, why did we did we want to explore this?</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                 dolor sem, pulvinar sed placerat nec, tempus convallis ex.
@@ -235,21 +228,25 @@
             </section>
           </section>
         </div>
-        <div class="mainSection part10">
+        <div class="mainSection part9a">
+          <section class="paddingWrapper">
+            <section class="visualizationContent">
+              <h3>
+                Which Genre’s ranked the highest based on key factors found
+                within the dataset?
+              </h3>
+              <div id="scatterPlot"></div>
+            </section>
+          </section>
+        </div>
+         <div class="mainSection part10">
           <section class="paddingWrapper">
             <section class="visualizationContent">
               <h2>
                 Which Genre’s ranked the highest based on key factors found
                 within the dataset?
               </h2>
-              <p>
-                This acts as a subtitle and should briefly explain what our
-                visualization is about.
-              </p>
-              <div id="lineChart"></div>
-            </section>
             <section class="visualizationDescription">
-              <h3>So, why did we did we want to explore this?</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                 dolor sem, pulvinar sed placerat nec, tempus convallis ex.
@@ -257,6 +254,17 @@
                 imperdiet a arcu hendrerit, condimentum dignissim massa. In hac
                 habitasse platea dictumst.
               </p>
+            </section>
+          </section>
+        </div>
+        <div class="mainSection part10a">
+          <section class="paddingWrapper">
+            <section class="visualizationContent">
+              <h3>
+                Which Genre’s ranked the highest based on key factors found
+                within the dataset?
+              </h3>
+              <div id="lineChart"></div>
             </section>
           </section>
         </div>
@@ -267,14 +275,8 @@
                 Which Genre’s ranked the highest based on key factors found
                 within the dataset?
               </h2>
-              <p>
-                This acts as a subtitle and should briefly explain what our
-                visualization is about.
-              </p>
-              <div id="animePieChart"></div>
             </section>
             <section class="visualizationDescription">
-              <h3>So, why did we did we want to explore this?</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                 dolor sem, pulvinar sed placerat nec, tempus convallis ex.
@@ -282,6 +284,17 @@
                 imperdiet a arcu hendrerit, condimentum dignissim massa. In hac
                 habitasse platea dictumst.
               </p>
+            </section>
+          </section>
+        </div>
+        <div class="mainSection part11a">
+          <section class="paddingWrapper">
+            <section class="visualizationContent">
+              <h3>
+                Which Genre’s ranked the highest based on key factors found
+                within the dataset?
+              </h3>
+              <div id="animePieChart"></div>
             </section>
           </section>
         </div>
