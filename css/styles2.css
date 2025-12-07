@@ -131,7 +131,7 @@ nav {
 /* Body Content */
 
 .mainContainer {
-  min-height: 100dvh; /*For mobile device scrolling */
+  height: 100dvh; /*For mobile device scrolling */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
