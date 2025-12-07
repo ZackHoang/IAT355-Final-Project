@@ -270,7 +270,6 @@ a {
 #crunchyroll-subscriptions {
   width: 100%;
   height: 60vh;
-  background-color: white; /* Temp fix, I just need to see where this is*/
 }
 
 .part3 p {
@@ -496,6 +495,7 @@ a {
 
 #brands-vis {
   width: 100%;
+  height: 100%;
 }
 
 
