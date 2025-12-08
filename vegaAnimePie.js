@@ -38,14 +38,12 @@
 
 // vegaEmbed("#animePieChart", searchPieSpec, { actions: false });
 
-
-
 var searchPieSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   description: "Anime Reviewer Gender Pie Chart with Anime/Genre Toggle",
 
-  autosize: { type: "fit-x", contains: "padding", resize: true },
-  width: "container",
+  // autosize: { type: "fit-x", contains: "padding", resize: true },
+  // width: "container",
 
   data: { url: "./data/anime-dataset-2023-user-gender.csv" },
 
@@ -57,15 +55,15 @@ var searchPieSpec = {
       bind: {
         input: "radio",
         options: ["anime", "genre"],
-        labels: ["Anime Search", "Genre Breakdown"]
-      }
+        labels: ["Anime Search", "Genre Breakdown"],
+      },
     },
 
     // Anime search
     {
       name: "animeSearch",
       value: "Trigun",
-      bind: { input: "text", placeholder: "Type exact anime title..." }
+      bind: { input: "text", placeholder: "Type exact anime title..." },
     },
 
     // Genre list (static; editable)
@@ -75,18 +73,34 @@ var searchPieSpec = {
       bind: {
         input: "select",
         options: [
-          "Action", "Adventure", "Sci-Fi", "Comedy","Drama", "Fantasy", "Gourmet", "Horror","Mystery","Romance",
-          "Sci-Fi","Slice of Life","Sports","Supernatural","Suspense"
-        ]
-      }
-    }
+          "Action",
+          "Adventure",
+          "Sci-Fi",
+          "Comedy",
+          "Drama",
+          "Fantasy",
+          "Gourmet",
+          "Horror",
+          "Mystery",
+          "Romance",
+          "Sci-Fi",
+          "Slice of Life",
+          "Sports",
+          "Supernatural",
+          "Suspense",
+        ],
+      },
+    },
   ],
 
   transform: [
     //---------------------------------------------------------
     // Split → Flatten → Trim Genres
     //---------------------------------------------------------
-    { calculate: "split(replace(datum.Genres, '\"', ''), ',')", as: "GenreArray" },
+    {
+      calculate: "split(replace(datum.Genres, '\"', ''), ',')",
+      as: "GenreArray",
+    },
     { flatten: ["GenreArray"] },
     { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
     { filter: "datum.OneGenre != ''" },
@@ -100,7 +114,7 @@ var searchPieSpec = {
         ? trim(lower(datum.Name)) === trim(lower(animeSearch))
         : datum.OneGenre === selectedGenre
       `,
-      as: "isSelected"
+      as: "isSelected",
     },
     { filter: "datum.isSelected" },
 
@@ -110,15 +124,15 @@ var searchPieSpec = {
     {
       aggregate: [
         { op: "sum", field: "number_of_male_reviewers", as: "Male" },
-        { op: "sum", field: "number_of_female_reviewers", as: "Female" }
-      ]
+        { op: "sum", field: "number_of_female_reviewers", as: "Female" },
+      ],
     },
 
     //---------------------------------------------------------
     // Fold → Pie format
     //---------------------------------------------------------
     { fold: ["Male", "Female"], as: ["Gender", "Count"] },
-    { filter: "datum.Count > 0" }
+    { filter: "datum.Count > 0" },
   ],
 
   mark: "arc",
@@ -128,13 +142,13 @@ var searchPieSpec = {
     color: {
       field: "Gender",
       type: "nominal",
-      scale: { range: ["#1f77b4", "#ff7f0e"] }
+      scale: { range: ["#1f77b4", "#ff7f0e"] },
     },
     tooltip: [
       { field: "Gender", type: "nominal", title: "Gender" },
-      { field: "Count", type: "quantitative", title: "Reviewers" }
-    ]
-  }
+      { field: "Count", type: "quantitative", title: "Reviewers" },
+    ],
+  },
 };
 
 vegaEmbed("#animePieChart", searchPieSpec, { actions: false });

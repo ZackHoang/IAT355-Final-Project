@@ -2,12 +2,12 @@ var scatterSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
   description: "Average Score vs Popularity by Genre",
 
-  autosize: {
-    type: "fit-x",
-    contains: "padding",
-    resize: true,
-  },
-  width: "container",
+  // autosize: {
+  //   type: "fit-x",
+  //   contains: "padding",
+  //   resize: true,
+  // },
+  // width: "container",
 
   data: { url: "./data/anime-dataset-2023-user-gender.csv" },
 

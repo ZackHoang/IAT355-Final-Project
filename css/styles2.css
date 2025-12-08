@@ -5,7 +5,7 @@
   --lightgrey: #aeabab;
   --lightgrey3: #8f8f8f;
   --lightgrey4: #bfbcbc;
-  --lightgrey5: #D9D9D9;
+  --lightgrey5: #d9d9d9;
   --darkgrey1: #272525;
   --darkgrey2: #191919;
   --darkgrey3: #a6a6a6;
@@ -97,10 +97,6 @@ h2 {
   padding: 0;
 }
 
-
-
-
-
 /* nav bar */
 
 nav {
@@ -121,12 +117,6 @@ nav {
   left: 5vw;
   width: 8vw;
 }
-
-
-
-
-
-
 
 /* Body Content */
 
@@ -196,7 +186,7 @@ nav {
 .part9a,
 .part10,
 .part10a,
-.part11, 
+.part11,
 .part11a {
   background-color: var(--lightBlue);
 }
@@ -225,30 +215,24 @@ nav {
   height: 0.5rem;
 }
 
-
 figcaption {
-  font-style:italic;
+  font-style: italic;
   color: var(--lightgrey3);
   max-width: 90%;
   margin: auto;
 }
 
 a {
-  font-style:italic;
+  font-style: italic;
   color: var(--lightgrey3);
   text-decoration: underline;
   width: 80%;
 }
 
-
-
-
-
-
 /*mainsection 2*/
 
 .part2 {
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .part2 picture {
@@ -265,10 +249,6 @@ a {
   width: 100%;
 }
 
-
-
-
-
 /*mainSection 3*/
 
 #crunchyroll-subscriptions {
@@ -283,11 +263,6 @@ a {
   max-width: 60%;
   color: var(--darkgrey3);
 }
-
-
-
-
-
 
 /*mainSection 4*/
 
@@ -321,7 +296,7 @@ a {
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-style:normal;
+  font-style: normal;
   margin-top: 5rem;
 }
 
@@ -332,13 +307,6 @@ a {
   color: white;
   background-color: white;
 }
-
-
-
-
-
-
-
 
 /*mainSection 5*/
 
@@ -477,9 +445,6 @@ a {
   /* For later, add hover states and make arrow bigger or something */
 }
 
-
-
-
 /* Visualization styling */
 
 #scatterPlot {
@@ -499,15 +464,10 @@ a {
 
 #brands-vis {
   width: 100%;
-  height: 100%;
+  height: 60vh;
 }
 
-
-
-
 /* Responsiveness ---------------------------------------------------- */
-
-
 
 @media (max-width: 107.75rem) {
   .visStats h3 {
@@ -523,16 +483,13 @@ a {
   .visStats {
     min-width: 17rem;
   }
-  
+
   .visNumbers {
     gap: 2rem;
   }
 }
 
 @media (max-width: 87.75rem) {
-
-
-
   /* Part 5 stuff */
 
   .part5 h3 {
@@ -561,7 +518,8 @@ a {
     flex-direction: row;
   }
 
-  .visStats h3, .visStats p {
+  .visStats h3,
+  .visStats p {
     width: auto;
     display: inline-block;
   }
@@ -571,83 +529,76 @@ a {
     margin-bottom: 1rem;
   }
 
+  /* Main styling */
 
-/* Main styling */
+  .part1 h2,
+  .part2 h2 {
+    color: white;
+    font-size: 5rem;
+    font-style: italic;
+  }
 
+  .part1 p,
+  .part2 p {
+    font-size: 2rem;
+    color: var(--darkgrey3);
+  }
 
+  .part4 h2,
+  .part5 h2,
+  .part6 h2,
+  .part9 h2,
+  .part9a h2,
+  .part10 h2,
+  .part10a h2,
+  .part11 h2,
+  .part11a h2 {
+    font-size: 2.5rem;
+  }
 
+  .part4 p,
+  .part5 p,
+  .part6 p {
+    font-size: 1.5rem;
+  }
 
-.part1 h2,
-.part2 h2 {
-  color: white;
-  font-size: 5rem;
-  font-style: italic;
-}
+  .part9 h3,
+  .part9a h3,
+  .part10 h3,
+  .part10a h3,
+  .part11 h3,
+  .part11a h3 {
+    font-size: 2rem;
+  }
 
+  .visualizationContent p,
+  .visualizationDescription p {
+    font-size: 1.7rem;
+  }
 
-.part1 p,
-.part2 p {
-  font-size: 2rem;
-  color: var(--darkgrey3);
-}
+  .part8 h2 {
+    font-size: 3.5rem;
+  }
 
-.part4 h2,
-.part5 h2,
-.part6 h2,
-.part9 h2,
-.part9a h2,
-.part10 h2,
-.part10a h2,
-.part11 h2,
-.part11a h2 {
-  font-size: 2.5rem;
-}
+  .part2 picture {
+    width: 100%;
+  }
 
-.part4 p,
-.part5 p,
-.part6 p {
-  font-size: 1.5rem;
-}
+  .part3 p {
+    max-width: 70%;
+  }
 
+  .part4 p {
+    max-width: 70%;
+  }
 
-.part9 h3,
-.part9a h3,
-.part10 h3,
-.part10a h3,
-.part11 h3,
-.part11a h3 {
-  font-size: 2rem;
-}
-
-.visualizationContent p,
-.visualizationDescription p {
-  font-size: 1.7rem;
-}
-
-.part8 h2 {
-  font-size: 3.5rem;
-}
-
-.part2 picture {
-  width: 100%;
-}
-
-.part3 p {
-  max-width: 70%;
-}
-
-.part4 p{
-  max-width: 70%;
-}
-
-.detailsSummary {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.detailsContent {
-  padding-left: 10%;
-}
-
+  .detailsSummary {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .detailsContent {
+    padding-left: 10%;
+  }
 }
 
 @media (max-width: 76.313rem) {
@@ -657,15 +608,12 @@ a {
 }
 
 @media (max-width: 68.063rem) {
-
-  
-
-.mainContainer {
-  overflow-x: hidden;
+  .mainContainer {
+    overflow-x: hidden;
   }
 
   .paddingWrapper {
-  margin: 0 8rem;
+    margin: 0 8rem;
   }
 
   /* Main styling */
@@ -676,12 +624,12 @@ a {
 
   .part1 h2,
   .part2 h2 {
-  font-size: 3rem;
+    font-size: 3rem;
   }
 
   .part1 p,
   .part2 p {
-  font-size: 1.3rem;
+    font-size: 1.3rem;
   }
 
   .part4 h2,
@@ -696,13 +644,11 @@ a {
     font-size: 2.25rem;
   }
 
-   .part4 p,
-    .part5 p,
-    .part6 p {
+  .part4 p,
+  .part5 p,
+  .part6 p {
     font-size: 1.5rem;
-    }
-
-
+  }
 
   /*Part 1 */
 
@@ -710,10 +656,7 @@ a {
     font-size: 4rem;
   }
 
-
   /* part 2 */
-
-
 
   .part2 img {
     display: block;
@@ -722,12 +665,10 @@ a {
     object-fit: cover;
   }
 
-
   .part2 picture {
     display: block;
     height: 100%;
   }
-
 
   /* part 4 */
 
@@ -738,7 +679,7 @@ a {
   */
 
   .part4 p {
-    width:auto;
+    width: auto;
   }
 
   .part4 h2 {
@@ -779,7 +720,8 @@ a {
 
   /* Part 7 */
 
-  .processEnd, .processStart {
+  .processEnd,
+  .processStart {
     padding: 1.5rem;
     font-size: 1.3rem;
   }
@@ -788,7 +730,6 @@ a {
     font-size: 1.3rem;
     max-width: 23rem;
   }
-
 
   .part8 h2 {
     font-size: 2.5rem;
@@ -799,12 +740,9 @@ a {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
-
-
 }
 
 @media (max-width: 50.313rem) {
-
   /* part 2*/
 
   .part2 img {
@@ -822,7 +760,7 @@ a {
   }
 
   .part5 .visTitle {
-    margin-top: 1rem
+    margin-top: 1rem;
   }
 
   .paddingWrapper.flexTitle {
@@ -853,8 +791,6 @@ a {
   .part4 h3 {
     font-size: 1.1rem;
   }
-
-
 }
 
 @media (max-width: 40.563rem) {
@@ -865,9 +801,7 @@ a {
   .visStats p {
     font-size: 1.1rem;
   }
-
 }
-
 
 @media (max-width: 37.813rem) {
   .headerTitle h1 {
@@ -875,237 +809,220 @@ a {
   }
 }
 
-
 @media (max-width: 35.563rem) {
-
-
   .paddingWrapper {
     margin: 0 4rem;
   }
 
-    .mainSection{
-      padding-top: 5vh;
-    }
+  .mainSection {
+    padding-top: 5vh;
+  }
 
-
-
-    .part1 h2,
-    .part2 h2 {
+  .part1 h2,
+  .part2 h2 {
     font-size: 2rem;
-    }
-
-
-    .part4 h2,
-    .part5 h2,
-    .part6 h2,
-    .part9 h2,
-    .part9a h2,
-    .part10 h2,
-    .part10a h2,
-    .part11 h2,
-    .part11a h2 {
-      font-size: 1.3rem;
-      color: white;
-    }
-
-    .part4 p,
-    .part5 p,
-    .part6 p {
-      font-size: 1.2rem;
-    }
-
-    .part9 h3,
-    .part9a h3,
-    .part10 h3,
-    .part10a h3,
-    .part11 h3,
-    .part11a h3 {
-      font-size: 1.3rem;
-    }
-
-
-    /* Part 1*/
-
-
-    .headerTitle p, .headerScroll p{
-      font-size: 1.5rem;
-    }
-
-
-
-    .part1 p,
-    .part2 p {
-      font-size: 1.1rem;
-    }
-
-
-    /* part 3 */
-
-    .part3 p {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-    }
-
-
-    /*part 4*/
-
-
-
-    /*part 5*/
-
-    .mainSection.part5 {
-      padding-top: 3rem;
-    }
-
-
-
-    .part5 h3 {
-      font-size: 1.5rem;
-    }
-
-    .part5 .visTitle {
-      margin-bottom: 2rem;
-    }
-
-    .part5 p {
-      font-size: 1.3rem;
-    }
-
-    .visStats h3 {
-      font-size: 1.5rem;
-    }
-
-    .visStats {
-      padding: 0.7rem;
-    }
-
-    /*part 7*/
-
-    .mainSection.part7 {
-      padding-top: 0;
-    }
-
-    .details,
-    .processStart,
-    .processEnd {
-      font-size: 1.1rem;
-      max-width: 20rem;
-    }
-
-    .processStart {
-      max-width: 15rem;
-    }
-
-    .processStart, .processEnd {
-      padding: 1rem;
-    }
-
-
-
-    /*Part 8*/
-
-    .part8 h2 {
-      font-size: 2rem;
-      line-height: 4rem;
-    }
-
-
-    .visualizationContent p,
-    .visualizationDescription p {
-      font-size: 1.5rem;
-    }
-
   }
 
-  @media (max-width: 28.688rem) {
-     .headerTitle h1 {
-      font-size: 2rem;
+  .part4 h2,
+  .part5 h2,
+  .part6 h2,
+  .part9 h2,
+  .part9a h2,
+  .part10 h2,
+  .part10a h2,
+  .part11 h2,
+  .part11a h2 {
+    font-size: 1.3rem;
+    color: white;
   }
+
+  .part4 p,
+  .part5 p,
+  .part6 p {
+    font-size: 1.2rem;
   }
 
+  .part9 h3,
+  .part9a h3,
+  .part10 h3,
+  .part10a h3,
+  .part11 h3,
+  .part11a h3 {
+    font-size: 1.3rem;
+  }
 
-  @media (max-width: 27.188rem){
+  /* Part 1*/
 
-    .part1 p,
-    .part2 p {
-      font-size: 1rem;
-    }
+  .headerTitle p,
+  .headerScroll p {
+    font-size: 1.5rem;
+  }
 
-    .part1 h2,
-    .part2 h2 {
+  .part1 p,
+  .part2 p {
+    font-size: 1.1rem;
+  }
+
+  /* part 3 */
+
+  .part3 p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  /*part 4*/
+
+  /*part 5*/
+
+  .mainSection.part5 {
+    padding-top: 3rem;
+  }
+
+  .part5 h3 {
+    font-size: 1.5rem;
+  }
+
+  .part5 .visTitle {
+    margin-bottom: 2rem;
+  }
+
+  .part5 p {
+    font-size: 1.3rem;
+  }
+
+  .visStats h3 {
+    font-size: 1.5rem;
+  }
+
+  .visStats {
+    padding: 0.7rem;
+  }
+
+  /*part 7*/
+
+  .mainSection.part7 {
+    padding-top: 0;
+  }
+
+  .details,
+  .processStart,
+  .processEnd {
+    font-size: 1.1rem;
+    max-width: 20rem;
+  }
+
+  .processStart {
+    max-width: 15rem;
+  }
+
+  .processStart,
+  .processEnd {
+    padding: 1rem;
+  }
+
+  /*Part 8*/
+
+  .part8 h2 {
     font-size: 2rem;
-    }
-
-    .mainSection.part5 {
-      padding-top: 2rem;
-    }
-
-    /*part 1*/
-
-    .headerTitle h1 {
-      font-size: 2rem;
-    }
-
-    .headerTitle p, .headerScroll p {
-      font-size: 1.3rem;
-    }
-
-    /* part 3 */
-
-    .part3 p {
-      margin-top: 1rem;
-      font-size: 1rem;
-    }
-
-
-    /* part 5 */
-
-    .part5 h2 {
-      font-size: 1.3rem;
-    }
-
-    .part5 h3 {
-      font-size: 1.2rem;
-    }
-
-
-    .part5 p {
-      font-size: 1rem;
-    }
-
-    .visStats h3 {
-      font-size: 1.5rem;
-    }
-
-    .part5 .visTitle {
-      margin-top: 0;
-    }
-
-
-    .visStats {
-      min-width: auto;
-    }
-
-    /* part 7 */
-
-    .details,
-    .processStart,
-    .processEnd {
-      font-size: 1.1rem;
-    }
-
-
-    /*part 8 */
-
-    .part8 h2 {
-      line-height: 3rem;
-    }
-
-    /* part 9 */
-
-    .visualizationContent p,
-    .visualizationDescription p {
-      font-size: 1.3rem;
-    }
-
+    line-height: 4rem;
   }
+
+  .visualizationContent p,
+  .visualizationDescription p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 28.688rem) {
+  .headerTitle h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 27.188rem) {
+  .part1 p,
+  .part2 p {
+    font-size: 1rem;
+  }
+
+  .part1 h2,
+  .part2 h2 {
+    font-size: 2rem;
+  }
+
+  .mainSection.part5 {
+    padding-top: 2rem;
+  }
+
+  /*part 1*/
+
+  .headerTitle h1 {
+    font-size: 2rem;
+  }
+
+  .headerTitle p,
+  .headerScroll p {
+    font-size: 1.3rem;
+  }
+
+  /* part 3 */
+
+  .part3 p {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  /* part 5 */
+
+  .part5 h2 {
+    font-size: 1.3rem;
+  }
+
+  .part5 h3 {
+    font-size: 1.2rem;
+  }
+
+  .part5 p {
+    font-size: 1rem;
+  }
+
+  .visStats h3 {
+    font-size: 1.5rem;
+  }
+
+  .part5 .visTitle {
+    margin-top: 0;
+  }
+
+  .visStats {
+    min-width: auto;
+  }
+
+  /* part 7 */
+
+  .details,
+  .processStart,
+  .processEnd {
+    font-size: 1.1rem;
+  }
+
+  /*part 8 */
+
+  .part8 h2 {
+    line-height: 3rem;
+  }
+
+  /* part 9 */
+
+  .visualizationContent p,
+  .visualizationDescription p {
+    font-size: 1.3rem;
+  }
+}
+
+svg {
+  max-width: 100%;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
