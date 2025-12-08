@@ -1,7 +1,7 @@
 var scatterSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
   description: "Average Score vs Popularity by Genre",
-
+  background: "#008ef3",
   // autosize: {
   //   type: "fit-x",
   //   contains: "padding",
@@ -53,25 +53,38 @@ var scatterSpec = {
       type: "quantitative",
       title: "Score",
       scale: { domain: [5.6, 7.4] },
+      axis: {
+        labelColor: "white",
+        titleColor: "white",
+        domainColor: "white",
+        grid: false,
+      },
     },
     y: {
       field: "AveragePopularity",
       type: "quantitative",
       title: "Popularity",
       scale: { domain: [4000, 9000] },
+      axis: {
+        labelColor: "white",
+        titleColor: "white",
+        domainColor: "white",
+        grid: false,
+      },
     },
     color: {
       field: "OneGenre",
       type: "nominal",
       title: "Genre",
       scale: { scheme: "tableau20" },
+      legend: null,
     },
-    size: {
-      field: "AnimeCount",
-      type: "quantitative",
-      title: "Number of Anime",
-      legend: { values: [0, 1000, 3000, 5000] },
-    },
+    // size: {
+    //   field: "AnimeCount",
+    //   type: "quantitative",
+    //   title: "Number of Anime",
+    //   legend: { values: [0, 1000, 3000, 5000] },
+    // },
     tooltip: [
       { field: "OneGenre", type: "nominal", title: "Genre" },
       { field: "AverageScore", type: "quantitative", title: "Score" },
