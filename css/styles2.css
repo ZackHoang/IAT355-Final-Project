@@ -140,6 +140,7 @@ nav {
   padding-top: 5vh;
   height: 100%;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .part1,
@@ -168,10 +169,11 @@ nav {
 
 .part1 p,
 .part2 p {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--darkgrey3);
 }
 
+.part3 h2,
 .part4 h2,
 .part5 h2,
 .part6 h2,
@@ -188,7 +190,7 @@ nav {
 .part4 p,
 .part5 p,
 .part6 p {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--darkgrey3);
 }
 
@@ -213,7 +215,7 @@ nav {
 
 .visualizationContent p,
 .visualizationDescription p {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--lightgrey4);
 }
 
@@ -271,17 +273,37 @@ a {
 
 /*mainSection 3*/
 
+.mainSection.part3 {
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 #crunchyroll-subscriptions {
   width: 100%;
-  height: 60vh;
+  height: 100%; /* This content should not be Vh, the js should adjust for the screen size*/
 }
+
+.part3 h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
 
 .part3 p {
   font-size: 1.25rem;
   text-align: center;
   margin: auto;
+    margin-top: 1rem;
   max-width: 60%;
   color: var(--darkgrey3);
+}
+
+.part3 .titleBlue {
+  font-weight: 500;
 }
 
 
@@ -314,6 +336,7 @@ a {
   max-width: 80%;
   margin: auto;
   margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .part4 p {
@@ -343,8 +366,8 @@ a {
 /*mainSection 5*/
 
 .part5 h3 {
-  margin-top: 15vh;
-  font-size: 3.5rem;
+  margin-top: 10vh;
+  font-size: 2.5rem;
   color: white;
   font-weight: 300;
 }
@@ -360,8 +383,8 @@ a {
 
 .visStats {
   background-color: var(--darkgrey5);
-  min-width: 25rem;
-  height: 13rem;
+  min-width: 20rem;
+  height: auto;
   border-radius: 0.5rem;
   padding: 2rem;
   display: flex;
@@ -372,7 +395,7 @@ a {
 
 .visStats h3 {
   font-weight: 500;
-  font-size: 6rem;
+  font-size: 5rem;
   margin: 0;
   width: 100%;
 }
@@ -385,14 +408,20 @@ a {
 
 /*Mainsection 6*/
 
-.part7 {
+.mainSection.part7 {
+  padding-top: 0;
+}
+
+.part7 .paddingWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 0.5rem;
   color: white;
+  height: 100%;
   padding-top: 0;
+  overflow: hidden;
 }
 
 /* Data cleaning tree */
@@ -407,14 +436,25 @@ a {
 .processEnd {
   border-radius: 0.5rem;
   background-color: var(--darkgrey5);
-  max-width: 35rem;
-  font-size: 2rem;
+  max-width: 30rem;
   text-align: center;
+}
+
+.details {
+    font-size: 1.5rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.details:hover {
+  cursor:pointer;
+  background-color: var(--darkgrey3);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .processStart,
 .processEnd {
   padding: 2rem;
+  font-size: 1.5rem;
 }
 
 .detailsSummary {
@@ -429,6 +469,7 @@ a {
   border-radius: 0 0 0.5rem 0.5rem;
   background-color: var(--darkgrey6);
   text-align: left;
+  max-width: 80%;
 }
 
 .processStart {
@@ -501,6 +542,12 @@ a {
   width: 100%;
   height: 100%;
 }
+
+
+
+
+/* Animation stuff (testing) */
+
 
 
 
