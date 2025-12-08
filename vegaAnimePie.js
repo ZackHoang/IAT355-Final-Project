@@ -121,7 +121,7 @@
   controlsDiv.innerHTML = `
     <label>
       Search Anime:
-      <input type="text" id="animeSearchInput" list="animeList" placeholder="Type anime title..." />
+      <input type="text" id="animeSearchInput" list="animeList" placeholder="Type anime title..." value="Trigun" />
       <datalist id="animeList"></datalist>
     </label>
     <br>
@@ -132,6 +132,7 @@
         <option value="genre">Genre Breakdown</option>
       </select>
     </label>
+    <br>
     <label>
       Genre:
       <select id="genreSelect">
@@ -157,6 +158,7 @@
     </label>
   `;
 
+  // Fill datalist for autocomplete
   const datalist = document.getElementById("animeList");
   animeTitles.forEach((title) => {
     const option = document.createElement("option");
@@ -168,13 +170,12 @@
   const viewModeSelect = document.getElementById("viewModeSelect");
   const genreSelect = document.getElementById("genreSelect");
 
-  // --- Vega-Lite spec ---
+  // --- Vega-Lite pie chart spec ---
   const searchPieSpec = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-    description: "Anime Reviewer Gender Pie Chart with Anime/Genre Toggle",
     width: "container",
-    height: 400,
-    background: "#008ef3", // general blue background
+    height: 450,
+    background: "#008ef3",
     data: { url: "./data/anime-dataset-2023-user-gender.csv" },
     params: [
       { name: "viewMode", value: "anime" },
@@ -239,11 +240,14 @@
     actions: false,
   });
 
-  // --- Event listeners ---
-  animeInput.addEventListener("change", () => {
+  // --- Update chart on input changes ---
+  function updatePie() {
+    view.signal("viewMode", viewModeSelect.value).run();
     view.signal("animeSearch", animeInput.value).run();
-  });
+    view.signal("selectedGenre", genreSelect.value).run();
+  }
 
+  animeInput.addEventListener("change", updatePie);
   animeInput.addEventListener("blur", () => {
     const val = animeInput.value.toLowerCase();
     if (!animeTitles.includes(animeInput.value)) {
@@ -255,13 +259,10 @@
         view.signal("animeSearch", match).run();
       }
     }
+    updatePie();
   });
 
-  viewModeSelect.addEventListener("change", () => {
-    view.signal("viewMode", viewModeSelect.value).run();
-  });
+  viewModeSelect.addEventListener("change", updatePie);
+  genreSelect.addEventListener("change", updatePie);
 
-  genreSelect.addEventListener("change", () => {
-    view.signal("selectedGenre", genreSelect.value).run();
-  });
 })();
