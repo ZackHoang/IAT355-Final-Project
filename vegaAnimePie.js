@@ -120,7 +120,7 @@
   controlsDiv.innerHTML = `
     <label>
       Search Anime:
-      <input type="text" id="animeSearchInput" list="animeList" placeholder="Type anime title..." />
+      <input type="text" id="animeSearchInput" list="animeList" placeholder="Type anime title..." value="Trigun" />
       <datalist id="animeList"></datalist>
     </label>
     <br>
@@ -131,6 +131,7 @@
         <option value="genre">Genre Breakdown</option>
       </select>
     </label>
+    <br>
     <label>
       Genre:
       <select id="genreSelect">
@@ -140,6 +141,7 @@
     </label>
   `;
 
+  // Fill datalist for autocomplete
   const datalist = document.getElementById("animeList");
   animeTitles.forEach(title => {
     const option = document.createElement("option");
@@ -151,13 +153,12 @@
   const viewModeSelect = document.getElementById("viewModeSelect");
   const genreSelect = document.getElementById("genreSelect");
 
-  // --- Vega-Lite spec ---
+  // --- Vega-Lite pie chart spec ---
   const searchPieSpec = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-    description: "Anime Reviewer Gender Pie Chart with Anime/Genre Toggle",
     width: "container",
-    height: 400,
-    background: "#008ef3", // general blue background
+    height: 450,
+    background: "#008ef3",
     data: { url: "./data/anime-dataset-2023-user-gender.csv" },
     params: [
       { name: "viewMode", value: "anime" },
@@ -184,55 +185,63 @@
       },
       { fold: ["Male", "Female"], as: ["Gender", "Count"] },
       { filter: "datum.Count > 0" },
-      {
-        // calculate percentage
-        window: [{ op: "sum", field: "Count", as: "Total" }],
-        frame: [null, null]
-      },
-      { calculate: "datum.Count / datum.Total * 100", as: "Percent" }
+      { window: [{ op: "sum", field: "Count", as: "Total" }], frame: [null, null] },
+      { calculate: "datum.Count / datum.Total * 100", as: "Percent" },
+      { calculate: "datum.Gender + ': ' + round(datum.Percent,1) + '%'", as: "GenderLabel" }
     ],
-    mark: { type: "arc", tooltip: true },
-    encoding: {
-      theta: { field: "Count", type: "quantitative" },
-      color: { 
-        field: "Gender", 
-        type: "nominal", 
-        scale: { domain: ["Male","Female"], range: ["#003c71","orange"] },
-        legend: null
+    layer: [
+      // Pie slices
+      {
+        mark: { type: "arc", tooltip: true },
+        encoding: {
+          theta: { field: "Count", type: "quantitative" },
+          color: { field: "Gender", type: "nominal", scale: { domain: ["Male","Female"], range: ["#003c71","orange"] }, legend: null },
+          tooltip: [
+            { field: "Gender", type: "nominal", title: "Gender" },
+            { field: "Count", type: "quantitative", title: "Reviewers" },
+            { field: "Percent", type: "quantitative", format: ".1f", title: "Percentage (%)" }
+          ]
+        }
       },
-      text: { field: "Gender", type: "nominal" },
-      tooltip: [
-        { field: "Gender", type: "nominal", title: "Gender" },
-        { field: "Count", type: "quantitative", title: "Reviewers" },
-        { field: "Percent", type: "quantitative", format: ".1f", title: "Percentage (%)" }
-      ]
-    }
+      // Slice labels raised further outside and horizontally offset
+      {
+        mark: { type: "text", radius: 265, color: "white", fontWeight: "bold", align: "center", baseline: "middle" },
+        encoding: {
+          text: { field: "GenderLabel", type: "nominal" },
+          theta: { field: "Count", type: "quantitative" },
+          dx: {
+            condition: [
+              { test: "datum.Gender === 'Male'", value: -60 },   // move Male left
+              { test: "datum.Gender === 'Female'", value: 60 }  // move Female right
+            ],
+            value: 0
+          }
+        }
+      }
+    ]
   };
 
   // --- Embed chart ---
   const { view } = await vegaEmbed("#animePieChart", searchPieSpec, { actions: false });
 
-  // --- Event listeners ---
-  animeInput.addEventListener("change", () => {
+  // --- Update chart on input changes ---
+  function updatePie() {
+    view.signal("viewMode", viewModeSelect.value).run();
     view.signal("animeSearch", animeInput.value).run();
-  });
+    view.signal("selectedGenre", genreSelect.value).run();
+  }
 
+  animeInput.addEventListener("change", updatePie);
   animeInput.addEventListener("blur", () => {
     const val = animeInput.value.toLowerCase();
     if (!animeTitles.includes(animeInput.value)) {
       const match = animeTitles.find(title => title.toLowerCase().startsWith(val));
-      if (match) {
-        animeInput.value = match;
-        view.signal("animeSearch", match).run();
-      }
+      if (match) animeInput.value = match;
     }
+    updatePie();
   });
 
-  viewModeSelect.addEventListener("change", () => {
-    view.signal("viewMode", viewModeSelect.value).run();
-  });
+  viewModeSelect.addEventListener("change", updatePie);
+  genreSelect.addEventListener("change", updatePie);
 
-  genreSelect.addEventListener("change", () => {
-    view.signal("selectedGenre", genreSelect.value).run();
-  });
 })();
