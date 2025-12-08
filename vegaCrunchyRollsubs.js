@@ -32,13 +32,14 @@ let crunchyrollsubscriptionsSpec = {
       mark: {
         type: "bar",
         size: 35,
+        cornerRadius: 5,
       },
       encoding: {
         y: {
           field: "year",
           type: "ordinal",
           axis: {
-            title: "Year",
+            title: null,
             labelColor: "white",
             titleColor: "white",
             labelFontSize: 18,
@@ -53,13 +54,14 @@ let crunchyrollsubscriptionsSpec = {
           field: "subscriptions",
           type: "quantitative",
           axis: {
-            title: "Subscribers in millions",
+            title: null,
             labelColor: "white",
-            titleColor: "white",
             tickCount: 12,
             labelFontSize: 18,
             titleFontSize: 18,
             gridColor: "#8F8F8F",
+            gridWidth: 2,
+            domain: false,
           },
         },
         color: {

@@ -20,7 +20,8 @@ let topVODBrands = {
     {
       mark: {
         type: "bar",
-        // size: 35,
+        size: 35,
+        cornerRadius: 5,
       },
 
       encoding: {
@@ -28,24 +29,25 @@ let topVODBrands = {
           field: "percentage",
           type: "quantitative",
           axis: {
-            title: "Percentages of respondents",
+            title: null,
             labelColor: "white",
-            titleColor: "white",
             tickCount: 12,
             labelFontSize: 18,
             titleFontSize: 18,
             gridColor: "#8F8F8F",
+            gridWidth: 2,
+            domain: false,
           },
         },
         y: {
           field: "brand",
           type: "ordinal",
           axis: {
-            title: "Brand",
+            title: null,
             labelColor: "white",
-            titleColor: "white",
             labelFontSize: 18,
             titleFontSize: 18,
+            domain: false,
           },
           scale: {
             padding: 0.2,
