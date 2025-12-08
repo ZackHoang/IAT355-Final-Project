@@ -137,7 +137,7 @@ nav {
 }
 
 .mainSection {
-  padding-top: 10vh;
+  padding-top: 5vh;
   height: 100%;
   scroll-snap-align: start;
 }
@@ -246,6 +246,10 @@ a {
 
 
 /*mainsection 2*/
+
+.part2 {
+  overflow:hidden;
+}
 
 .part2 picture {
   display: block;
@@ -531,13 +535,14 @@ a {
   /* Part 5 stuff */
 
   .part5 h3 {
-    margin-top: 5rem;
+    margin-top: 2rem;
     font-size: 2.25rem;
   }
 
   .visStats h3 {
     margin-top: 0;
     font-size: 4rem;
+    text-align: left;
   }
   .visNumbers {
     flex-direction: column;
@@ -546,9 +551,13 @@ a {
   .visStats {
     display: flex;
     justify-content: flex-start;
-    max-width: 30rem;
-    height: 6rem;
-    gap: 0;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    height: 3rem;
+    gap: 1rem;
+    width: auto;
+    min-width: auto;
+    flex-direction: row;
   }
 
   .visStats h3, .visStats p {
@@ -557,8 +566,8 @@ a {
   }
 
   .visStats p {
-    margin-top: auto;
     font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
 
@@ -697,13 +706,10 @@ a {
   /* part 2 */
 
 
-  .part2 {
-    overflow:hidden;
-  }
 
   .part2 img {
     display: block;
-    height: 100%;
+
     width: 100%;
     object-fit: cover;
   }
@@ -752,24 +758,52 @@ a {
   }
 
   .part5 p {
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
     font-size: 1.4rem;
   }
 
   .visStats {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .visStats p {
     font-size: 1.2rem;
   }
 
+  /* Part 7 */
+
+  .processEnd, .processStart {
+    padding: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .details {
+    font-size: 1.3rem;
+  }
+
+  .part8 h2 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+  }
+
+  .detailsContent p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+
 }
 
-@media (max-width: 49.5rem) {
+@media (max-width: 50.313rem) {
 
-  /* part 1 */
+  /* part 5 */
+
+  .part5 h2 {
+    font-size: 2rem;
+  }
+
+  .part5 h3 {
+    font-size: 1.5rem;
+  }
 
   .part5 .visTitle {
     margin-top: 1rem
@@ -783,21 +817,43 @@ a {
     font-size: 3rem;
   }
 
+  .visStats h3 {
+    font-size: 2rem;
+  }
+
+  .visStats p {
+    margin-bottom: 0;
+  }
+
+  .part5 p {
+    font-size: 1.3rem;
+  }
+
+  .visStats {
+    gap: 0.5rem;
+    padding: 0.7rem;
+  }
+
+  .part4 h3 {
+    font-size: 1.3rem;
+  }
+
+
 }
 
 @media (max-width: 40.563rem) {
   .mainSection.part5 {
-    padding-top: 5rem;
+    padding-top: 3rem;
   }
 
   .visStats p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
 }
 
 
-@media (max-width: 33.75rem) {
+@media (max-width: 35.563rem) {
 
 
   .paddingWrapper {
@@ -825,14 +881,14 @@ a {
     .part10a h2,
     .part11 h2,
     .part11a h2 {
-      font-size: 2rem;
+      font-size: 1.3rem;
       color: white;
     }
 
     .part4 p,
     .part5 p,
     .part6 p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
 
@@ -858,6 +914,8 @@ a {
 
     .part3 p {
       max-width: 100%;
+      font-size: 1.2rem;
+      margin-top: 1rem;
     }
 
 
@@ -877,17 +935,20 @@ a {
       font-size: 1.5rem;
     }
 
+    .part5 .visTitle {
+      margin-bottom: 2rem;
+    }
+
     .part5 p {
-      margin-top: 1rem;
       font-size: 1.3rem;
     }
 
     .visStats h3 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     .visStats {
-      padding: 1rem;
+      padding: 0.7rem;
     }
 
     /*part 7*/
@@ -899,7 +960,7 @@ a {
     .details,
     .processStart,
     .processEnd {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       max-width: 20rem;
     }
 
@@ -928,18 +989,40 @@ a {
   }
 
 
-  @media (max-width: 25.25rem){
+  @media (max-width: 27.188rem){
+
+    .mainSection.part5 {
+      padding-top: 2rem;
+    }
+
+    /*part 1*/
+
+    .headerTitle h1 {
+      font-size: 2rem;
+    }
+
+    .headerTitle p, .headerScroll p {
+      font-size: 1.3rem;
+    }
+
+    /* part 3 */
+
+    .part3 p {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
 
 
     /* part 5 */
 
     .part5 h2 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
 
     .part5 h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
+
 
     .part5 p {
       font-size: 1.1rem;
@@ -949,11 +1032,21 @@ a {
       font-size: 1.5rem;
     }
 
+    .part5 .visTitle {
+      margin-top: 0;
+    }
+
 
     .visStats {
-      min-width: 10rem;
-      max-width: 10rem;
-      width: 100%;
+      min-width: auto;
+    }
+
+    /* part 7 */
+
+    .details,
+    .processStart,
+    .processEnd {
+      font-size: 1.1rem;
     }
 
 
@@ -961,6 +1054,13 @@ a {
 
     .part8 h2 {
       line-height: 3rem;
+    }
+
+    /* part 9 */
+
+    .visualizationContent p,
+    .visualizationDescription p {
+      font-size: 1.3rem;
     }
 
   }
