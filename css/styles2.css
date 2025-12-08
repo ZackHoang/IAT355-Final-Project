@@ -1053,3 +1053,17 @@ svg {
   justify-self: center;
   align-self: center;
 }
+
+@media (max-width: 600px) {
+  #lineChart {
+    width: 98vw !important;
+    margin-left: calc(-48vw + 50%) !important;
+  }
+
+  #lineChart .paddingWrapper,
+  #lineChartWrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
