@@ -13,6 +13,7 @@
   --darkgrey5: #575757;
   --darkgrey6: #414141;
   --lightBlue: #008ef3;
+  --darkBlue: #075AA8;
   --orange: #ff5e00;
 }
 
@@ -190,7 +191,7 @@ nav {
 .part10a,
 .part11,
 .part11a {
-  background-color: var(--lightBlue);
+  background-color: var(--darkBlue);
 }
 
 .part9 h3,
