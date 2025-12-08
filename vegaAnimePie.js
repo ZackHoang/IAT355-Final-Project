@@ -102,7 +102,7 @@
 // <div id="controls"></div>
 // <div id="animePieChart"></div>
 
-(async function() {
+(async function () {
   // --- Load CSV & extract titles ---
   let animeTitles = [];
   const response = await fetch("./data/anime-dataset-2023-user-gender.csv");
@@ -110,9 +110,10 @@
   const lines = csvText.split("\n");
   const header = lines[0].split(",");
   const nameIndex = header.indexOf("Name");
-  animeTitles = lines.slice(1)
-    .map(line => line.split(",")[nameIndex])
-    .filter(v => v);
+  animeTitles = lines
+    .slice(1)
+    .map((line) => line.split(",")[nameIndex])
+    .filter((v) => v);
   animeTitles = [...new Set(animeTitles)];
 
   // --- Create controls dynamically ---
@@ -135,15 +136,31 @@
     <label>
       Genre:
       <select id="genreSelect">
-        ${["Action","Adventure","Sci-Fi","Comedy","Drama","Fantasy","Gourmet","Horror","Mystery","Romance","Slice of Life","Sports","Supernatural","Suspense"]
-          .map(g => `<option>${g}</option>`).join("")}
+        ${[
+          "Action",
+          "Adventure",
+          "Sci-Fi",
+          "Comedy",
+          "Drama",
+          "Fantasy",
+          "Gourmet",
+          "Horror",
+          "Mystery",
+          "Romance",
+          "Slice of Life",
+          "Sports",
+          "Supernatural",
+          "Suspense",
+        ]
+          .map((g) => `<option>${g}</option>`)
+          .join("")}
       </select>
     </label>
   `;
 
   // Fill datalist for autocomplete
   const datalist = document.getElementById("animeList");
-  animeTitles.forEach(title => {
+  animeTitles.forEach((title) => {
     const option = document.createElement("option");
     option.value = title;
     datalist.appendChild(option);
@@ -163,10 +180,13 @@
     params: [
       { name: "viewMode", value: "anime" },
       { name: "animeSearch", value: "Trigun" },
-      { name: "selectedGenre", value: "Action" }
+      { name: "selectedGenre", value: "Action" },
     ],
     transform: [
-      { calculate: "split(replace(datum.Genres, '\"', ''), ',')", as: "GenreArray" },
+      {
+        calculate: "split(replace(datum.Genres, '\"', ''), ',')",
+        as: "GenreArray",
+      },
       { flatten: ["GenreArray"] },
       { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
       { filter: "datum.OneGenre != ''" },
@@ -174,55 +194,51 @@
         calculate: `viewMode === "anime"
           ? trim(lower(datum.Name)) === trim(lower(animeSearch))
           : datum.OneGenre === selectedGenre`,
-        as: "isSelected"
+        as: "isSelected",
       },
       { filter: "datum.isSelected" },
       {
         aggregate: [
           { op: "sum", field: "number_of_male_reviewers", as: "Male" },
-          { op: "sum", field: "number_of_female_reviewers", as: "Female" }
-        ]
+          { op: "sum", field: "number_of_female_reviewers", as: "Female" },
+        ],
       },
       { fold: ["Male", "Female"], as: ["Gender", "Count"] },
       { filter: "datum.Count > 0" },
-      { window: [{ op: "sum", field: "Count", as: "Total" }], frame: [null, null] },
-      { calculate: "datum.Count / datum.Total * 100", as: "Percent" },
-      { calculate: "datum.Gender + ': ' + round(datum.Percent,1) + '%'", as: "GenderLabel" }
-    ],
-    layer: [
-      // Pie slices
       {
-        mark: { type: "arc", tooltip: true },
-        encoding: {
-          theta: { field: "Count", type: "quantitative" },
-          color: { field: "Gender", type: "nominal", scale: { domain: ["Male","Female"], range: ["#003c71","orange"] }, legend: null },
-          tooltip: [
-            { field: "Gender", type: "nominal", title: "Gender" },
-            { field: "Count", type: "quantitative", title: "Reviewers" },
-            { field: "Percent", type: "quantitative", format: ".1f", title: "Percentage (%)" }
-          ]
-        }
+        // calculate percentage
+        window: [{ op: "sum", field: "Count", as: "Total" }],
+        frame: [null, null],
       },
-      // Slice labels raised further outside and horizontally offset
-      {
-        mark: { type: "text", radius: 265, color: "white", fontWeight: "bold", align: "center", baseline: "middle" },
-        encoding: {
-          text: { field: "GenderLabel", type: "nominal" },
-          theta: { field: "Count", type: "quantitative" },
-          dx: {
-            condition: [
-              { test: "datum.Gender === 'Male'", value: -60 },   // move Male left
-              { test: "datum.Gender === 'Female'", value: 60 }  // move Female right
-            ],
-            value: 0
-          }
-        }
-      }
-    ]
+      { calculate: "datum.Count / datum.Total * 100", as: "Percent" },
+    ],
+    mark: { type: "arc", tooltip: true },
+    encoding: {
+      theta: { field: "Count", type: "quantitative" },
+      color: {
+        field: "Gender",
+        type: "nominal",
+        scale: { domain: ["Male", "Female"], range: ["#003c71", "orange"] },
+        legend: null,
+      },
+      text: { field: "Gender", type: "nominal" },
+      tooltip: [
+        { field: "Gender", type: "nominal", title: "Gender" },
+        { field: "Count", type: "quantitative", title: "Reviewers" },
+        {
+          field: "Percent",
+          type: "quantitative",
+          format: ".1f",
+          title: "Percentage (%)",
+        },
+      ],
+    },
   };
 
   // --- Embed chart ---
-  const { view } = await vegaEmbed("#animePieChart", searchPieSpec, { actions: false });
+  const { view } = await vegaEmbed("#animePieChart", searchPieSpec, {
+    actions: false,
+  });
 
   // --- Update chart on input changes ---
   function updatePie() {
@@ -235,8 +251,13 @@
   animeInput.addEventListener("blur", () => {
     const val = animeInput.value.toLowerCase();
     if (!animeTitles.includes(animeInput.value)) {
-      const match = animeTitles.find(title => title.toLowerCase().startsWith(val));
-      if (match) animeInput.value = match;
+      const match = animeTitles.find((title) =>
+        title.toLowerCase().startsWith(val)
+      );
+      if (match) {
+        animeInput.value = match;
+        view.signal("animeSearch", match).run();
+      }
     }
     updatePie();
   });

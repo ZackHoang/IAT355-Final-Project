@@ -8,8 +8,7 @@ let crunchyrollsubscriptionsSpec = {
   background: "#191919",
   description:
     "Number of Crunchyroll paying subscriptionscribers worldwide from September 2012 to June 2024",
-  width: "container",
-  height: 500,
+  height: "container",
   data: {
     values: [
       { year: "Sep 2012", subscriptions: 0.1 },

@@ -1,14 +1,6 @@
 let topVODBrands = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-  // autosize: {
-  //   type: "fit-x",
-  //   contains: "padding",
-  //   resize: true,
-  // },
-  width: "container",
-  height: 500,
   background: "#191919",
-
   data: {
     values: [
       { brand: "Starz", percentage: 73 },
@@ -21,14 +13,14 @@ let topVODBrands = {
       { brand: "Crunchyroll", percentage: 50 },
     ],
   },
-
+  height: "container",
   transform: [{ calculate: "datum.percentage + '%'", as: "percentageLabel" }],
 
   layer: [
     {
       mark: {
         type: "bar",
-        size: 35,
+        // size: 35,
       },
 
       encoding: {
