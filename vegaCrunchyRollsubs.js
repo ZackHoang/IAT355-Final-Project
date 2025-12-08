@@ -1,10 +1,5 @@
 let crunchyrollsubscriptionsSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-  // autosize: {
-  //   type: "fit-x",
-  //   contains: "padding",
-  //   resize: true,
-  // },
   background: "#191919",
   description:
     "Number of Crunchyroll paying subscriptionscribers worldwide from September 2012 to June 2024",
@@ -64,10 +59,6 @@ let crunchyrollsubscriptionsSpec = {
           },
         },
         color: {
-          condition: {
-            test: "datum.year !== 'Jun 2024'",
-            value: "white",
-          },
           value: "#008EF3",
         },
         tooltip: [
