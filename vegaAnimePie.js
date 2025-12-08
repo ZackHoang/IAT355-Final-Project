@@ -149,6 +149,30 @@
   const viewModeSelect = document.getElementById("viewModeSelect");
   const genreSelect = document.getElementById("genreSelect");
 
+  // --- Add single-line legend above the pie chart ---
+  const chartDiv = document.getElementById("animePieChart");
+  chartDiv.insertAdjacentHTML(
+    "beforebegin",
+    `
+    <div id="pieLegend" style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: white;
+    ">
+        <span style="display:flex; align-items:center; gap:0.25rem;">
+          Male <span style="width:1rem; height:1rem; background:#003c71; display:inline-block;"></span>
+        </span>
+        <span style="display:flex; align-items:center; gap:0.25rem;">
+          Female <span style="width:1rem; height:1rem; background:orange; display:inline-block;"></span>
+        </span>
+    </div>
+    `
+  );
+
   // --- Vega-Lite pie chart spec ---
   const searchPieSpec = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
