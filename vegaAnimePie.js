@@ -4,105 +4,101 @@
 
 //   autosize: { type: "fit-x", contains: "padding", resize: true },
 //   width: "container",
+//   height: 450,
+//   background: "#008ef3",
 
 //   data: { url: "./data/anime-dataset-2023-user-gender.csv" },
+
 
 //   params: [
 //     // Toggle mode
 //     {
-//       name: "viewMode",
-//       value: "anime",
+//       name: "viewMode",       // internal signal name
+//       value: "anime",         // default
 //       bind: {
-//         input: "radio",
+//         input: "select",
 //         options: ["anime", "genre"],
-//         labels: ["Anime Search", "Genre Breakdown"]
+//         labels: ["Anime Chart", "Genre Chart"], // dropdown options text
+//         name: "Chart Type Selection"           // label next to dropdown
 //       }
 //     },
 
 //     // Anime search
 //     {
-//       name: "animeSearch",
+//       name: "animeSearch",    // internal signal name
 //       value: "Trigun",
-//       bind: { input: "text", placeholder: "Type exact anime title..." }
+//       bind: {
+//         input: "text",
+//         placeholder: "Anime Search",
+//         name: "Search Anime"   // label next to text input
+//       }
 //     },
 
-//     // Genre list (static; editable)
+//     // Genre selection
 //     {
-//       name: "selectedGenre",
-//       value: "Action",
+//       name: "selectedGenre",  // internal signal name
+//       value: "Action",        // default selection
 //       bind: {
 //         input: "select",
 //         options: [
-//           "Action", "Adventure", "Sci-Fi", "Comedy","Drama", "Fantasy", "Gourmet", "Horror","Mystery","Romance",
-//           "Sci-Fi","Slice of Life","Sports","Supernatural","Suspense"
-//         ]
+//           "Action","Adventure","Sci-Fi","Comedy","Drama","Fantasy","Gourmet","Horror",
+//           "Mystery","Romance","Slice of Life","Sports","Supernatural","Suspense"
+//         ],
+//         labels: [
+//           "Action","Adventure","Sci-Fi","Comedy","Drama","Fantasy","Gourmet","Horror",
+//           "Mystery","Romance","Slice of Life","Sports","Supernatural","Suspense"
+//         ],             // dropdown option texts
+//         name: "Select Genre" // label next to dropdown
 //       }
 //     }
 //   ],
 
+
 //   transform: [
-//     //---------------------------------------------------------
-//     // Split → Flatten → Trim Genres
-//     //---------------------------------------------------------
 //     { calculate: "split(replace(datum.Genres, '\"', ''), ',')", as: "GenreArray" },
 //     { flatten: ["GenreArray"] },
 //     { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
 //     { filter: "datum.OneGenre != ''" },
-
-//     //---------------------------------------------------------
-//     // MODE SWITCH
-//     //---------------------------------------------------------
 //     {
-//       calculate: `
-//         viewMode === "anime"
+//       calculate: `viewMode === "anime"
 //         ? trim(lower(datum.Name)) === trim(lower(animeSearch))
-//         : datum.OneGenre === selectedGenre
-//       `,
+//         : datum.OneGenre === selectedGenre`,
 //       as: "isSelected"
 //     },
 //     { filter: "datum.isSelected" },
-
-//     //---------------------------------------------------------
-//     // If genre mode → aggregate all anime in the genre
-//     //---------------------------------------------------------
 //     {
 //       aggregate: [
 //         { op: "sum", field: "number_of_male_reviewers", as: "Male" },
 //         { op: "sum", field: "number_of_female_reviewers", as: "Female" }
 //       ]
 //     },
-
-//     //---------------------------------------------------------
-//     // Fold → Pie format
-//     //---------------------------------------------------------
 //     { fold: ["Male", "Female"], as: ["Gender", "Count"] },
-//     { filter: "datum.Count > 0" }
+//     { filter: "datum.Count > 0" },
+//     { window: [{ op: "sum", field: "Count", as: "Total" }], frame: [null, null] },
+//     { calculate: "datum.Count / datum.Total * 100", as: "Percent" }
 //   ],
 
-//   mark: "arc",
+//   mark: { type: "arc", tooltip: true },
 
 //   encoding: {
 //     theta: { field: "Count", type: "quantitative" },
 //     color: {
 //       field: "Gender",
 //       type: "nominal",
-//       scale: { range: ["#1f77b4", "#ff7f0e"] }
+//       scale: { domain: ["Male","Female"], range: ["#003c71","orange"] },
+//       legend: null
 //     },
 //     tooltip: [
 //       { field: "Gender", type: "nominal", title: "Gender" },
-//       { field: "Count", type: "quantitative", title: "Reviewers" }
+//       { field: "Count", type: "quantitative", title: "Reviewers" },
+//       { field: "Percent", type: "quantitative", format: ".1f", title: "Percentage (%)" }
 //     ]
 //   }
 // };
 
 // vegaEmbed("#animePieChart", searchPieSpec, { actions: false });
 
-// animePieChart.js
-// Make sure your HTML has:
-// <div id="controls"></div>
-// <div id="animePieChart"></div>
-
-(async function () {
+(async function() {
   // --- Load CSV & extract titles ---
   let animeTitles = [];
   const response = await fetch("./data/anime-dataset-2023-user-gender.csv");
@@ -110,10 +106,9 @@
   const lines = csvText.split("\n");
   const header = lines[0].split(",");
   const nameIndex = header.indexOf("Name");
-  animeTitles = lines
-    .slice(1)
-    .map((line) => line.split(",")[nameIndex])
-    .filter((v) => v);
+  animeTitles = lines.slice(1)
+    .map(line => line.split(",")[nameIndex])
+    .filter(v => v);
   animeTitles = [...new Set(animeTitles)];
 
   // --- Create controls dynamically ---
@@ -136,31 +131,15 @@
     <label>
       Genre:
       <select id="genreSelect">
-        ${[
-          "Action",
-          "Adventure",
-          "Sci-Fi",
-          "Comedy",
-          "Drama",
-          "Fantasy",
-          "Gourmet",
-          "Horror",
-          "Mystery",
-          "Romance",
-          "Slice of Life",
-          "Sports",
-          "Supernatural",
-          "Suspense",
-        ]
-          .map((g) => `<option>${g}</option>`)
-          .join("")}
+        ${["Action","Adventure","Sci-Fi","Comedy","Drama","Fantasy","Gourmet","Horror","Mystery","Romance","Slice of Life","Sports","Supernatural","Suspense"]
+          .map(g => `<option>${g}</option>`).join("")}
       </select>
     </label>
   `;
 
   // Fill datalist for autocomplete
   const datalist = document.getElementById("animeList");
-  animeTitles.forEach((title) => {
+  animeTitles.forEach(title => {
     const option = document.createElement("option");
     option.value = title;
     datalist.appendChild(option);
@@ -180,13 +159,10 @@
     params: [
       { name: "viewMode", value: "anime" },
       { name: "animeSearch", value: "Trigun" },
-      { name: "selectedGenre", value: "Action" },
+      { name: "selectedGenre", value: "Action" }
     ],
     transform: [
-      {
-        calculate: "split(replace(datum.Genres, '\"', ''), ',')",
-        as: "GenreArray",
-      },
+      { calculate: "split(replace(datum.Genres, '\"', ''), ',')", as: "GenreArray" },
       { flatten: ["GenreArray"] },
       { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
       { filter: "datum.OneGenre != ''" },
@@ -194,51 +170,34 @@
         calculate: `viewMode === "anime"
           ? trim(lower(datum.Name)) === trim(lower(animeSearch))
           : datum.OneGenre === selectedGenre`,
-        as: "isSelected",
+        as: "isSelected"
       },
       { filter: "datum.isSelected" },
       {
         aggregate: [
           { op: "sum", field: "number_of_male_reviewers", as: "Male" },
-          { op: "sum", field: "number_of_female_reviewers", as: "Female" },
-        ],
+          { op: "sum", field: "number_of_female_reviewers", as: "Female" }
+        ]
       },
       { fold: ["Male", "Female"], as: ["Gender", "Count"] },
       { filter: "datum.Count > 0" },
-      {
-        // calculate percentage
-        window: [{ op: "sum", field: "Count", as: "Total" }],
-        frame: [null, null],
-      },
-      { calculate: "datum.Count / datum.Total * 100", as: "Percent" },
+      { window: [{ op: "sum", field: "Count", as: "Total" }], frame: [null, null] },
+      { calculate: "datum.Count / datum.Total * 100", as: "Percent" }
     ],
-    mark: { type: "arc", tooltip: true },
+    mark: "arc",
     encoding: {
       theta: { field: "Count", type: "quantitative" },
-      color: {
-        field: "Gender",
-        type: "nominal",
-        scale: { domain: ["Male", "Female"], range: ["#003c71", "orange"] },
-        legend: null,
-      },
-      text: { field: "Gender", type: "nominal" },
+      color: { field: "Gender", type: "nominal", scale: { domain: ["Male","Female"], range: ["#003c71","orange"] }, legend: null },
       tooltip: [
         { field: "Gender", type: "nominal", title: "Gender" },
         { field: "Count", type: "quantitative", title: "Reviewers" },
-        {
-          field: "Percent",
-          type: "quantitative",
-          format: ".1f",
-          title: "Percentage (%)",
-        },
-      ],
-    },
+        { field: "Percent", type: "quantitative", format: ".1f", title: "Percentage (%)" }
+      ]
+    }
   };
 
   // --- Embed chart ---
-  const { view } = await vegaEmbed("#animePieChart", searchPieSpec, {
-    actions: false,
-  });
+  const { view } = await vegaEmbed("#animePieChart", searchPieSpec, { actions: false });
 
   // --- Update chart on input changes ---
   function updatePie() {
@@ -251,13 +210,8 @@
   animeInput.addEventListener("blur", () => {
     const val = animeInput.value.toLowerCase();
     if (!animeTitles.includes(animeInput.value)) {
-      const match = animeTitles.find((title) =>
-        title.toLowerCase().startsWith(val)
-      );
-      if (match) {
-        animeInput.value = match;
-        view.signal("animeSearch", match).run();
-      }
+      const match = animeTitles.find(title => title.toLowerCase().startsWith(val));
+      if (match) animeInput.value = match;
     }
     updatePie();
   });
