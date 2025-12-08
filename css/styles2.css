@@ -55,7 +55,7 @@ h2 {
   justify-content: center;
   flex-direction: column;
   align-items: end;
-  gap: 30vh;
+  gap: 5rem;
 }
 
 .headerTitle h1 {
@@ -168,7 +168,7 @@ nav {
 
 .part1 p,
 .part2 p {
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--darkgrey3);
 }
 
@@ -181,14 +181,14 @@ nav {
 .part10a h2,
 .part11 h2,
 .part11a h2 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: white;
 }
 
 .part4 p,
 .part5 p,
 .part6 p {
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--darkgrey3);
 }
 
@@ -213,7 +213,7 @@ nav {
 
 .visualizationContent p,
 .visualizationDescription p {
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--lightgrey4);
 }
 
@@ -344,7 +344,7 @@ a {
 
 .part5 h3 {
   margin-top: 15vh;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: white;
   font-weight: 300;
 }
@@ -407,8 +407,8 @@ a {
 .processEnd {
   border-radius: 0.5rem;
   background-color: var(--darkgrey5);
-  max-width: 30rem;
-  font-size: 1.5rem;
+  max-width: 35rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -506,6 +506,7 @@ a {
 
 
 /* Responsiveness ---------------------------------------------------- */
+
 
 
 @media (max-width: 107.75rem) {
@@ -649,8 +650,15 @@ a {
 
 }
 
+@media (max-width: 76.313rem) {
+  .headerTitle h1 {
+    font-size: 4rem;
+  }
+}
+
 @media (max-width: 68.063rem) {
 
+  
 
 .mainContainer {
   overflow-x: hidden;
@@ -668,12 +676,12 @@ a {
 
   .part1 h2,
   .part2 h2 {
-  font-size: 4rem;
+  font-size: 3rem;
   }
 
   .part1 p,
   .part2 p {
-  font-size: 1.75rem;
+  font-size: 1.3rem;
   }
 
   .part4 h2,
@@ -717,7 +725,7 @@ a {
 
   .part2 picture {
     display: block;
-    height: 35rem;
+    height: 100%;
   }
 
 
@@ -778,7 +786,9 @@ a {
 
   .details {
     font-size: 1.3rem;
+    max-width: 23rem;
   }
+
 
   .part8 h2 {
     font-size: 2.5rem;
@@ -859,6 +869,13 @@ a {
 }
 
 
+@media (max-width: 37.813rem) {
+  .headerTitle h1 {
+    font-size: 2.5rem;
+  }
+}
+
+
 @media (max-width: 35.563rem) {
 
 
@@ -874,7 +891,7 @@ a {
 
     .part1 h2,
     .part2 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     }
 
 
@@ -909,9 +926,6 @@ a {
 
     /* Part 1*/
 
-    .headerTitle h1 {
-      font-size: 2.5rem;
-    }
 
     .headerTitle p, .headerScroll p{
       font-size: 1.5rem;
@@ -974,12 +988,16 @@ a {
     .details,
     .processStart,
     .processEnd {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 20rem;
     }
 
     .processStart {
       max-width: 15rem;
+    }
+
+    .processStart, .processEnd {
+      padding: 1rem;
     }
 
 
@@ -997,9 +1015,12 @@ a {
       font-size: 1.5rem;
     }
 
+  }
 
-
-
+  @media (max-width: 28.688rem) {
+     .headerTitle h1 {
+      font-size: 2rem;
+  }
   }
 
 
@@ -1049,7 +1070,7 @@ a {
 
 
     .part5 p {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .visStats h3 {
