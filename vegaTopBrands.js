@@ -1,11 +1,10 @@
 let topVODBrands = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-  description: "a",
-  autosize: {
-    type: "fit-x",
-    contains: "padding",
-    resize: true,
-  },
+  // autosize: {
+  //   type: "fit-x",
+  //   contains: "padding",
+  //   resize: true,
+  // },
   width: "container",
   height: 500,
   background: "#191919",
@@ -41,8 +40,8 @@ let topVODBrands = {
             labelColor: "white",
             titleColor: "white",
             tickCount: 12,
-            labelFontSize: 32,
-            titleFontSize: 32,
+            labelFontSize: 18,
+            titleFontSize: 18,
           },
         },
         y: {
@@ -52,8 +51,8 @@ let topVODBrands = {
             title: "Brand",
             labelColor: "white",
             titleColor: "white",
-            labelFontSize: 32,
-            titleFontSize: 32,
+            labelFontSize: 18,
+            titleFontSize: 18,
           },
           scale: {
             padding: 0.2,
@@ -65,6 +64,7 @@ let topVODBrands = {
             test: "datum.brand !== 'Crunchyroll'",
             value: "white",
           },
+          value: "#008EF3",
         },
         tooltip: [
           {
@@ -87,7 +87,7 @@ let topVODBrands = {
         baseline: "middle",
         dx: -4,
         fill: "black",
-        fontSize: 32,
+        fontSize: 18,
       },
       encoding: {
         x: { field: "percentage", type: "quantitative" },
@@ -102,4 +102,4 @@ let topVODBrands = {
   ],
 };
 
-vegaEmbed("#brands-vis", topVODBrands);
+vegaEmbed("#brands-vis", topVODBrands, { actions: false });
