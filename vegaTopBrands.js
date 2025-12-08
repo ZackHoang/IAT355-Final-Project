@@ -1,14 +1,6 @@
 let topVODBrands = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-  // autosize: {
-  //   type: "fit-x",
-  //   contains: "padding",
-  //   resize: true,
-  // },
-  width: "container",
-  height: 500,
   background: "#191919",
-
   data: {
     values: [
       { brand: "Starz", percentage: 73 },
@@ -21,7 +13,7 @@ let topVODBrands = {
       { brand: "Crunchyroll", percentage: 50 },
     ],
   },
-
+  height: "container",
   transform: [{ calculate: "datum.percentage + '%'", as: "percentageLabel" }],
 
   layer: [
@@ -29,6 +21,7 @@ let topVODBrands = {
       mark: {
         type: "bar",
         size: 35,
+        cornerRadius: 5,
       },
 
       encoding: {
@@ -36,23 +29,25 @@ let topVODBrands = {
           field: "percentage",
           type: "quantitative",
           axis: {
-            title: "Percentages of respondents",
+            title: null,
             labelColor: "white",
-            titleColor: "white",
             tickCount: 12,
             labelFontSize: 18,
             titleFontSize: 18,
+            gridColor: "#8F8F8F",
+            gridWidth: 2,
+            domain: false,
           },
         },
         y: {
           field: "brand",
           type: "ordinal",
           axis: {
-            title: "Brand",
+            title: null,
             labelColor: "white",
-            titleColor: "white",
             labelFontSize: 18,
             titleFontSize: 18,
+            domain: false,
           },
           scale: {
             padding: 0.2,
@@ -100,6 +95,12 @@ let topVODBrands = {
       },
     },
   ],
+
+  config: {
+    view: {
+      stroke: "transparent",
+    },
+  },
 };
 
 vegaEmbed("#brands-vis", topVODBrands, { actions: false });

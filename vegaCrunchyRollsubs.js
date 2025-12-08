@@ -1,15 +1,9 @@
 let crunchyrollsubscriptionsSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-  // autosize: {
-  //   type: "fit-x",
-  //   contains: "padding",
-  //   resize: true,
-  // },
   background: "#191919",
   description:
     "Number of Crunchyroll paying subscriptionscribers worldwide from September 2012 to June 2024",
-  width: "container",
-  height: 500,
+  height: "container",
   data: {
     values: [
       { year: "Sep 2012", subscriptions: 0.1 },
@@ -31,15 +25,15 @@ let crunchyrollsubscriptionsSpec = {
   layer: [
     {
       mark: {
-        type: "bar",
-        size: 35,
+        type: "line",
+        cornerRadius: 5,
       },
       encoding: {
-        y: {
+        x: {
           field: "year",
           type: "ordinal",
           axis: {
-            title: "Year",
+            title: null,
             labelColor: "white",
             titleColor: "white",
             labelFontSize: 18,
@@ -48,25 +42,23 @@ let crunchyrollsubscriptionsSpec = {
           scale: {
             padding: 0.25,
           },
-          sort: { field: "subscriptions", order: "descending" },
+          sort: { field: "subscriptions", order: "ascending" },
         },
-        x: {
+        y: {
           field: "subscriptions",
           type: "quantitative",
           axis: {
-            title: "Subscribers in millions",
+            title: null,
             labelColor: "white",
-            titleColor: "white",
             tickCount: 12,
             labelFontSize: 18,
             titleFontSize: 18,
+            gridColor: "#8F8F8F",
+            gridWidth: 2,
+            domain: false,
           },
         },
         color: {
-          condition: {
-            test: "datum.year !== 'Jun 2024'",
-            value: "white",
-          },
           value: "#008EF3",
         },
         tooltip: [
@@ -83,26 +75,32 @@ let crunchyrollsubscriptionsSpec = {
         ],
       },
     },
-    {
-      mark: {
-        type: "text",
-        align: "left",
-        baseline: "middle",
-        dx: 4,
-        fontSize: 18,
-        color: "white",
-      },
-      encoding: {
-        x: { field: "subscriptions", type: "quantitative" },
-        y: {
-          field: "year",
-          type: "ordinal",
-          sort: { field: "subscriptions", order: "ascending" },
-        },
-        text: { field: "subsLabel" },
-      },
-    },
+    // {
+    //   mark: {
+    //     type: "text",
+    //     align: "left",
+    //     baseline: "middle",
+    //     dx: 4,
+    //     fontSize: 18,
+    //     color: "white",
+    //   },
+    //   encoding: {
+    //     x: { field: "subscriptions", type: "quantitative" },
+    //     y: {
+    //       field: "year",
+    //       type: "ordinal",
+    //       sort: { field: "subscriptions", order: "ascending" },
+    //     },
+    //     text: { field: "subsLabel" },
+    //   },
+    // },
   ],
+
+  config: {
+    view: {
+      stroke: "transparent",
+    },
+  },
 };
 
 vegaEmbed("#crunchyroll-subscriptions", crunchyrollsubscriptionsSpec, {
