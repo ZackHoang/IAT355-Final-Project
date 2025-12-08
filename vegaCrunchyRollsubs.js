@@ -30,12 +30,11 @@ let crunchyrollsubscriptionsSpec = {
   layer: [
     {
       mark: {
-        type: "bar",
-        size: 35,
+        type: "line",
         cornerRadius: 5,
       },
       encoding: {
-        y: {
+        x: {
           field: "year",
           type: "ordinal",
           axis: {
@@ -48,9 +47,9 @@ let crunchyrollsubscriptionsSpec = {
           scale: {
             padding: 0.25,
           },
-          sort: { field: "subscriptions", order: "descending" },
+          sort: { field: "subscriptions", order: "ascending" },
         },
-        x: {
+        y: {
           field: "subscriptions",
           type: "quantitative",
           axis: {
@@ -85,25 +84,25 @@ let crunchyrollsubscriptionsSpec = {
         ],
       },
     },
-    {
-      mark: {
-        type: "text",
-        align: "left",
-        baseline: "middle",
-        dx: 4,
-        fontSize: 18,
-        color: "white",
-      },
-      encoding: {
-        x: { field: "subscriptions", type: "quantitative" },
-        y: {
-          field: "year",
-          type: "ordinal",
-          sort: { field: "subscriptions", order: "ascending" },
-        },
-        text: { field: "subsLabel" },
-      },
-    },
+    // {
+    //   mark: {
+    //     type: "text",
+    //     align: "left",
+    //     baseline: "middle",
+    //     dx: 4,
+    //     fontSize: 18,
+    //     color: "white",
+    //   },
+    //   encoding: {
+    //     x: { field: "subscriptions", type: "quantitative" },
+    //     y: {
+    //       field: "year",
+    //       type: "ordinal",
+    //       sort: { field: "subscriptions", order: "ascending" },
+    //     },
+    //     text: { field: "subsLabel" },
+    //   },
+    // },
   ],
 
   config: {
