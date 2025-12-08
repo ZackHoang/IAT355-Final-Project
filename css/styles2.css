@@ -873,12 +873,10 @@ input[type="text"] {
   padding: 4px 8px;
 }
 
-#belowText {
+#controls {
   text-align: center;
-  color: white;
-  margin-top: 10px;
-  font-size: 16px;
 }
+
 @media (max-width: 27.188rem) {
   /* Part 1*/
 
