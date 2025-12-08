@@ -1122,5 +1122,15 @@ svg {
     margin: 0 !important;
     padding: 0 !important;
   }
+  #scatterPlot {
+    width: 98vw !important;
+    margin-left: calc(-48vw + 50%) !important;
+  }
+
+  #scatterPlot .paddingWrapper,
+  #lineChartWrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 }
 
