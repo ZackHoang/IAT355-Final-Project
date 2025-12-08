@@ -1,13 +1,13 @@
 let topVODBrands = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-  description: "a",
-  autosize: {
-    type: "fit-x",
-    contains: "padding",
-    resize: true,
-  },
+  // autosize: {
+  //   type: "fit-x",
+  //   contains: "padding",
+  //   resize: true,
+  // },
   width: "container",
-  background: "#313131",
+  height: 500,
+  background: "#191919",
 
   data: {
     values: [
@@ -22,53 +22,84 @@ let topVODBrands = {
     ],
   },
 
-  mark: {
-    type: "bar",
-  },
+  transform: [{ calculate: "datum.percentage + '%'", as: "percentageLabel" }],
 
-  encoding: {
-    x: {
-      field: "percentage",
-      type: "quantitative",
-      axis: {
-        title: "Percentages of respondents",
-        labelColor: "white",
-        titleColor: "white",
+  layer: [
+    {
+      mark: {
+        type: "bar",
+        size: 35,
+      },
+
+      encoding: {
+        x: {
+          field: "percentage",
+          type: "quantitative",
+          axis: {
+            title: "Percentages of respondents",
+            labelColor: "white",
+            titleColor: "white",
+            tickCount: 12,
+            labelFontSize: 18,
+            titleFontSize: 18,
+          },
+        },
+        y: {
+          field: "brand",
+          type: "ordinal",
+          axis: {
+            title: "Brand",
+            labelColor: "white",
+            titleColor: "white",
+            labelFontSize: 18,
+            titleFontSize: 18,
+          },
+          scale: {
+            padding: 0.2,
+          },
+          sort: { field: "percentage", order: "descending" },
+        },
+        color: {
+          condition: {
+            test: "datum.brand !== 'Crunchyroll'",
+            value: "white",
+          },
+          value: "#008EF3",
+        },
+        tooltip: [
+          {
+            field: "brand",
+            type: "ordinal",
+            title: "Brand",
+          },
+          {
+            field: "percentage",
+            type: "quantitative",
+            title: "Percentages of respondents",
+          },
+        ],
       },
     },
-    y: {
-      field: "brand",
-      type: "ordinal",
-      axis: {
-        title: "Brand",
-        labelColor: "white",
-        titleColor: "white",
+    {
+      mark: {
+        type: "text",
+        align: "right",
+        baseline: "middle",
+        dx: -4,
+        fill: "black",
+        fontSize: 18,
       },
-      scale: {
-        padding: 0.25,
+      encoding: {
+        x: { field: "percentage", type: "quantitative" },
+        y: {
+          field: "brand",
+          type: "ordinal",
+          sort: { field: "percentage", order: "descending" },
+        },
+        text: { field: "percentageLabel" },
       },
-      sort: { field: "percentage", order: "descending" },
     },
-    color: {
-      condition: {
-        test: "datum.brand !== 'Crunchyroll'",
-        value: "#D3D3D3",
-      },
-      value: "#FF6600",
-    },
-    tooltip: [
-      {
-        field: "brand",
-        type: "ordinal",
-        title: "Brand",
-      },
-      {
-        field: "percentage",
-        type: "quantitative",
-        title: "Percentages of respondents",
-      },
-    ],
-  },
+  ],
 };
 
-vegaEmbed("#brands-vis", topVODBrands);
+vegaEmbed("#brands-vis", topVODBrands, { actions: false });

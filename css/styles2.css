@@ -45,7 +45,6 @@ h2 {
   background-size: cover;
   background-position: center;
   color: white;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,8 +55,7 @@ h2 {
   justify-content: center;
   flex-direction: column;
   align-items: end;
-  height: 100vh;
-  gap: 30vh;
+  gap: 5rem;
 }
 
 .headerTitle h1 {
@@ -133,14 +131,13 @@ nav {
 /* Body Content */
 
 .mainContainer {
-  height: 100vh;
   height: 100dvh; /*For mobile device scrolling */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
 
 .mainSection {
-  padding-top: 10vh;
+  padding-top: 5vh;
   height: 100%;
   scroll-snap-align: start;
 }
@@ -171,7 +168,7 @@ nav {
 
 .part1 p,
 .part2 p {
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--darkgrey3);
 }
 
@@ -184,14 +181,14 @@ nav {
 .part10a h2,
 .part11 h2,
 .part11a h2 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: white;
 }
 
 .part4 p,
 .part5 p,
 .part6 p {
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--darkgrey3);
 }
 
@@ -216,7 +213,7 @@ nav {
 
 .visualizationContent p,
 .visualizationDescription p {
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--lightgrey4);
 }
 
@@ -250,6 +247,10 @@ a {
 
 /*mainsection 2*/
 
+.part2 {
+  overflow:hidden;
+}
+
 .part2 picture {
   display: block;
   width: 55vw;
@@ -273,7 +274,6 @@ a {
 #crunchyroll-subscriptions {
   width: 100%;
   height: 60vh;
-  background-color: white; /* Temp fix, I just need to see where this is*/
 }
 
 .part3 p {
@@ -298,7 +298,8 @@ a {
 
 .part4 figure {
   width: 100%;
-  height: 50vh;
+  min-height: 50vh;
+  height: auto;
 }
 
 .part4 h2 {
@@ -343,7 +344,7 @@ a {
 
 .part5 h3 {
   margin-top: 15vh;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: white;
   font-weight: 300;
 }
@@ -406,8 +407,8 @@ a {
 .processEnd {
   border-radius: 0.5rem;
   background-color: var(--darkgrey5);
-  max-width: 30rem;
-  font-size: 1.5rem;
+  max-width: 35rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -498,12 +499,14 @@ a {
 
 #brands-vis {
   width: 100%;
+  height: 100%;
 }
 
 
 
 
 /* Responsiveness ---------------------------------------------------- */
+
 
 
 @media (max-width: 107.75rem) {
@@ -533,13 +536,14 @@ a {
   /* Part 5 stuff */
 
   .part5 h3 {
-    margin-top: 5vh;
+    margin-top: 2rem;
     font-size: 2.25rem;
   }
 
   .visStats h3 {
     margin-top: 0;
     font-size: 4rem;
+    text-align: left;
   }
   .visNumbers {
     flex-direction: column;
@@ -548,9 +552,13 @@ a {
   .visStats {
     display: flex;
     justify-content: flex-start;
-    width: 30vw;
-    height: 8vh;
-    gap: 0;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    height: 3rem;
+    gap: 1rem;
+    width: auto;
+    min-width: auto;
+    flex-direction: row;
   }
 
   .visStats h3, .visStats p {
@@ -559,8 +567,8 @@ a {
   }
 
   .visStats p {
-    margin-top: auto;
     font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
 
@@ -621,7 +629,7 @@ a {
 }
 
 .part2 picture {
-  width: 70vw;
+  width: 100%;
 }
 
 .part3 p {
@@ -642,10 +650,22 @@ a {
 
 }
 
+@media (max-width: 76.313rem) {
+  .headerTitle h1 {
+    font-size: 4rem;
+  }
+}
+
 @media (max-width: 68.063rem) {
 
+  
+
+.mainContainer {
+  overflow-x: hidden;
+  }
+
   .paddingWrapper {
-  margin: 0 10vw;
+  margin: 0 8rem;
   }
 
   /* Main styling */
@@ -656,12 +676,12 @@ a {
 
   .part1 h2,
   .part2 h2 {
-  font-size: 4rem;
+  font-size: 3rem;
   }
 
   .part1 p,
   .part2 p {
-  font-size: 1.75rem;
+  font-size: 1.3rem;
   }
 
   .part4 h2,
@@ -694,13 +714,10 @@ a {
   /* part 2 */
 
 
-  .part2 {
-    overflow:hidden;
-  }
 
   .part2 img {
     display: block;
-    height: 50vh;
+
     width: 100%;
     object-fit: cover;
   }
@@ -708,22 +725,24 @@ a {
 
   .part2 picture {
     display: block;
-    height: 50vh;
+    height: 100%;
   }
 
 
   /* part 4 */
 
+  /*
   figcaption {
     width: 90vw;
   }
+  */
 
   .part4 p {
     width:auto;
   }
 
   .part4 h2 {
-    width: 80vw;
+    width: 80%;
     margin: auto;
   }
 
@@ -747,50 +766,132 @@ a {
   }
 
   .part5 p {
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
     font-size: 1.4rem;
   }
 
   .visStats {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .visStats p {
     font-size: 1.2rem;
   }
 
+  /* Part 7 */
+
+  .processEnd, .processStart {
+    padding: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .details {
+    font-size: 1.3rem;
+    max-width: 23rem;
+  }
+
+
+  .part8 h2 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+  }
+
+  .detailsContent p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+
 }
 
-@media (max-width: 49.5rem) {
+@media (max-width: 50.313rem) {
+
+  /* part 2*/
+
+  .part2 img {
+    height: 100%;
+  }
+
+  /* part 5 */
+
+  .part5 h2 {
+    font-size: 2rem;
+  }
+
+  .part5 h3 {
+    font-size: 1.5rem;
+  }
+
   .part5 .visTitle {
     margin-top: 1rem
   }
+
+  .paddingWrapper.flexTitle {
+    margin: 0 6rem;
+  }
+
+  .headerTitle h1 {
+    font-size: 3rem;
+  }
+
+  .visStats h3 {
+    font-size: 2rem;
+  }
+
+  .visStats p {
+    margin-bottom: 0;
+  }
+
+  .part5 p {
+    font-size: 1.3rem;
+  }
+
+  .visStats {
+    gap: 0.5rem;
+    padding: 0.7rem;
+  }
+
+  .part4 h3 {
+    font-size: 1.1rem;
+  }
+
 
 }
 
 @media (max-width: 40.563rem) {
   .mainSection.part5 {
-    padding-top: 5vw;
+    padding-top: 3rem;
   }
 
   .visStats p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
 }
 
 
-@media (max-width: 33.75rem) {
+@media (max-width: 37.813rem) {
+  .headerTitle h1 {
+    font-size: 2.5rem;
+  }
+}
+
+
+@media (max-width: 35.563rem) {
+
+
+  .paddingWrapper {
+    margin: 0 4rem;
+  }
 
     .mainSection{
       padding-top: 5vh;
     }
 
 
+
     .part1 h2,
     .part2 h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     }
 
 
@@ -803,26 +904,46 @@ a {
     .part10a h2,
     .part11 h2,
     .part11a h2 {
-      font-size: 2rem;
+      font-size: 1.3rem;
       color: white;
     }
 
     .part4 p,
     .part5 p,
     .part6 p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .part9 h3,
+    .part9a h3,
+    .part10 h3,
+    .part10a h3,
+    .part11 h3,
+    .part11a h3 {
+      font-size: 1.3rem;
     }
 
 
     /* Part 1*/
 
-    .headerTitle h1 {
-      font-size: 3rem;
+
+    .headerTitle p, .headerScroll p{
+      font-size: 1.5rem;
     }
+
+
 
     .part1 p,
     .part2 p {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+
+    /* part 3 */
+
+    .part3 p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
     }
 
 
@@ -833,24 +954,29 @@ a {
     /*part 5*/
 
     .mainSection.part5 {
-      padding-top: 10vw;
+      padding-top: 3rem;
     }
+
+
 
     .part5 h3 {
       font-size: 1.5rem;
     }
 
+    .part5 .visTitle {
+      margin-bottom: 2rem;
+    }
+
     .part5 p {
-      margin-top: 1rem;
       font-size: 1.3rem;
     }
 
     .visStats h3 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     .visStats {
-      padding: 1rem;
+      padding: 0.7rem;
     }
 
     /*part 7*/
@@ -862,12 +988,16 @@ a {
     .details,
     .processStart,
     .processEnd {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       max-width: 20rem;
     }
 
     .processStart {
       max-width: 15rem;
+    }
+
+    .processStart, .processEnd {
+      padding: 1rem;
     }
 
 
@@ -885,7 +1015,13 @@ a {
       font-size: 1.5rem;
     }
 
+  }
 
+  @media (max-width: 28.688rem) {
+     .headerTitle h1 {
+      font-size: 2rem;
+  }
+  }
 
 
   }
@@ -918,3 +1054,88 @@ input[type="text"] {
   margin-top: 10px;  
   font-size: 16px;    
 }
+  @media (max-width: 27.188rem){
+
+    .part1 p,
+    .part2 p {
+      font-size: 1rem;
+    }
+
+    .part1 h2,
+    .part2 h2 {
+    font-size: 2rem;
+    }
+
+    .mainSection.part5 {
+      padding-top: 2rem;
+    }
+
+    /*part 1*/
+
+    .headerTitle h1 {
+      font-size: 2rem;
+    }
+
+    .headerTitle p, .headerScroll p {
+      font-size: 1.3rem;
+    }
+
+    /* part 3 */
+
+    .part3 p {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+
+    /* part 5 */
+
+    .part5 h2 {
+      font-size: 1.3rem;
+    }
+
+    .part5 h3 {
+      font-size: 1.2rem;
+    }
+
+
+    .part5 p {
+      font-size: 1rem;
+    }
+
+    .visStats h3 {
+      font-size: 1.5rem;
+    }
+
+    .part5 .visTitle {
+      margin-top: 0;
+    }
+
+
+    .visStats {
+      min-width: auto;
+    }
+
+    /* part 7 */
+
+    .details,
+    .processStart,
+    .processEnd {
+      font-size: 1.1rem;
+    }
+
+
+    /*part 8 */
+
+    .part8 h2 {
+      line-height: 3rem;
+    }
+
+    /* part 9 */
+
+    .visualizationContent p,
+    .visualizationDescription p {
+      font-size: 1.3rem;
+    }
+
+  }
