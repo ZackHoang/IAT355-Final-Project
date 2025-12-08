@@ -82,7 +82,7 @@ var genreLineSpec = {
       as: "Year",
     },
     { filter: "isValid(datum.Year)" },
-    { filter: "datum.Year >= 1975 && datum.Year <= 2023" },
+    { filter: "datum.Year >= 1975 && datum.Year <= 2022" },
 
     {
       calculate: "split(replace(datum.Genres, '\"', ''), ',')",
@@ -118,14 +118,17 @@ var genreLineSpec = {
       field: "Year",
       type: "quantitative",
       title: "Year",
-      scale: { domain: [1975, 2023] },
-      axis: { format: "d" },
+      scale: { domain: [1975, 2022] },
+      axis: {
+        format: "d",
+        values: [1975, 1985, 1995, 2005, 2015, 2022],
+      },
     },
     y: {
       field: "AnimeCount",
       type: "quantitative",
       title: "Number of Anime Released",
-      scale: { domain: [0, 350] }, // ✅ CAP Y AXIS
+      scale: { domain: [0, 350] },
     },
 
     color: {
