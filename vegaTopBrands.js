@@ -34,6 +34,7 @@ let topVODBrands = {
             tickCount: 12,
             labelFontSize: 18,
             titleFontSize: 18,
+            gridColor: "#8F8F8F",
           },
         },
         y: {
@@ -92,6 +93,12 @@ let topVODBrands = {
       },
     },
   ],
+
+  config: {
+    view: {
+      stroke: "transparent",
+    },
+  },
 };
 
 vegaEmbed("#brands-vis", topVODBrands, { actions: false });

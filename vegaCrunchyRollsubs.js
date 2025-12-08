@@ -59,6 +59,7 @@ let crunchyrollsubscriptionsSpec = {
             tickCount: 12,
             labelFontSize: 18,
             titleFontSize: 18,
+            gridColor: "#8F8F8F",
           },
         },
         color: {
@@ -102,6 +103,12 @@ let crunchyrollsubscriptionsSpec = {
       },
     },
   ],
+
+  config: {
+    view: {
+      stroke: "transparent",
+    },
+  },
 };
 
 vegaEmbed("#crunchyroll-subscriptions", crunchyrollsubscriptionsSpec, {
