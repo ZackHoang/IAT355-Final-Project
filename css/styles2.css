@@ -850,7 +850,36 @@ a {
   .part11a h3 {
     font-size: 1.3rem;
   }
+}
+/* label */
 
+label {
+  color: white !important;
+}
+
+select {
+  color: white !important;
+  background-color: #008ef3 !important;
+  border: 1px solid #575757 !important;
+  border-radius: 10px !important;
+  padding: 4px 8px !important;
+}
+
+input[type="text"] {
+  color: white !important;
+  background-color: #008ef3 !important;
+  border: 1px solid #575757 !important;
+  border-radius: 10px !important;
+  padding: 4px 8px;
+}
+
+#belowText {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: 16px;
+}
+@media (max-width: 27.188rem) {
   /* Part 1*/
 
   .headerTitle p,
