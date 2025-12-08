@@ -115,7 +115,7 @@
   const controlsDiv = document.getElementById("controls");
   controlsDiv.innerHTML = `
     <label>
-      Search Anime:
+      Search:
       <input type="text" id="animeSearchInput" list="animeList" placeholder="Type anime title..." value="Trigun" />
       <datalist id="animeList"></datalist>
     </label>
