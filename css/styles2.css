@@ -511,6 +511,8 @@ a {
   /* min-height: 50vh; */
 }
 
+
+
 /* Animation stuff (testing) */
 
 /* Responsiveness ---------------------------------------------------- */
@@ -860,6 +862,7 @@ a {
     margin: 0 4rem;
   }
 
+  /*some screens dont need this*/
   .mainSection {
     padding-top: 5vh;
   }
@@ -897,7 +900,7 @@ a {
     font-size: 1.3rem;
   }
 }
-/* label */
+/* Visualization labels */
 
 label {
   color: white !important;
@@ -905,18 +908,69 @@ label {
 
 select {
   color: white !important;
-  background-color: #075AA8 !important;
+  background-color: var(--lightBlue) !important;
   border: 2px solid white !important;
   border-radius: 10px !important;
   padding: 4px 8px !important;
 }
 
+option {
+  background-color: white;
+  color: black;
+}
+
 input[type="text"] {
   color: white !important;
-  background-color: #075AA8 !important;
+  background-color: var(--lightBlue) !important;
   border: 2px solid white !important;
   border-radius: 10px !important;
   padding: 4px 8px;
+}
+
+/*2nd vis styling */
+
+.vega-bindings {
+  background-color: var(--lightBlue);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vega-bind {
+  display: block;
+  margin: 0 1rem;
+}
+
+.vega-bind label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vega-bind-name{
+  font-size: 1.5rem;
+}
+
+/*3rd vis styling */
+
+
+#controls {
+  background-color: var(--lightBlue);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+#controls label {
+  font-weight: 500;
+  margin: 0.25rem;
+  display: block;
 }
 
 @media (max-width: 27.188rem) {
@@ -1136,5 +1190,52 @@ svg {
     margin: 0 !important;
     padding: 0 !important;
   } 
+
+
+  #controls {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #controls label {
+    display: flex;
+    flex-direction: column;
+  }
+  #crunchyroll-subscriptions .paddingWrapper,
+  #lineChartWrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #animePieChart{
+    width: 100;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  }
+
+
+  #animeSearchInput{
+    max-width: 95%;
+  }
+
+  #controls {
+    margin: auto;
+  }
+
+  .part11a .paddingWrapper {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .part11a h3 {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1rem;
+  }
 }
 
