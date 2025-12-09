@@ -940,6 +940,10 @@ input[type="text"] {
   gap: 1rem;
 }
 
+.vega-bindings:empty {
+  display: none !important;
+}
+
 .vega-bind {
   display: block;
   margin: 0 1rem;
