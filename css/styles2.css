@@ -680,6 +680,7 @@ a {
     font-size: 1.3rem;
   }
 
+  .part3 h2,
   .part4 h2,
   .part5 h2,
   .part6 h2,
@@ -717,6 +718,10 @@ a {
     display: block;
     height: 100%;
   }
+
+  /* part 3*/
+
+
 
   /* part 4 */
 
@@ -863,15 +868,12 @@ a {
   }
 
   /*some screens dont need this*/
-  .mainSection {
-    padding-top: 5vh;
-  }
 
   .part1 h2,
   .part2 h2 {
     font-size: 2rem;
   }
-
+  .part3 h2,
   .part4 h2,
   .part5 h2,
   .part6 h2,
@@ -899,6 +901,14 @@ a {
   .part11a h3 {
     font-size: 1.3rem;
   }
+
+
+  /*part 8 */
+
+  .part8 {
+    padding-top: 0;
+  }
+  
 }
 /* Visualization labels */
 
