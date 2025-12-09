@@ -164,10 +164,10 @@
         color: white;
     ">
         <span style="display:flex; align-items:center; gap:0.25rem;">
-          Male <span style="width:1rem; height:1rem; background:#003c71; display:inline-block;"></span>
+          Male <span style="width:1rem; height:1rem; background:#008ef3; display:inline-block;"></span>
         </span>
         <span style="display:flex; align-items:center; gap:0.25rem;">
-          Female <span style="width:1rem; height:1rem; background:orange; display:inline-block;"></span>
+          Female <span style="width:1rem; height:1rem; background:#ff5e00; display:inline-block;"></span>
         </span>
     </div>
     `
@@ -178,7 +178,7 @@
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     width: "container",
     height: 450,
-    background: "#008ef3",
+    background: "#075AA8",
     data: { url: "./data/anime-dataset-2023-user-gender.csv" },
     params: [
       { name: "viewMode", value: "anime" },
@@ -211,7 +211,7 @@
     mark: "arc",
     encoding: {
       theta: { field: "Count", type: "quantitative" },
-      color: { field: "Gender", type: "nominal", scale: { domain: ["Male","Female"], range: ["#003c71","orange"] }, legend: null },
+      color: { field: "Gender", type: "nominal", scale: { domain: ["Male","Female"], range: ["#008ef3","#ff5e00"] }, legend: null },
       tooltip: [
         { field: "Gender", type: "nominal", title: "Gender" },
         { field: "Count", type: "quantitative", title: "Reviewers" },
