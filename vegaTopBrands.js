@@ -25,7 +25,6 @@ let topVODBrands = {
         size: 35,
         cornerRadius: 5,
       },
-
       encoding: {
         x: {
           field: "percentage",
@@ -44,13 +43,14 @@ let topVODBrands = {
         y: {
           field: "brand",
           type: "ordinal",
-          axis: {
-            title: null,
-            labelColor: "white",
-            labelFontSize: 18,
-            titleFontSize: 18,
-            domain: false,
-          },
+          axis: null,
+          // axis: {
+          //   title: null,
+          //   labelColor: "white",
+          //   labelFontSize: 18,
+          //   titleFontSize: 18,
+          //   domain: false,
+          // },
           scale: {
             padding: 0.2,
           },
@@ -75,6 +75,25 @@ let topVODBrands = {
             title: "Percentages of respondents",
           },
         ],
+      },
+    },
+    {
+      mark: {
+        type: "text",
+        align: "left",
+        baseline: "middle",
+        dx: 5,
+        fontSize: 18,
+        fill: "black",
+      },
+      encoding: {
+        x: { value: 0 },
+        y: {
+          field: "brand",
+          type: "ordinal",
+          sort: { field: "percentage", order: "descending" },
+        },
+        text: { field: "brand" },
       },
     },
     {
