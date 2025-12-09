@@ -2,21 +2,14 @@ var scatterSpec = {
   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
   description: "Average Score vs Popularity by Genre",
 
-  autosize: {
-    type: "fit-x",
-    contains: "padding",
-    resize: true,
-  },
+  autosize: { type: "fit-x", contains: "padding", resize: true },
   width: "container",
-  background: "#075AA8", // updated background
+  background: "#075AA8",
 
   data: { url: "./data/anime-dataset-2023-user-gender.csv" },
 
   transform: [
-    {
-      calculate: "split(replace(datum.Genres, '\"', ''), ',')",
-      as: "GenreArray",
-    },
+    { calculate: "split(replace(datum.Genres, '\"', ''), ',')", as: "GenreArray" },
     { flatten: ["GenreArray"] },
     { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
     { filter: "datum.OneGenre != ''" },
@@ -27,27 +20,33 @@ var scatterSpec = {
       aggregate: [
         { op: "mean", field: "ScoreNum", as: "AverageScore" },
         { op: "mean", field: "PopularityNum", as: "AveragePopularity" },
-        { op: "count", as: "AnimeCount" },
+        { op: "count", as: "AnimeCount" }
       ],
-      groupby: ["OneGenre"],
+      groupby: ["OneGenre"]
     },
     { calculate: "round(datum.AveragePopularity)", as: "AveragePopularity" },
-    { calculate: "round(datum.AverageScore * 100) / 100", as: "AverageScore" },
+    { calculate: "round(datum.AverageScore * 100) / 100", as: "AverageScore" }
   ],
 
-  mark: {
-    type: "point",
-    filled: true // fill all points
-  },
+  mark: { type: "point", filled: true },
 
-  selection: {
-    pointSelect: {
-      type: "multi",
-      fields: ["OneGenre"],
-      on: "click",
-      toggle: true,
-    },
-  },
+  // One checkbox parameter per genre, all checked by default
+  params: [
+    { name: "Action", value: true, bind: { input: "checkbox", name: "Action" } },
+    { name: "Adventure", value: true, bind: { input: "checkbox", name: "Adventure" } },
+    { name: "SciFi", value: true, bind: { input: "checkbox", name: "Sci-Fi" } },
+    { name: "Comedy", value: true, bind: { input: "checkbox", name: "Comedy" } },
+    { name: "Drama", value: true, bind: { input: "checkbox", name: "Drama" } },
+    { name: "Fantasy", value: true, bind: { input: "checkbox", name: "Fantasy" } },
+    { name: "Gourmet", value: true, bind: { input: "checkbox", name: "Gourmet" } },
+    { name: "Horror", value: true, bind: { input: "checkbox", name: "Horror" } },
+    { name: "Mystery", value: true, bind: { input: "checkbox", name: "Mystery" } },
+    { name: "Romance", value: true, bind: { input: "checkbox", name: "Romance" } },
+    { name: "SliceOfLife", value: true, bind: { input: "checkbox", name: "Slice of Life" } },
+    { name: "Sports", value: true, bind: { input: "checkbox", name: "Sports" } },
+    { name: "Supernatural", value: true, bind: { input: "checkbox", name: "Supernatural" } },
+    { name: "Suspense", value: true, bind: { input: "checkbox", name: "Suspense" } }
+  ],
 
   encoding: {
     x: {
@@ -55,79 +54,58 @@ var scatterSpec = {
       type: "quantitative",
       title: "Score",
       scale: { domain: [5.5, 7.5] },
-      axis: {
-        domain: true,       
-        domainColor: "white",
-        labelColor: "white",
-        titleColor: "white",
-        tickCount: 21, 
-        grid: true,
-        gridColor: "rgba(255,255,255,0.5)",        
-      },
+      axis: { domainColor: "white", labelColor: "white", titleColor: "white", tickCount: 21, grid: true, gridColor: "rgba(255,255,255,0.5)" }
     },
     y: {
       field: "AveragePopularity",
       type: "quantitative",
       title: "Popularity",
       scale: { domain: [9000, 4000] },
-      axis: {
-        domain: true,     
-        domainColor: "white",
-        labelColor: "white",
-        titleColor: "white",
-        grid: true,
-        gridColor: "rgba(255,255,255,0.5)",      
-      },
+      axis: { domainColor: "white", labelColor: "white", titleColor: "white", grid: true, gridColor: "rgba(255,255,255,0.5)" }
     },
     color: {
       field: "OneGenre",
       type: "nominal",
-      title: "Genre",
-      scale: { scheme: "tableau20" }, // still using tableau20, but fits new background
-      legend: {
-        orient: "bottom",
-        direction: "vertical",
-        labelColor: "white",
-        titleColor: "white",
-        fillColor: "#075AA8", // updated legend background
-        padding: 10,
-        offset: 0,
-        strokeColor: null
-      }
+      scale: { scheme: "tableau20" },
+      legend: null 
     },
-    size: {
-      field: "AnimeCount",
-      type: "quantitative",
-      title: "Number of Anime",
-      scale: { range: [100, 2000] },
-      legend: {
-        orient: "bottom",
-        direction: "vertical",
-        labelColor: "white",
-        titleColor: "white",
-        fillColor: "#075AA8", // updated legend background
-        symbolFillColor: "white", // make size legend circles white
-        padding: 10,
-        offset: 0,
-        strokeColor: null
-      },
-    },
+        size: { field: "AnimeCount", type: "quantitative", scale: { range: [100, 1800] }, legend: null },
     tooltip: [
       { field: "OneGenre", type: "nominal", title: "Genre" },
       { field: "AverageScore", type: "quantitative", title: "Score" },
       { field: "AveragePopularity", type: "quantitative", title: "Popularity" },
-      { field: "AnimeCount", type: "quantitative", title: "Number of Anime" },
+      { field: "AnimeCount", type: "quantitative", title: "Number of Anime" }
     ],
     opacity: {
-      condition: [{ selection: "pointSelect", value: 1 }],
-      value: 0.1,
-    },
+      condition: [
+        {
+          test: `
+            (datum.OneGenre === "Action" && Action) ||
+            (datum.OneGenre === "Adventure" && Adventure) ||
+            (datum.OneGenre === "Sci-Fi" && SciFi) ||
+            (datum.OneGenre === "Comedy" && Comedy) ||
+            (datum.OneGenre === "Drama" && Drama) ||
+            (datum.OneGenre === "Fantasy" && Fantasy) ||
+            (datum.OneGenre === "Gourmet" && Gourmet) ||
+            (datum.OneGenre === "Horror" && Horror) ||
+            (datum.OneGenre === "Mystery" && Mystery) ||
+            (datum.OneGenre === "Romance" && Romance) ||
+            (datum.OneGenre === "Slice of Life" && SliceOfLife) ||
+            (datum.OneGenre === "Sports" && Sports) ||
+            (datum.OneGenre === "Supernatural" && Supernatural) ||
+            (datum.OneGenre === "Suspense" && Suspense)
+          `,
+          value: 1
+        }
+      ],
+      value: 0.2
+    }
   },
 
   config: {
-    view: { stroke: null }, 
-    title: { color: "white" },
-  },
+    view: { stroke: null },
+    title: { color: "white" }
+  }
 };
 
 vegaEmbed("#scatterPlot", scatterSpec, { actions: false });
@@ -138,13 +116,14 @@ vegaEmbed("#scatterPlot", scatterSpec, { actions: false });
 // var scatterSpec = {
 //   $schema: "https://vega.github.io/schema/vega-lite/v6.json",
 //   description: "Average Score vs Popularity by Genre",
-//   background: "#008ef3",
-//   // autosize: {
-//   //   type: "fit-x",
-//   //   contains: "padding",
-//   //   resize: true,
-//   // },
-//   // width: "container",
+
+//   autosize: {
+//     type: "fit-x",
+//     contains: "padding",
+//     resize: true,
+//   },
+//   width: "container",
+//   background: "#075AA8",
 
 //   data: { url: "./data/anime-dataset-2023-user-gender.csv" },
 
@@ -159,8 +138,6 @@ vegaEmbed("#scatterPlot", scatterSpec, { actions: false });
 //     { calculate: "toNumber(datum.Score)", as: "ScoreNum" },
 //     { calculate: "toNumber(datum.Popularity)", as: "PopularityNum" },
 //     { filter: "isValid(datum.ScoreNum) && isValid(datum.PopularityNum)" },
-//     // the dataset no longer has those directly
-//     // { filter: "datum.OneGenre != 'Ecchi' && datum.OneGenre != 'Hentai' && datum.OneGenre != 'Erotica' && datum.OneGenre != 'Avant Garde' && datum.OneGenre != 'Award Winning' && datum.OneGenre != 'UNKNOWN' && datum.OneGenre != 'Girls Love' && datum.OneGenre != 'Boys Love'" },
 //     {
 //       aggregate: [
 //         { op: "mean", field: "ScoreNum", as: "AverageScore" },
@@ -173,7 +150,10 @@ vegaEmbed("#scatterPlot", scatterSpec, { actions: false });
 //     { calculate: "round(datum.AverageScore * 100) / 100", as: "AverageScore" },
 //   ],
 
-//   mark: "point",
+//   mark: {
+//     type: "point",
+//     filled: true 
+//   },
 
 //   selection: {
 //     pointSelect: {
@@ -189,39 +169,64 @@ vegaEmbed("#scatterPlot", scatterSpec, { actions: false });
 //       field: "AverageScore",
 //       type: "quantitative",
 //       title: "Score",
-//       scale: { domain: [5.6, 7.4] },
+//       scale: { domain: [5.5, 7.5] },
 //       axis: {
+//         domain: true,       
+//         domainColor: "white",
 //         labelColor: "white",
 //         titleColor: "white",
-//         domainColor: "white",
-//         grid: false,
+//         tickCount: 21, 
+//         grid: true,
+//         gridColor: "rgba(255,255,255,0.5)",        
 //       },
 //     },
 //     y: {
 //       field: "AveragePopularity",
 //       type: "quantitative",
 //       title: "Popularity",
-//       scale: { domain: [4000, 9000] },
+//       scale: { domain: [9000, 4000] },
 //       axis: {
+//         domain: true,     
+//         domainColor: "white",
 //         labelColor: "white",
 //         titleColor: "white",
-//         domainColor: "white",
-//         grid: false,
+//         grid: true,
+//         gridColor: "rgba(255,255,255,0.5)",      
 //       },
 //     },
 //     color: {
 //       field: "OneGenre",
 //       type: "nominal",
 //       title: "Genre",
-//       scale: { scheme: "tableau20" },
-//       legend: null,
+//       scale: { scheme: "tableau20" }, 
+//       legend: {
+//         orient: "bottom",
+//         direction: "vertical",
+//         labelColor: "white",
+//         titleColor: "white",
+//         fillColor: "#075AA8",
+//         padding: 10,
+//         offset: 0,
+//         strokeColor: null
+//       }
 //     },
-//     // size: {
-//     //   field: "AnimeCount",
-//     //   type: "quantitative",
-//     //   title: "Number of Anime",
-//     //   legend: { values: [0, 1000, 3000, 5000] },
-//     // },
+//     size: {
+//       field: "AnimeCount",
+//       type: "quantitative",
+//       title: "Number of Anime",
+//       scale: { range: [100, 2000] },
+//       legend: {
+//         orient: "bottom",
+//         direction: "vertical",
+//         labelColor: "white",
+//         titleColor: "white",
+//         fillColor: "#075AA8",
+//         symbolFillColor: "white",
+//         padding: 10,
+//         offset: 0,
+//         strokeColor: null
+//       },
+//     },
 //     tooltip: [
 //       { field: "OneGenre", type: "nominal", title: "Genre" },
 //       { field: "AverageScore", type: "quantitative", title: "Score" },
@@ -229,10 +234,18 @@ vegaEmbed("#scatterPlot", scatterSpec, { actions: false });
 //       { field: "AnimeCount", type: "quantitative", title: "Number of Anime" },
 //     ],
 //     opacity: {
-//       condition: [{ selection: "pointSelect", value: 1 }],
-//       value: 0.1,
+//       condition: [{ selection: "pointSelect", value: 1}],
+//       value: 0.2,
 //     },
+//   },
+
+//   config: {
+//     view: { stroke: null }, 
+//     title: { color: "white" },
 //   },
 // };
 
 // vegaEmbed("#scatterPlot", scatterSpec, { actions: false });
+
+
+

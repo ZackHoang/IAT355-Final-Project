@@ -4,14 +4,15 @@ var genreLineSpec = {
 
   autosize: { type: "fit-x", contains: "padding", resize: true },
   width: "container",
-  height: 500,
+  height: 400,
   background: "#075AA8",
 
   config: {
     axis: {
       labelColor: "white",
       titleColor: "white",
-      grid: false,
+      grid: true,
+      gridColor: "rgba(255,255,255,0.5)",
       domain: true, // SHOW axis borders
       domainColor: "white", // MAKE THEM WHITE
     },
