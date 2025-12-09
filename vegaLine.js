@@ -11,7 +11,8 @@ var genreLineSpec = {
     axis: {
       labelColor: "white",
       titleColor: "white",
-      grid: false,
+      grid: true,
+      gridColor: "rgba(255,255,255,0.5)",
       domain: true, // SHOW axis borders
       domainColor: "white", // MAKE THEM WHITE
     },
