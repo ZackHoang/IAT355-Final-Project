@@ -23,17 +23,18 @@ let topVODBrands = {
       mark: {
         type: "bar",
         size: 35,
-        cornerRadiusTopRight: 5,
-        cornerRadiusBottomRight: 5,
-        cornerRadiusTopLeft: 0,
-        cornerRadiusBottomLeft: 0
+      cornerRadiusTopRight: 5,
+      cornerRadiusBottomRight: 5,
+      cornerRadiusTopLeft: 0,
+      cornerRadiusBottomLeft: 0
       },
       encoding: {
         x: {
           field: "percentage",
           type: "quantitative",
           axis: {
-            title: null,
+            title: "Respondents (%)",
+            titleColor: "white",
             labelColor: "white",
             tickCount: 12,
             labelFontSize: 18,
