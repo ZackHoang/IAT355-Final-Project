@@ -6,7 +6,7 @@ let crunchyrollsubscriptionsSpec = {
   
   autosize: { type: "fit-x", contains: "padding", resize: true },
   width: "container",
-  height: 400,
+  height: 300,
   data: {
     values: [
       { year: "Sep 2012", subscriptions: 0.1 },
