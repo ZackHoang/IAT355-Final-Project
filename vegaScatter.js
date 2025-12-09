@@ -8,7 +8,7 @@ var scatterSpec = {
     resize: true,
   },
   width: "container",
-  background: "#008ef3",
+  background: "#075AA8", // updated background
 
   data: { url: "./data/anime-dataset-2023-user-gender.csv" },
 
@@ -23,8 +23,6 @@ var scatterSpec = {
     { calculate: "toNumber(datum.Score)", as: "ScoreNum" },
     { calculate: "toNumber(datum.Popularity)", as: "PopularityNum" },
     { filter: "isValid(datum.ScoreNum) && isValid(datum.PopularityNum)" },
-    // the dataset no longer has those directly
-    // { filter: "datum.OneGenre != 'Ecchi' && datum.OneGenre != 'Hentai' && datum.OneGenre != 'Erotica' && datum.OneGenre != 'Avant Garde' && datum.OneGenre != 'Award Winning' && datum.OneGenre != 'UNKNOWN' && datum.OneGenre != 'Girls Love' && datum.OneGenre != 'Boys Love'" },
     {
       aggregate: [
         { op: "mean", field: "ScoreNum", as: "AverageScore" },
@@ -37,7 +35,10 @@ var scatterSpec = {
     { calculate: "round(datum.AverageScore * 100) / 100", as: "AverageScore" },
   ],
 
-  mark: "point",
+  mark: {
+    type: "point",
+    filled: true // fill all points
+  },
 
   selection: {
     pointSelect: {
@@ -60,7 +61,8 @@ var scatterSpec = {
         labelColor: "white",
         titleColor: "white",
         tickCount: 21, 
-        grid: false,        
+        grid: true,
+        gridColor: "rgba(255,255,255,0.5)",        
       },
     },
     y: {
@@ -73,20 +75,21 @@ var scatterSpec = {
         domainColor: "white",
         labelColor: "white",
         titleColor: "white",
-        grid: false,      
+        grid: true,
+        gridColor: "rgba(255,255,255,0.5)",      
       },
     },
     color: {
       field: "OneGenre",
       type: "nominal",
       title: "Genre",
-      scale: { scheme: "tableau20" },
+      scale: { scheme: "tableau20" }, // still using tableau20, but fits new background
       legend: {
         orient: "bottom",
         direction: "vertical",
         labelColor: "white",
         titleColor: "white",
-        fillColor: "#008ef3",
+        fillColor: "#075AA8", // updated legend background
         padding: 10,
         offset: 0,
         strokeColor: null
@@ -96,12 +99,14 @@ var scatterSpec = {
       field: "AnimeCount",
       type: "quantitative",
       title: "Number of Anime",
+      scale: { range: [100, 2000] },
       legend: {
         orient: "bottom",
         direction: "vertical",
         labelColor: "white",
         titleColor: "white",
-        fillColor: "#008ef3",
+        fillColor: "#075AA8", // updated legend background
+        symbolFillColor: "white", // make size legend circles white
         padding: 10,
         offset: 0,
         strokeColor: null

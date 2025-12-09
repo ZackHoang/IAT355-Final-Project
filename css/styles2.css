@@ -901,16 +901,16 @@ label {
 
 select {
   color: white !important;
-  background-color: #008ef3 !important;
-  border: 1px solid #575757 !important;
+  background-color: #075AA8 !important;
+  border: 2px solid white !important;
   border-radius: 10px !important;
   padding: 4px 8px !important;
 }
 
 input[type="text"] {
   color: white !important;
-  background-color: #008ef3 !important;
-  border: 1px solid #575757 !important;
+  background-color: #075AA8 !important;
+  border: 2px solid white !important;
   border-radius: 10px !important;
   padding: 4px 8px;
 }

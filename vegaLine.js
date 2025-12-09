@@ -5,7 +5,7 @@ var genreLineSpec = {
   autosize: { type: "fit-x", contains: "padding", resize: true },
   width: "container",
   height: 500,
-  background: "#008ef3",
+  background: "#075AA8",
 
   config: {
     axis: {
@@ -136,7 +136,7 @@ var genreLineSpec = {
       type: "nominal",
       scale: {
         domain: ["Genre1", "Genre2"],
-        range: ["orange", "#003c71"],
+        range: ["#ff5e00", "#008ef3"],
       },
       legend: null,
     },
