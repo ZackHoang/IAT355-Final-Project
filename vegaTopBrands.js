@@ -5,10 +5,10 @@ let topVODBrands = {
     values: [
       { brand: "Starz", percentage: 73 },
       { brand: "Discovery+", percentage: 70 },
-      { brand: "PlayStation", percentage: 68 }, //PlayStation Store
+      { brand: "PlayStation Store", percentage: 68 },
       { brand: "Sling TV", percentage: 66 },
       { brand: "Microsoft Store", percentage: 65 },
-      { brand: "Fandango", percentage: 60 }, //Fandango (Vudu)
+      { brand: "Fandango (Vudu)", percentage: 60 }, 
       { brand: "MGM+", percentage: 56 },
       { brand: "Crunchyroll", percentage: 50 },
     ],
@@ -23,7 +23,10 @@ let topVODBrands = {
       mark: {
         type: "bar",
         size: 35,
-        cornerRadius: 5,
+        cornerRadiusTopRight: 5,
+        cornerRadiusBottomRight: 5,
+        cornerRadiusTopLeft: 0,
+        cornerRadiusBottomLeft: 0
       },
       encoding: {
         x: {
