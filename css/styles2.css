@@ -13,7 +13,7 @@
   --darkgrey5: #575757;
   --darkgrey6: #414141;
   --lightBlue: #008ef3;
-  --darkBlue: #075AA8;
+  --darkBlue: #075aa8;
   --orange: #ff5e00;
 }
 
@@ -30,7 +30,6 @@
 h2 {
   margin: 0;
 }
-
 
 /* Header styling */
 
@@ -228,10 +227,7 @@ figcaption {
 }
 
 a {
-  font-style: italic;
-  color: var(--lightgrey3);
-  text-decoration: underline;
-  width: 80%;
+  color: #ffffff;
 }
 
 /*mainsection 2*/
@@ -265,11 +261,10 @@ a {
 
 #crunchyroll-subscriptions {
   width: 100%;
-  
+
   /* This content should not be Vh, the js should adjust for the screen size*/
   /* height: 60vh; */
   height: auto;
-
 }
 
 .part3 h2 {
@@ -513,7 +508,6 @@ a {
   /* min-height: 50vh; */
 }
 
-
 /* Visualization labels */
 
 label {
@@ -533,7 +527,7 @@ option {
   color: black;
 }
 
-input[type="text"] {
+input[type='text'] {
   color: white !important;
   background-color: var(--lightBlue) !important;
   border: 2px solid white !important;
@@ -561,7 +555,6 @@ input[type="text"] {
 .vega-bind {
   display: block;
   margin: 0 1rem;
-
 }
 
 .vega-bind label {
@@ -572,12 +565,11 @@ input[type="text"] {
   gap: 1rem;
 }
 
-.vega-bind-name{
+.vega-bind-name {
   font-size: 1.5rem;
 }
 
 /*3rd vis styling */
-
 
 #controls {
   background-color: var(--lightBlue);
@@ -604,8 +596,6 @@ svg {
   justify-self: center;
   align-self: center;
 }
-
-
 
 /* Animation stuff (testing) */
 
@@ -815,8 +805,6 @@ svg {
 
   /* part 3*/
 
-
-
   /* part 4 */
 
   /*
@@ -940,8 +928,8 @@ svg {
 }
 
 @media (max-width: 58.625rem) {
-  .vega-bind-name{
-  font-size: 1rem;
+  .vega-bind-name {
+    font-size: 1rem;
   }
 
   .vega-bind {
@@ -950,93 +938,88 @@ svg {
 }
 
 @media (max-width: 46.5rem) {
-  
 }
 
+@media (max-width: 44rem) {
+  /* Visualization labels */
 
-@media (max-width: 44rem) {/* Visualization labels */
+  label {
+    color: white !important;
+  }
 
-label {
-  color: white !important;
-}
+  select {
+    color: white !important;
+    background-color: var(--lightBlue) !important;
+    border: 2px solid white !important;
+    border-radius: 10px !important;
+    padding: 4px 8px !important;
+  }
 
-select {
-  color: white !important;
-  background-color: var(--lightBlue) !important;
-  border: 2px solid white !important;
-  border-radius: 10px !important;
-  padding: 4px 8px !important;
-}
+  option {
+    background-color: white;
+    color: black;
+  }
 
-option {
-  background-color: white;
-  color: black;
-}
+  input[type='text'] {
+    color: white !important;
+    background-color: var(--lightBlue) !important;
+    border: 2px solid white !important;
+    border-radius: 10px !important;
+    padding: 4px 8px;
+  }
 
-input[type="text"] {
-  color: white !important;
-  background-color: var(--lightBlue) !important;
-  border: 2px solid white !important;
-  border-radius: 10px !important;
-  padding: 4px 8px;
-}
+  /*2nd vis styling */
 
-/*2nd vis styling */
+  .vega-bindings {
+    background-color: var(--lightBlue);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+  }
 
-.vega-bindings {
-  background-color: var(--lightBlue);
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  gap: 1rem;
-}
+  .vega-bindings:empty {
+    display: none !important;
+  }
 
-.vega-bindings:empty {
-  display: none !important;
-}
+  .vega-bind {
+    display: block;
+  }
 
-.vega-bind {
-  display: block;
+  .vega-bind label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 
-}
+  /*3rd vis styling */
 
-.vega-bind label {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
+  #controls {
+    background-color: var(--lightBlue);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
 
+  #controls label {
+    font-weight: 500;
+    margin: 0.25rem;
+    display: block;
+  }
 
-/*3rd vis styling */
-
-
-#controls {
-  background-color: var(--lightBlue);
-  border-radius: 0.5rem;
-  padding: 1rem;
-}
-
-#controls label {
-  font-weight: 500;
-  margin: 0.25rem;
-  display: block;
-}
-
-svg {
-  max-width: 100%;
-  display: flex;
-  justify-self: center;
-  align-self: center;
-}
+  svg {
+    max-width: 100%;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+  }
 }
 
 @media (max-width: 40.563rem) {
-
   .visStats p {
     font-size: 1.1rem;
   }
@@ -1088,15 +1071,12 @@ svg {
     font-size: 1.3rem;
   }
 
-
   /*part 8 */
 
   .part8 {
     padding-top: 0;
   }
-  
 }
-
 
 @media (max-width: 27.188rem) {
   /* Part 1*/
@@ -1121,7 +1101,6 @@ svg {
   /*part 4*/
 
   /*part 5*/
-
 
   .part5 h3 {
     font-size: 1.5rem;
@@ -1195,7 +1174,6 @@ svg {
     font-size: 2rem;
   }
 
-
   /*part 1*/
 
   .headerTitle h1 {
@@ -1262,7 +1240,6 @@ svg {
   }
 }
 
-
 @media (max-width: 38rem) {
   #lineChart {
     width: 98vw !important;
@@ -1302,8 +1279,7 @@ svg {
   #lineChartWrapper {
     margin: 0 !important;
     padding: 0 !important;
-  } 
-
+  }
 
   #controls {
     width: 90%;
@@ -1321,16 +1297,15 @@ svg {
     padding: 0 !important;
   }
 
-  #animePieChart{
+  #animePieChart {
     width: 100;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
-
-  #animeSearchInput{
+  #animeSearchInput {
     max-width: 95%;
   }
 
@@ -1352,81 +1327,89 @@ svg {
   }
 }
 
-
 /* Generic checkbox styling */
-.vega-bindings input[type="checkbox"] {
+.vega-bindings input[type='checkbox'] {
   width: 1.125rem;
   height: 1.125rem;
   margin-right: 0.375rem;
-  accent-color: #4E79A7; /* default fallback */
+  accent-color: #4e79a7; /* default fallback */
 }
 
 /* Action */
-.vega-bindings input[name="Action"] {
-  accent-color: #4E79A7;
+.vega-bindings input[name='Action'] {
+  accent-color: #4e79a7;
 }
 
 /* Adventure */
-.vega-bindings input[name="Adventure"] {
-  accent-color: #F28E2B;
+.vega-bindings input[name='Adventure'] {
+  accent-color: #f28e2b;
 }
 
 /* Sci-Fi */
-.vega-bindings input[name="SciFi"] {
-  accent-color: #E15759;
+.vega-bindings input[name='SciFi'] {
+  accent-color: #e15759;
 }
 
 /* Comedy */
-.vega-bindings input[name="Comedy"] {
-  accent-color: #76B7B2;
+.vega-bindings input[name='Comedy'] {
+  accent-color: #76b7b2;
 }
 
 /* Drama */
-.vega-bindings input[name="Drama"] {
-  accent-color: #59A14F;
+.vega-bindings input[name='Drama'] {
+  accent-color: #59a14f;
 }
 
 /* Fantasy */
-.vega-bindings input[name="Fantasy"] {
-  accent-color: #EDC948;
+.vega-bindings input[name='Fantasy'] {
+  accent-color: #edc948;
 }
 
 /* Gourmet */
-.vega-bindings input[name="Gourmet"] {
-  accent-color: #B07AA1;
+.vega-bindings input[name='Gourmet'] {
+  accent-color: #b07aa1;
 }
 
 /* Horror */
-.vega-bindings input[name="Horror"] {
-  accent-color: #FF9DA7;
+.vega-bindings input[name='Horror'] {
+  accent-color: #ff9da7;
 }
 
 /* Mystery */
-.vega-bindings input[name="Mystery"] {
-  accent-color: #9C755F;
+.vega-bindings input[name='Mystery'] {
+  accent-color: #9c755f;
 }
 
 /* Romance */
-.vega-bindings input[name="Romance"] {
-  accent-color: #BAB0AC;
+.vega-bindings input[name='Romance'] {
+  accent-color: #bab0ac;
 }
 
 /* Slice of Life */
-.vega-bindings input[name="SliceOfLife"] {
-  accent-color: #4E79A7;
+.vega-bindings input[name='SliceOfLife'] {
+  accent-color: #4e79a7;
 }
 
 /* Sports */
-.vega-bindings input[name="Sports"] {
-  accent-color: #F28E2B;
+.vega-bindings input[name='Sports'] {
+  accent-color: #f28e2b;
 }
 
 /* Supernatural */
-.vega-bindings input[name="Supernatural"] {
-  accent-color: #E15759;
+.vega-bindings input[name='Supernatural'] {
+  accent-color: #e15759;
 }
 
 /* Suspense */
-.vega-bindings input[name="Suspense"] {
-  accent-color: #76B7B2;
+.vega-bindings input[name='Suspense'] {
+  accent-color: #76b7b2;
+}
+
+nav {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #272525;
 }

@@ -20,6 +20,13 @@
   </head>
   <body>
     <main>
+      <nav>
+        <a>Title</a>
+        <a>History</a>
+        <a>Summary</a>
+        <a>Dataset</a>
+        <a>Findings</a>
+      </nav>
       <div class="mainContainer">
         <div class="mainSection headerMaterial">
           <div class="paddingWrapper flexTitle">
@@ -81,7 +88,9 @@
         </div>
         <div class="mainSection part3">
           <section class="paddingWrapper">
-            <h2>Crunchyroll's monthly subscriber count from Sept. 2012 - June 2024</h2>
+            <h2>
+              Crunchyroll's monthly subscriber count from Sept. 2012 - June 2024
+            </h2>
             <div id="crunchyroll-subscriptions"></div>
             <!-- <figcaption>
                 Source:
@@ -91,7 +100,9 @@
                 >
               </figcaption> -->
             <p>
-              Considering the average price of a subscription (7.99+8.33+12.49/3 = 9.60 per sub), this would roughly equal around <span class="titleBlue part3para">144 million dollars!</span>
+              Considering the average price of a subscription (7.99+8.33+12.49/3
+              = 9.60 per sub), this would roughly equal around
+              <span class="titleBlue part3para">144 million dollars!</span>
             </p>
           </section>
         </div>
@@ -102,7 +113,9 @@
               in fact that...
             </h2>
             <h3>
-              Crunchyroll owns <span class="titleBlue">50%</span> of brand recognition among the top 10 brands when users were surveyed about video-on-demand service
+              Crunchyroll owns <span class="titleBlue">50%</span> of brand
+              recognition among the top 10 brands when users were surveyed about
+              video-on-demand service
             </h3>
             <div id="brands-vis"></div>
             <!-- <figcaption>
@@ -165,45 +178,49 @@
               <h2>Unorganized Dataset</h2>
             </div>
 
-          <div class="downArrow"></div>
-          <details class="details" name="detailDiagram">
-            <summary class="detailsSummary">
-              Removed inappropiate and bloated categories
-            </summary>
-            <div class="detailsContent">
-              <p>
-                It was important to make sure that data was safe for all users
-                and organized correctly to ensure precise evaluations, leading
-                to us filtering out these columns
-              </p>
+            <div class="downArrow"></div>
+            <details class="details" name="detailDiagram">
+              <summary class="detailsSummary">
+                Removed inappropiate and bloated categories
+              </summary>
+              <div class="detailsContent">
+                <p>
+                  It was important to make sure that data was safe for all users
+                  and organized correctly to ensure precise evaluations, leading
+                  to us filtering out these columns
+                </p>
+              </div>
+            </details>
+            <div class="downArrow"></div>
+            <details class="details" name="detailDiagram">
+              <summary class="detailsSummary">
+                Removed Unnecessary User Data
+              </summary>
+              <div class="detailsContent">
+                <p>
+                  Parts such as the username and signup date didnt contribute to
+                  the outcome of the evaluations, so they were removed to make
+                  findings more concise
+                </p>
+              </div>
+            </details>
+            <div class="downArrow"></div>
+            <details class="details" name="detailDiagram">
+              <summary class="detailsSummary">
+                Removed duplicate values through cross referencing
+              </summary>
+              <div class="detailsContent">
+                <p>
+                  We discovered duplicate user ratings and titles within the
+                  datasets, so cross referencing them and removing duplicates
+                  created a more confident dataset.
+                </p>
+              </div>
+            </details>
+            <div class="downArrow"></div>
+            <div class="processEnd">
+              <h2>Filtered Dataset</h2>
             </div>
-          </details>
-          <div class="downArrow"></div>
-          <details class="details" name="detailDiagram">
-            <summary class="detailsSummary">
-              Removed Unnecessary User Data
-            </summary>
-            <div class="detailsContent">
-              <p>
-                Parts such as the username and signup date didnt contribute to the outcome of the evaluations, so they were removed to make findings more concise
-              </p>
-            </div>
-          </details>
-          <div class="downArrow"></div>
-          <details class="details" name="detailDiagram">
-            <summary class="detailsSummary">
-              Removed duplicate values through cross referencing
-            </summary>
-            <div class="detailsContent">
-              <p>
-                We discovered duplicate user ratings and titles within the datasets, so cross referencing them and removing duplicates created a more confident dataset.
-              </p>
-            </div>
-          </details>
-          <div class="downArrow"></div>
-          <div class="processEnd">
-            <h2>Filtered Dataset</h2>
-          </div>
           </section>
         </div>
         <div class="mainSection part8">
@@ -225,16 +242,21 @@
             </section>
             <section class="visualizationDescription">
               <p>
-                We asked this question as we wanted to see how users ranked each genre of anime, along with what each user thought was the best genre of anime overall. We also considered other key features such as the amount of anime each genre had to the average score each genre received to create a fair judging ground.
+                We asked this question as we wanted to see how users ranked each
+                genre of anime, along with what each user thought was the best
+                genre of anime overall. We also considered other key features
+                such as the amount of anime each genre had to the average score
+                each genre received to create a fair judging ground.
               </p>
             </section>
           </section>
         </div>
-        <div class="mainSection  flexCenter part9a">
+        <div class="mainSection flexCenter part9a">
           <section class="paddingWrapper">
             <section class="visualizationContent">
               <h3>
-                What did users think about each Genre of Anime, aswell as if the ranking, average score, or amount of anime made a difference?
+                What did users think about each Genre of Anime, aswell as if the
+                ranking, average score, or amount of anime made a difference?
               </h3>
               <div id="scatterPlot"></div>
             </section>
@@ -244,12 +266,17 @@
           <section class="paddingWrapper">
             <section class="visualizationContent">
               <h2>
-                Was the production count of a certain type of anime affected by the genre it was centered around? 
+                Was the production count of a certain type of anime affected by
+                the genre it was centered around?
               </h2>
             </section>
             <section class="visualizationDescription">
               <p>
-                We wanted to ask this question as we felt that users were appealed to certain types of genre more than others, which is also seen in other entertainment industries such as Film. We wanted to observe and compare the genre count of anime's created over the years to answer if this trend existed within anime.
+                We wanted to ask this question as we felt that users were
+                appealed to certain types of genre more than others, which is
+                also seen in other entertainment industries such as Film. We
+                wanted to observe and compare the genre count of anime's created
+                over the years to answer if this trend existed within anime.
               </p>
             </section>
           </section>
@@ -258,7 +285,8 @@
           <section class="paddingWrapper">
             <section class="visualizationContent">
               <h3>
-                Does a certain type of genre affect how many anime's are created under it? How does this compare with other genre's?
+                Does a certain type of genre affect how many anime's are created
+                under it? How does this compare with other genre's?
               </h3>
               <div id="lineChart"></div>
             </section>
@@ -268,12 +296,17 @@
           <section class="paddingWrapper">
             <section class="visualizationContent">
               <h2>
-                What was the gender distribution between certain types of anime and their genre's? 
+                What was the gender distribution between certain types of anime
+                and their genre's?
               </h2>
             </section>
             <section class="visualizationDescription">
               <p>
-                We wanted to ask this question since some people (including our group) are couped to beliving that some anime titles or genre's have more of a certain gender of users than others. To answer this hypothesis, we decided to answer the question entirely by evaluating the distrubtion through a pie chart.
+                We wanted to ask this question since some people (including our
+                group) are couped to beliving that some anime titles or genre's
+                have more of a certain gender of users than others. To answer
+                this hypothesis, we decided to answer the question entirely by
+                evaluating the distrubtion through a pie chart.
               </p>
             </section>
           </section>
@@ -282,7 +315,7 @@
           <section class="paddingWrapper">
             <section class="visualizationContent">
               <h3>
-                Is a specific anime or genre catered to a specific gender? 
+                Is a specific anime or genre catered to a specific gender?
               </h3>
               <div id="animePieChart"></div>
               <div id="controls"></div>
