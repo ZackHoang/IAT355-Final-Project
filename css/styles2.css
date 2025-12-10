@@ -1352,3 +1352,81 @@ svg {
   }
 }
 
+
+/* Generic checkbox styling */
+.vega-bindings input[type="checkbox"] {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-right: 0.375rem;
+  accent-color: #4E79A7; /* default fallback */
+}
+
+/* Action */
+.vega-bindings input[name="Action"] {
+  accent-color: #4E79A7;
+}
+
+/* Adventure */
+.vega-bindings input[name="Adventure"] {
+  accent-color: #F28E2B;
+}
+
+/* Sci-Fi */
+.vega-bindings input[name="SciFi"] {
+  accent-color: #E15759;
+}
+
+/* Comedy */
+.vega-bindings input[name="Comedy"] {
+  accent-color: #76B7B2;
+}
+
+/* Drama */
+.vega-bindings input[name="Drama"] {
+  accent-color: #59A14F;
+}
+
+/* Fantasy */
+.vega-bindings input[name="Fantasy"] {
+  accent-color: #EDC948;
+}
+
+/* Gourmet */
+.vega-bindings input[name="Gourmet"] {
+  accent-color: #B07AA1;
+}
+
+/* Horror */
+.vega-bindings input[name="Horror"] {
+  accent-color: #FF9DA7;
+}
+
+/* Mystery */
+.vega-bindings input[name="Mystery"] {
+  accent-color: #9C755F;
+}
+
+/* Romance */
+.vega-bindings input[name="Romance"] {
+  accent-color: #BAB0AC;
+}
+
+/* Slice of Life */
+.vega-bindings input[name="SliceOfLife"] {
+  accent-color: #4E79A7;
+}
+
+/* Sports */
+.vega-bindings input[name="Sports"] {
+  accent-color: #F28E2B;
+}
+
+/* Supernatural */
+.vega-bindings input[name="Supernatural"] {
+  accent-color: #E15759;
+}
+
+/* Suspense */
+.vega-bindings input[name="Suspense"] {
+  accent-color: #76B7B2;
+}
