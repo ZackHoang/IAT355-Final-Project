@@ -523,6 +523,15 @@ select {
   border: 2px solid white !important;
   border-radius: 10px !important;
   padding: 4px 8px !important;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url('../img/arrow.png');
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 10px auto  
 }
 
 option {
@@ -974,6 +983,15 @@ svg {
     border: 2px solid white !important;
     border-radius: 10px !important;
     padding: 4px 8px !important;
+    
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url('../img/arrow.png');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 10px auto    
   }
 
   option {
@@ -1405,19 +1423,3 @@ svg {
 .vega-bindings input[name='SliceOfLife'] { background:#83BCB6; border-color:#83BCB6; }
 .vega-bindings input[name='Sports']      { background:#E45756; border-color:#E45756; }
 
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  color: white;
-  background-color: #075AA8;
-  border: 2px solid white;
-  border-radius: 8px;
-  padding: 0.25rem 2rem 0.25rem 0.5rem;
-  font-size: 1rem;
-
-  background-image: url('../img/arrow.png');
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 10px auto; 
-}
