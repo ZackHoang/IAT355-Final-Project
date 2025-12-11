@@ -24,7 +24,7 @@ var scatterSpec = {
       ],
       groupby: ["OneGenre"]
     },
-    { filter: "datum.OneGenre != 'Suspense' && datum.OneGenre != 'Supernatural' && datum.OneGenre != 'Gourmet'" },
+    { filter: "datum.OneGenre != 'Suspense' && datum.OneGenre != 'Supernatural' && datum.OneGenre != 'Gourmet' && datum.OneGenre != 'Avant Garde' && datum.OneGenre != 'Award Winning' && datum.OneGenre != 'UNKNOWN' && datum.OneGenre != 'Girls Love' && datum.OneGenre != 'Boys Love'"  },
     { calculate: "round(datum.AveragePopularity)", as: "AveragePopularity" },
     { calculate: "round(datum.AverageScore * 100) / 100", as: "AverageScore" }
   ],

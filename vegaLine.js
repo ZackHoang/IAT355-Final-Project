@@ -87,7 +87,7 @@ var genreLineSpec = {
     { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
     { filter: "datum.OneGenre != ''" },
 
-    { filter: "datum.OneGenre != 'Suspense' && datum.OneGenre != 'Supernatural' && datum.OneGenre != 'Gourmet'" },
+    { filter: "datum.OneGenre != 'Suspense' && datum.OneGenre != 'Supernatural' && datum.OneGenre != 'Gourmet' && datum.OneGenre != 'Avant Garde' && datum.OneGenre != 'Award Winning' && datum.OneGenre != 'UNKNOWN' && datum.OneGenre != 'Girls Love' && datum.OneGenre != 'Boys Love'"  },
 
     {
       filter:
