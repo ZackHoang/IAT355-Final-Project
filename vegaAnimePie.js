@@ -123,8 +123,8 @@
     <label>
       Mode:
       <select id="viewModeSelect">
-        <option value="anime">Anime Search</option>
-        <option value="genre">Genre Stats</option>
+        <option value="anime">Search</option>
+        <option value="genre">Genre</option>
       </select>
     </label>
     <br>
