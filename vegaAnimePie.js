@@ -54,6 +54,15 @@
   chartDiv.insertAdjacentHTML(
     "beforebegin",
     `
+    <div id="chartTitle" style="
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 0.5rem;
+    ">
+      Anime: Trigun
+    </div>    
     <div id="pieLegend" style="
         display: flex;
         justify-content: center;
@@ -63,11 +72,13 @@
         font-size: 1rem;
         color: white;
     ">
-        <span style="display:flex; align-items:center; gap:0.25rem;">
-          Male <span style="width:1rem; height:1rem; background:#008ef3; display:inline-block;"></span>
+        <span id="maleLegend" style="display:flex; align-items:center; gap:0.25rem;">
+          Male (<span id="malePercent">26.5%</span>)
+          <span style="width:1rem; height:1rem; background:#008ef3; display:inline-block;"></span>
         </span>
-        <span style="display:flex; align-items:center; gap:0.25rem;">
-          Female <span style="width:1rem; height:1rem; background:#ff5e00; display:inline-block;"></span>
+        <span id="femaleLegend" style="display:flex; align-items:center; gap:0.25rem;">
+          Female (<span id="femalePercent">26.5%</span>)
+          <span style="width:1rem; height:1rem; background:#ff5e00; display:inline-block;"></span>
         </span>
     </div>
     `
@@ -76,7 +87,7 @@
   const searchPieSpec = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     width: "container",
-    height: 400,
+    height: 375,
     background: "#075AA8",
     data: { url: "./data/anime-dataset-2023-user-gender.csv" },
     params: [
@@ -120,12 +131,38 @@
     }
   };
 
+  async function updateLegendPercent() {
+    const data = await view.data("source_0"); // get transformed data from Vega view
+    let male = 0, female = 0;
+
+    if (data && data.length) {
+      data.forEach(d => {
+        if (d.Gender === "Male") male = d.Percent;
+        if (d.Gender === "Female") female = d.Percent;
+      });
+    }
+
+    document.getElementById("malePercent").textContent = male ? male.toFixed(1) + "%" : "0%";
+    document.getElementById("femalePercent").textContent = female ? female.toFixed(1) + "%" : "0%";
+  }
+
+  function updateChartTitle() {
+    const titleDiv = document.getElementById("chartTitle");
+    if (viewModeSelect.value === "anime") {
+      titleDiv.textContent = `Anime: ${animeInput.value}`;
+    } else {
+      titleDiv.textContent = `Genre: ${genreSelect.value}`;
+    }
+  }
+
   const { view } = await vegaEmbed("#animePieChart", searchPieSpec, { actions: false });
 
   function updatePie() {
     view.signal("viewMode", viewModeSelect.value).run();
     view.signal("animeSearch", animeInput.value).run();
     view.signal("selectedGenre", genreSelect.value).run();
+    updateLegendPercent();
+    updateChartTitle();
   }
 
   animeInput.addEventListener("change", updatePie);
