@@ -124,7 +124,7 @@
       Mode:
       <select id="viewModeSelect">
         <option value="anime">Anime Search</option>
-        <option value="genre">Genre Breakdown</option>
+        <option value="genre">Genre Stats</option>
       </select>
     </label>
     <br>
