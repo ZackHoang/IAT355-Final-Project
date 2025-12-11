@@ -100,7 +100,20 @@
       { flatten: ["GenreArray"] },
       { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
       { filter: "datum.OneGenre != ''" },
-      { filter: "datum.OneGenre != 'Suspense' && datum.OneGenre != 'Supernatural' && datum.OneGenre != 'Gourmet' && datum.OneGenre != 'Avant Garde' && datum.OneGenre != 'Award Winning' && datum.OneGenre != 'UNKNOWN' && datum.OneGenre != 'Girls Love' && datum.OneGenre != 'Boys Love'"  },
+      {
+        calculate: `viewMode === "genre" &&
+          (datum.OneGenre === 'Suspense' ||
+          datum.OneGenre === 'Supernatural' ||
+          datum.OneGenre === 'Gourmet' ||
+          datum.OneGenre === 'Avant Garde' ||
+          datum.OneGenre === 'Award Winning' ||
+          datum.OneGenre === 'UNKNOWN' ||
+          datum.OneGenre === 'Girls Love' ||
+          datum.OneGenre === 'Boys Love')
+            ? false : true`,
+        as: "genreAllowed"
+      },
+      { filter: "datum.genreAllowed" },     
       {
         calculate: `viewMode === "anime"
           ? trim(lower(datum.Name)) === trim(lower(animeSearch))
@@ -132,7 +145,7 @@
   };
 
   async function updateLegendPercent() {
-    const data = await view.data("source_0"); // get transformed data from Vega view
+    const data = await view.data("source_0"); 
     let male = 0, female = 0;
 
     if (data && data.length) {
