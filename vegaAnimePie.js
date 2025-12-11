@@ -99,7 +99,6 @@
 // vegaEmbed("#animePieChart", searchPieSpec, { actions: false });
 
 (async function() {
-  // --- Load CSV & extract titles ---
   let animeTitles = [];
   const response = await fetch("./data/anime-dataset-2023-user-gender.csv");
   const csvText = await response.text();
@@ -111,7 +110,11 @@
     .filter(v => v);
   animeTitles = [...new Set(animeTitles)];
 
-  // --- Create controls dynamically ---
+  const allowedGenres = [
+    "Action","Adventure","Sci-Fi","Comedy","Drama","Fantasy",
+    "Horror","Mystery","Romance","Slice of Life","Sports"
+  ];
+
   const controlsDiv = document.getElementById("controls");
   controlsDiv.innerHTML = `
     <label>
@@ -123,21 +126,19 @@
     <label>
       Mode:
       <select id="viewModeSelect">
-        <option value="anime">Anime Search</option>
-        <option value="genre">Genre Stats</option>
+        <option value="anime">Search</option>
+        <option value="genre">Genre</option>
       </select>
     </label>
     <br>
     <label>
       Genre:
       <select id="genreSelect">
-        ${["Action","Adventure","Sci-Fi","Comedy","Drama","Fantasy","Gourmet","Horror","Mystery","Romance","Slice of Life","Sports","Supernatural","Suspense"]
-          .map(g => `<option>${g}</option>`).join("")}
+        ${allowedGenres.map(g => `<option>${g}</option>`).join("")}
       </select>
     </label>
   `;
 
-  // Fill datalist for autocomplete
   const datalist = document.getElementById("animeList");
   animeTitles.forEach(title => {
     const option = document.createElement("option");
@@ -149,7 +150,6 @@
   const viewModeSelect = document.getElementById("viewModeSelect");
   const genreSelect = document.getElementById("genreSelect");
 
-  // --- Add single-line legend above the pie chart ---
   const chartDiv = document.getElementById("animePieChart");
   chartDiv.insertAdjacentHTML(
     "beforebegin",
@@ -173,7 +173,6 @@
     `
   );
 
-  // --- Vega-Lite pie chart spec ---
   const searchPieSpec = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     width: "container",
@@ -183,13 +182,14 @@
     params: [
       { name: "viewMode", value: "anime" },
       { name: "animeSearch", value: "Trigun" },
-      { name: "selectedGenre", value: "Action" }
+      { name: "selectedGenre", value: allowedGenres[0] }
     ],
     transform: [
       { calculate: "split(replace(datum.Genres, '\"', ''), ',')", as: "GenreArray" },
       { flatten: ["GenreArray"] },
       { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
       { filter: "datum.OneGenre != ''" },
+      { filter: "datum.OneGenre != 'Suspense' && datum.OneGenre != 'Supernatural' && datum.OneGenre != 'Gourmet'" },
       {
         calculate: `viewMode === "anime"
           ? trim(lower(datum.Name)) === trim(lower(animeSearch))
@@ -220,10 +220,8 @@
     }
   };
 
-  // --- Embed chart ---
   const { view } = await vegaEmbed("#animePieChart", searchPieSpec, { actions: false });
 
-  // --- Update chart on input changes ---
   function updatePie() {
     view.signal("viewMode", viewModeSelect.value).run();
     view.signal("animeSearch", animeInput.value).run();
