@@ -399,6 +399,7 @@ a {
 .part7 .downArrow {
   margin-bottom: 1rem;
   border-color: white;
+  padding: 0.5rem;
 }
 
 .details,
@@ -747,6 +748,11 @@ svg {
   }
   .detailsContent {
     padding-left: 10%;
+  }
+
+  .part7 .downArrow {
+    padding: 0.3rem;
+    margin-bottom: 0.5rem;
   }
 }
 
