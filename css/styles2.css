@@ -1329,15 +1329,6 @@ svg {
   }
 }
 
-nav {
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #272525;
-}
-
 .vega-bindings input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
