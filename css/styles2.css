@@ -560,7 +560,7 @@ input[type='text'] {
   padding: 0.5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   align-items: flex-start;
   gap: 0.75rem;
   width: auto;
@@ -585,6 +585,7 @@ input[type='text'] {
 
 .vega-bind-name {
   font-size: 1.3rem;
+  font-weight: 500;
 }
 
 /*3rd vis styling */
@@ -606,6 +607,7 @@ input[type='text'] {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  width: 15rem;
 }
 
 svg {
@@ -1062,7 +1064,7 @@ svg {
 
 
   .part10a .vega-bind-name {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   #lineChart label {
@@ -1083,7 +1085,6 @@ svg {
   #controls label {
     font-weight: 500;
     margin: 0.25rem;
-    display: block;
   }
 
 }
@@ -1368,8 +1369,8 @@ svg {
 
   #controls label {
     display: flex;
-    flex-direction: column;
   }
+
   #crunchyroll-subscriptions .paddingWrapper,
   #lineChartWrapper {
     margin: 0 !important;
