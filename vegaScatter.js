@@ -24,13 +24,13 @@ var scatterSpec = {
       ],
       groupby: ["OneGenre"]
     },
+    { filter: "datum.OneGenre != 'Suspense' && datum.OneGenre != 'Supernatural' && datum.OneGenre != 'Gourmet'" },
     { calculate: "round(datum.AveragePopularity)", as: "AveragePopularity" },
     { calculate: "round(datum.AverageScore * 100) / 100", as: "AverageScore" }
   ],
 
   mark: { type: "point", filled: true },
 
-  // One checkbox parameter per genre, all checked by default
   params: [
     { name: "Action", value: true, bind: { input: "checkbox", name: "Action" } },
     { name: "Adventure", value: true, bind: { input: "checkbox", name: "Adventure" } },
@@ -38,14 +38,11 @@ var scatterSpec = {
     { name: "Comedy", value: true, bind: { input: "checkbox", name: "Comedy" } },
     { name: "Drama", value: true, bind: { input: "checkbox", name: "Drama" } },
     { name: "Fantasy", value: true, bind: { input: "checkbox", name: "Fantasy" } },
-    { name: "Gourmet", value: true, bind: { input: "checkbox", name: "Gourmet" } },
     { name: "Horror", value: true, bind: { input: "checkbox", name: "Horror" } },
     { name: "Mystery", value: true, bind: { input: "checkbox", name: "Mystery" } },
     { name: "Romance", value: true, bind: { input: "checkbox", name: "Romance" } },
     { name: "SliceOfLife", value: true, bind: { input: "checkbox", name: "Slice of Life" } },
-    { name: "Sports", value: true, bind: { input: "checkbox", name: "Sports" } },
-    { name: "Supernatural", value: true, bind: { input: "checkbox", name: "Supernatural" } },
-    { name: "Suspense", value: true, bind: { input: "checkbox", name: "Suspense" } }
+    { name: "Sports", value: true, bind: { input: "checkbox", name: "Sports" } }
   ],
 
   encoding: {
@@ -66,10 +63,10 @@ var scatterSpec = {
     color: {
       field: "OneGenre",
       type: "nominal",
-      scale: { scheme: "tableau20" },
+      // scale: { scheme: "tableau20" },
       legend: null 
     },
-        size: { field: "AnimeCount", type: "quantitative", scale: { range: [100, 1800] }, legend: null },
+    size: { field: "AnimeCount", type: "quantitative", scale: { range: [100, 1800] }, legend: null },
     tooltip: [
       { field: "OneGenre", type: "nominal", title: "Genre" },
       { field: "AverageScore", type: "quantitative", title: "Score" },
@@ -86,14 +83,11 @@ var scatterSpec = {
             (datum.OneGenre === "Comedy" && Comedy) ||
             (datum.OneGenre === "Drama" && Drama) ||
             (datum.OneGenre === "Fantasy" && Fantasy) ||
-            (datum.OneGenre === "Gourmet" && Gourmet) ||
             (datum.OneGenre === "Horror" && Horror) ||
             (datum.OneGenre === "Mystery" && Mystery) ||
             (datum.OneGenre === "Romance" && Romance) ||
             (datum.OneGenre === "Slice of Life" && SliceOfLife) ||
-            (datum.OneGenre === "Sports" && Sports) ||
-            (datum.OneGenre === "Supernatural" && Supernatural) ||
-            (datum.OneGenre === "Suspense" && Suspense)
+            (datum.OneGenre === "Sports" && Sports)
           `,
           value: 1
         }
@@ -109,6 +103,7 @@ var scatterSpec = {
 };
 
 vegaEmbed("#scatterPlot", scatterSpec, { actions: false });
+
 
 
 

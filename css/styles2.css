@@ -1368,21 +1368,17 @@ nav {
   display: block;
 }
 
-/* COLOR OVERRIDES PER GENRE */
 .vega-bindings input[name='Action']     { background:#4e79a7; border-color:#4e79a7; }
 .vega-bindings input[name='Adventure']  { background:#f28e2b; border-color:#f28e2b; }
 .vega-bindings input[name='SciFi']      { background:#e15759; border-color:#e15759; }
 .vega-bindings input[name='Comedy']     { background:#76b7b2; border-color:#76b7b2; }
 .vega-bindings input[name='Drama']      { background:#59a14f; border-color:#59a14f; }
 .vega-bindings input[name='Fantasy']    { background:#edc948; border-color:#edc948; }
-.vega-bindings input[name='Gourmet']    { background:#b07aa1; border-color:#b07aa1; }
 .vega-bindings input[name='Horror']     { background:#ff9da7; border-color:#ff9da7; }
 .vega-bindings input[name='Mystery']    { background:#9c755f; border-color:#9c755f; }
 .vega-bindings input[name='Romance']    { background:#bab0ac; border-color:#bab0ac; }
 .vega-bindings input[name='SliceOfLife']{ background:#4e79a7; border-color:#4e79a7; }
 .vega-bindings input[name='Sports']     { background:#f28e2b; border-color:#f28e2b; }
-.vega-bindings input[name='Supernatural']{ background:#e15759; border-color:#e15759; }
-.vega-bindings input[name='Suspense']   { background:#76b7b2; border-color:#76b7b2; }
 
 select {
   appearance: none;

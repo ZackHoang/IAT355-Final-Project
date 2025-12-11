@@ -4,7 +4,7 @@ var genreLineSpec = {
 
   autosize: { type: "fit-x", contains: "padding", resize: true },
   width: "container",
-  height: 400,
+  height: 350,
   background: "#075AA8",
 
   config: {
@@ -13,8 +13,8 @@ var genreLineSpec = {
       titleColor: "white",
       grid: true,
       gridColor: "rgba(255,255,255,0.5)",
-      domain: true, // SHOW axis borders
-      domainColor: "white", // MAKE THEM WHITE
+      domain: true,
+      domainColor: "white",
     },
     view: { stroke: null },
     title: { color: "white" },
@@ -37,14 +37,11 @@ var genreLineSpec = {
           "Comedy",
           "Drama",
           "Fantasy",
-          "Gourmet",
           "Horror",
           "Mystery",
           "Romance",
           "Slice of Life",
-          "Sports",
-          "Supernatural",
-          "Suspense",
+          "Sports"
         ],
         style: "color:white;",
       },
@@ -63,14 +60,11 @@ var genreLineSpec = {
           "Comedy",
           "Drama",
           "Fantasy",
-          "Gourmet",
           "Horror",
           "Mystery",
           "Romance",
           "Slice of Life",
-          "Sports",
-          "Supernatural",
-          "Suspense",
+          "Sports"
         ],
         style: "color:white;",
       },
@@ -92,6 +86,8 @@ var genreLineSpec = {
     { flatten: ["GenreArray"] },
     { calculate: "trim(datum.GenreArray)", as: "OneGenre" },
     { filter: "datum.OneGenre != ''" },
+
+    { filter: "datum.OneGenre != 'Suspense' && datum.OneGenre != 'Supernatural' && datum.OneGenre != 'Gourmet'" },
 
     {
       filter:
