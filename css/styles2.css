@@ -1343,7 +1343,7 @@ svg {
   cursor: pointer;
 }
 
-/* Generic checkmark */
+/* checkmark styling */
 .vega-bindings input[type="checkbox"]::after {
   content: "";
   position: absolute;
@@ -1356,22 +1356,21 @@ svg {
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 0, 80% 0, 43% 62%);
 }
 
-/* When checked */
 .vega-bindings input[type="checkbox"]:checked::after {
   display: block;
 }
 
-.vega-bindings input[name='Action']     { background:#4e79a7; border-color:#4e79a7; }
-.vega-bindings input[name='Adventure']  { background:#f28e2b; border-color:#f28e2b; }
-.vega-bindings input[name='SciFi']      { background:#e15759; border-color:#e15759; }
-.vega-bindings input[name='Comedy']     { background:#76b7b2; border-color:#76b7b2; }
-.vega-bindings input[name='Drama']      { background:#59a14f; border-color:#59a14f; }
-.vega-bindings input[name='Fantasy']    { background:#edc948; border-color:#edc948; }
-.vega-bindings input[name='Horror']     { background:#ff9da7; border-color:#ff9da7; }
-.vega-bindings input[name='Mystery']    { background:#9c755f; border-color:#9c755f; }
-.vega-bindings input[name='Romance']    { background:#bab0ac; border-color:#bab0ac; }
-.vega-bindings input[name='SliceOfLife']{ background:#4e79a7; border-color:#4e79a7; }
-.vega-bindings input[name='Sports']     { background:#f28e2b; border-color:#f28e2b; }
+.vega-bindings input[name='Action']      { background:#4C78A8; border-color:#4C78A8; }
+.vega-bindings input[name='Adventure']   { background:#9ECAE9; border-color:#9ECAE9; }
+.vega-bindings input[name='SciFi']       { background:#439894; border-color:#439894; }
+.vega-bindings input[name='Comedy']      { background:#F58517; border-color:#F58517; }
+.vega-bindings input[name='Drama']       { background:#FFBE79; border-color:#FFBE79; }
+.vega-bindings input[name='Fantasy']     { background:#55A24B; border-color:#55A24B; }
+.vega-bindings input[name='Horror']      { background:#88D27A; border-color:#88D27A; }
+.vega-bindings input[name='Mystery']     { background:#B79A20; border-color:#B79A20; }
+.vega-bindings input[name='Romance']     { background:#F2CF5C; border-color:#F2CF5C; }
+.vega-bindings input[name='SliceOfLife'] { background:#83BCB6; border-color:#83BCB6; }
+.vega-bindings input[name='Sports']      { background:#E45756; border-color:#E45756; }
 
 select {
   appearance: none;
@@ -1389,68 +1388,3 @@ select {
   background-position: right 0.5rem center;
   background-size: 10px auto; 
 }
-
-
-/* 
-.vega-bindings input[type='checkbox'] {
-  width: 1.125rem;
-  height: 1.125rem;
-  margin-right: 0.375rem;
-  accent-color: #4e79a7; 
-}
-
-.vega-bindings input[name='Action'] {
-  accent-color: #4e79a7;
-}
-
-.vega-bindings input[name='Adventure'] {
-  accent-color: #f28e2b;
-}
-
-.vega-bindings input[name='SciFi'] {
-  accent-color: #e15759;
-}
-
-.vega-bindings input[name='Comedy'] {
-  accent-color: #76b7b2;
-}
-
-.vega-bindings input[name='Drama'] {
-  accent-color: #59a14f;
-}
-
-.vega-bindings input[name='Fantasy'] {
-  accent-color: #edc948;
-}
-
-.vega-bindings input[name='Gourmet'] {
-  accent-color: #b07aa1;
-}
-
-.vega-bindings input[name='Horror'] {
-  accent-color: #ff9da7;
-}
-
-.vega-bindings input[name='Mystery'] {
-  accent-color: #9c755f;
-}
-
-.vega-bindings input[name='Romance'] {
-  accent-color: #bab0ac;
-}
-
-.vega-bindings input[name='SliceOfLife'] {
-  accent-color: #4e79a7;
-}
-
-.vega-bindings input[name='Sports'] {
-  accent-color: #f28e2b;
-}
-
-.vega-bindings input[name='Supernatural'] {
-  accent-color: #e15759;
-}
-
-.vega-bindings input[name='Suspense'] {
-  accent-color: #76b7b2;
-} */
