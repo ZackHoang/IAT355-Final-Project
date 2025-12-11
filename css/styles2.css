@@ -412,7 +412,7 @@ a {
 }
 
 .details {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -422,9 +422,13 @@ a {
   transition: background-color 0.3s ease-in-out;
 }
 
+.detailsContent {
+  font-size: 1.1rem;
+}
+
 .processStart,
 .processEnd {
-  padding: 2rem;
+  padding: 1.5rem;
   font-size: 1.5rem;
 }
 
@@ -436,7 +440,7 @@ a {
 }
 
 .detailsContent {
-  padding: 1rem 10% 1rem 10%;
+  padding: 0.5rem 10% 0.5rem 10%;
   border-radius: 0 0 0.5rem 0.5rem;
   background-color: var(--darkgrey6);
   text-align: left;
@@ -886,7 +890,7 @@ svg {
 
   .processEnd,
   .processStart {
-    padding: 1.5rem;
+    padding: 1.2rem;
     font-size: 1.3rem;
   }
 
@@ -903,6 +907,8 @@ svg {
   .detailsContent p {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
+    
   }
 }
 
