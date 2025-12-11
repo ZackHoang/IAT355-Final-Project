@@ -176,7 +176,7 @@
   const searchPieSpec = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     width: "container",
-    height: 400,
+    height: 300,
     background: "#075AA8",
     data: { url: "./data/anime-dataset-2023-user-gender.csv" },
     params: [

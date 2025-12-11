@@ -311,7 +311,7 @@ a {
   font-weight: 400;
   max-width: 80%;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -379,6 +379,7 @@ a {
 
 .mainSection.part7 {
   padding-top: 0;
+  overflow:hidden;
 }
 
 .part7 .paddingWrapper {
@@ -545,9 +546,10 @@ input[type='text'] {
   padding: 0.5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: start;
+  align-items: flex-start;
   gap: 1rem;
+  width: auto;
 }
 
 .vega-bindings:empty {
@@ -595,9 +597,14 @@ input[type='text'] {
 svg {
   max-width: 100%;
   display: flex;
-  justify-self: center;
-  align-self: center;
+  justify-content: center;
+  align-items: center;
 }
+
+  #animeSearchInput, .part11a select {
+    width: 10rem;
+    height: 2rem;
+  }
 
 /* Animation stuff (testing) */
 
@@ -715,7 +722,7 @@ svg {
   }
 
   .part2 picture {
-    width: 100%;
+    width: auto;
   }
 
   .part3 p {
@@ -727,8 +734,7 @@ svg {
   }
 
   .detailsSummary {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
   }
   .detailsContent {
     padding-left: 10%;
@@ -738,6 +744,13 @@ svg {
 @media (max-width: 76.313rem) {
   .headerTitle h1 {
     font-size: 4rem;
+  }
+}
+
+@media (max-width: 71.125rem) {
+  #controls {
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }
 
@@ -934,12 +947,18 @@ svg {
     font-size: 1rem;
   }
 
+  .part10a select {
+    font-size: 0.8rem;
+  }
+
   .vega-bind {
     margin: 0;
   }
 }
 
-@media (max-width: 46.5rem) {
+@media (max-width: 43rem) {
+
+
 }
 
 @media (max-width: 44rem) {
@@ -973,14 +992,12 @@ svg {
   /*2nd vis styling */
 
   .vega-bindings {
-    background-color: var(--lightBlue);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+  }
+
+  .part10a .vega-bindings {
+    justify-content: center;
+    padding: 0.5rem 0.2rem;
   }
 
   .vega-bindings:empty {
@@ -991,12 +1008,16 @@ svg {
     display: block;
   }
 
-  .vega-bind label {
+
+  .part10a .vega-bind-name {
+    font-size: 0.8rem;
+  }
+
+  #lineChart label {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   /*3rd vis styling */
@@ -1013,12 +1034,6 @@ svg {
     display: block;
   }
 
-  svg {
-    max-width: 100%;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-  }
 }
 
 @media (max-width: 40.563rem) {
@@ -1034,8 +1049,8 @@ svg {
 }
 
 @media (max-width: 35.563rem) {
-  .paddingWrapper {
-    margin: 0 4rem;
+  .paddingWrapper, .paddingWrapper.flexTitle {
+    margin: 0 2rem;
   }
 
   /*some screens dont need this*/
@@ -1071,6 +1086,14 @@ svg {
   .part11 h3,
   .part11a h3 {
     font-size: 1.3rem;
+  }
+
+  /*part 4*/
+
+  .part4 h3 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    max-width: 100%;
   }
 
   /*part 8 */
@@ -1121,6 +1144,7 @@ svg {
   }
 
   .visStats {
+    height: 2rem;
     padding: 0.7rem;
   }
 
@@ -1254,8 +1278,9 @@ svg {
   }
 
   #scatterPlot {
-    width: 98vw !important;
-    margin-left: calc(-48vw + 50%) !important;
+    width: 98dvw !important;
+    margin-left: calc(-48dvw + 50%) !important;
+
   }
   #scatterPlot .paddingWrapper,
   #lineChartWrapper {
@@ -1284,7 +1309,7 @@ svg {
   }
 
   #controls {
-    width: 90%;
+    width: 80%;
     display: flex;
     flex-direction: column;
   }
@@ -1300,7 +1325,7 @@ svg {
   }
 
   #animePieChart {
-    width: 100;
+    width: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1327,7 +1352,15 @@ svg {
     margin: auto;
     margin-bottom: 1rem;
   }
+
 }
+
+@media (max-width: 21.75rem) {
+  .vega-bind-name {
+    font-size: 0.8rem;
+  }
+}
+
 
 .vega-bindings input[type="checkbox"] {
   appearance: none;
@@ -1361,17 +1394,21 @@ svg {
   display: block;
 }
 
+/* COLOR OVERRIDES PER GENRE */
 .vega-bindings input[name='Action']     { background:#4e79a7; border-color:#4e79a7; }
 .vega-bindings input[name='Adventure']  { background:#f28e2b; border-color:#f28e2b; }
 .vega-bindings input[name='SciFi']      { background:#e15759; border-color:#e15759; }
 .vega-bindings input[name='Comedy']     { background:#76b7b2; border-color:#76b7b2; }
 .vega-bindings input[name='Drama']      { background:#59a14f; border-color:#59a14f; }
 .vega-bindings input[name='Fantasy']    { background:#edc948; border-color:#edc948; }
+.vega-bindings input[name='Gourmet']    { background:#b07aa1; border-color:#b07aa1; }
 .vega-bindings input[name='Horror']     { background:#ff9da7; border-color:#ff9da7; }
 .vega-bindings input[name='Mystery']    { background:#9c755f; border-color:#9c755f; }
 .vega-bindings input[name='Romance']    { background:#bab0ac; border-color:#bab0ac; }
 .vega-bindings input[name='SliceOfLife']{ background:#4e79a7; border-color:#4e79a7; }
 .vega-bindings input[name='Sports']     { background:#f28e2b; border-color:#f28e2b; }
+.vega-bindings input[name='Supernatural']{ background:#e15759; border-color:#e15759; }
+.vega-bindings input[name='Suspense']   { background:#76b7b2; border-color:#76b7b2; }
 
 select {
   appearance: none;
