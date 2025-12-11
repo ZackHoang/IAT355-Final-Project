@@ -1,6 +1,6 @@
 (async function() {
   let animeTitles = [];
-  const response = await fetch("./data/anime-dataset-2023-user-gender.csv");
+  const response = await fetch("./data/anime-dataset-2023-user-gender-none-removed.csv");
   const csvText = await response.text();
   const lines = csvText.split("\n");
   const header = lines[0].split(",");
