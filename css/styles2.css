@@ -94,13 +94,15 @@ h2 {
 /* nav bar */
 
 nav {
-  /* Change nav functionality when viewport drops*/
-  background-color: rgba(0, 0, 0, 0);
+  position: sticky;
+  top: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #272525;
 }
 
-.navWrapper {
-  width: 8vw;
-}
+
 
 .navTitle {
   background-color: rgba(0, 0, 0, 0);
@@ -1405,11 +1407,4 @@ svg {
   accent-color: #76b7b2;
 }
 
-nav {
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #272525;
-}
+
