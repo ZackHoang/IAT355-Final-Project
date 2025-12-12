@@ -139,9 +139,9 @@ var genreLineSpec = {
     },
 
     tooltip: [
-      { field: "OneGenre", type: "nominal" },
+      { field: "OneGenre", type: "nominal", title: "Genre" },
       { field: "Year", type: "quantitative" },
-      { field: "AnimeCount", type: "quantitative" },
+      { field: "AnimeCount", type: "quantitative", title: "Anime Releases" },
     ],
   },
 };
