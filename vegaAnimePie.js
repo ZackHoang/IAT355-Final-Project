@@ -73,7 +73,7 @@
         color: white;
     ">
         <span id="maleLegend" style="display:flex; align-items:center; gap:0.25rem;">
-          Male (<span id="malePercent">26.5%</span>)
+          Male (<span id="malePercent">73.5%</span>)
           <span style="width:1rem; height:1rem; background:#008ef3; display:inline-block;"></span>
         </span>
         <span id="femaleLegend" style="display:flex; align-items:center; gap:0.25rem;">
