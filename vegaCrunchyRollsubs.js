@@ -8,7 +8,7 @@ let crunchyrollsubscriptionsSpec = {
   width: "container",
   height: 300,
   data: {
-    values: [
+    values: [   
       { year: "Sep 2012", subscriptions: 0.1 },
       { year: "Mar 2013", subscriptions: 0.2 },
       { year: "Nov 2014", subscriptions: 0.4 },
@@ -31,6 +31,7 @@ let crunchyrollsubscriptionsSpec = {
         type: "line",
         cornerRadius: 5,
       },
+      mark: { type: "line", point: true },
       encoding: {
         x: {
           field: "year",
@@ -59,6 +60,7 @@ let crunchyrollsubscriptionsSpec = {
             gridColor: "#8F8F8F",
             gridWidth: 2,
             domain: false,
+            values: [0, 2, 4, 6, 8, 10, 12, 14, 16]
           },
         },
         color: {
@@ -68,7 +70,7 @@ let crunchyrollsubscriptionsSpec = {
           {
             field: "subscriptions",
             type: "quantitative",
-            title: "Subscriptions (in millions)",
+            title: "Subscriptions (million)",
           },
           {
             field: "year",
@@ -78,25 +80,6 @@ let crunchyrollsubscriptionsSpec = {
         ],
       },
     },
-    // {
-    //   mark: {
-    //     type: "text",
-    //     align: "left",
-    //     baseline: "middle",
-    //     dx: 4,
-    //     fontSize: 18,
-    //     color: "white",
-    //   },
-    //   encoding: {
-    //     x: { field: "subscriptions", type: "quantitative" },
-    //     y: {
-    //       field: "year",
-    //       type: "ordinal",
-    //       sort: { field: "subscriptions", order: "ascending" },
-    //     },
-    //     text: { field: "subsLabel" },
-    //   },
-    // },
   ],
 
   config: {
