@@ -46,10 +46,10 @@ h2 {
 
 .flexTitle {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   align-items: end;
-  gap: 5rem;
+  height: 80%;
 }
 
 .headerTitle h1 {
