@@ -1468,3 +1468,27 @@ svg {
 .vega-bindings input[name='SliceOfLife'] { background:#83BCB6; border-color:#83BCB6; }
 .vega-bindings input[name='Sports']      { background:#E45756; border-color:#E45756; }
 
+.vg-tooltip {
+  background-color: #008EF3 !important;
+  color: white !important;
+  border-radius: 0.5rem !important;   
+  border: 0.125rem solid white !important; 
+  padding: 0.5rem !important;   
+  font-size: 0.7rem !important;          
+}
+.vg-tooltip table {
+  color: white !important;
+}
+.vg-tooltip td,
+.vg-tooltip th {
+  color: white !important;
+  padding: 0.1rem 0.1rem !important;  
+}
+.vg-tooltip .key {
+  color: white !important;
+  font-weight: bold !important;
+}
+.vg-tooltip .value {
+  color: white !important;
+}
+
