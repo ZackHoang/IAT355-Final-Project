@@ -127,6 +127,7 @@ nav {
   height: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  overflow: hidden;
 }
 
 .flexCenter {
@@ -623,7 +624,9 @@ svg {
     height: 2rem;
   }
 
-/* Animation stuff (testing) */
+/* tooltips */
+
+
 
 /* Responsiveness ---------------------------------------------------- */
 
