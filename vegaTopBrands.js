@@ -76,7 +76,7 @@ let topVODBrands = {
           {
             field: "percentage",
             type: "quantitative",
-            title: "Percentages of respondents",
+            title: "Respondents (%)",
           },
         ],
       },

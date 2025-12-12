@@ -70,7 +70,7 @@ let crunchyrollsubscriptionsSpec = {
           {
             field: "subscriptions",
             type: "quantitative",
-            title: "Subscriptions (in millions)",
+            title: "Subscriptions (million)",
           },
           {
             field: "year",
