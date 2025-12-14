@@ -88,7 +88,7 @@
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     width: "container",
     height: 300,
-    background: "#075AA8",
+    background: "#012240",
     data: { url: "./data/anime-dataset-2023-user-gender.csv" },
     params: [
       { name: "viewMode", value: "anime" },
