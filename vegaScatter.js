@@ -4,7 +4,7 @@ var scatterSpec = {
 
   autosize: { type: "fit-x", contains: "padding", resize: true },
   width: "container",
-  background: "#075AA8",
+  background: "#012240",
 
   data: { url: "./data/anime-dataset-2023-user-gender.csv" },
 

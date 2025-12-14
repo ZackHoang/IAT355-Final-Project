@@ -5,7 +5,7 @@ var genreLineSpec = {
   autosize: { type: "fit-x", contains: "padding", resize: true },
   width: "container",
   height: 350,
-  background: "#075AA8",
+  background: "#012240",
 
   config: {
     axis: {
