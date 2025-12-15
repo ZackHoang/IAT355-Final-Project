@@ -349,10 +349,13 @@ a {
 }
 
 .part5 h3 {
-  margin-top: 10vh;
   font-size: 2.5rem;
   color: white;
   font-weight: 300;
+}
+
+.part5 .visTitle {
+  margin: 1rem 0 0.5rem 0;
 }
 
 .part5 a {
@@ -360,6 +363,10 @@ a {
   text-align: center;
   font-size: 1rem;
   text-decoration: none;
+}
+
+.part5 p {
+  margin: 2rem 0 1rem 0;
 }
 
 /*dataset stats*/
@@ -376,7 +383,7 @@ a {
   min-width: 20rem;
   height: auto;
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -678,13 +685,6 @@ svg {
   .visStats p {
     font-size: 1.75rem;
   }
-  .visStats {
-    height: 10rem;
-  }
-
-  .visStats {
-    min-width: 17rem;
-  }
 
   .visNumbers {
     gap: 1rem;
@@ -692,6 +692,10 @@ svg {
 }
 
 @media (max-width: 87.75rem) {
+
+  .paddingWrapper {
+    margin: 0 6rem;
+  }
   /* Part 5 stuff */
 
   .part5 h3 {
@@ -701,7 +705,7 @@ svg {
 
   .visStats h3 {
     margin-top: 0;
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: left;
   }
   .visNumbers {
@@ -713,11 +717,12 @@ svg {
     justify-content: flex-start;
     align-items: flex-end;
     flex-wrap: wrap;
-    height: 3rem;
+    height: auto;
     gap: 1rem;
     width: auto;
     min-width: auto;
     flex-direction: row;
+    padding: 0.5rem;
   }
 
   .visStats h3,
@@ -728,7 +733,7 @@ svg {
 
   .visStats p {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   /* Main styling */
@@ -803,6 +808,10 @@ svg {
 
   .part7 .downArrow {
     padding: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .part5 p {
     margin-bottom: 0.5rem;
   }
 }
@@ -930,9 +939,6 @@ svg {
     font-size: 1.4rem;
   }
 
-  .visStats {
-    padding: 1rem;
-  }
 
   .visStats p {
     font-size: 1.2rem;
@@ -1015,7 +1021,6 @@ svg {
 
   .visStats {
     gap: 0.5rem;
-    padding: 0.7rem;
   }
 
   .part4 h3 {
