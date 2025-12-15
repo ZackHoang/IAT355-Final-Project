@@ -544,6 +544,107 @@ a {
   /* min-height: 50vh; */
 }
 
+/*Vega lite styling ------------------------ */
+.vega-bindings input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-right: 0.375rem;
+  border-radius: 3px;
+  border: 2px solid #888; /* fallback border */
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* checkmark styling */
+.vega-bindings input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  display: none;
+  background: white;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 0, 80% 0, 43% 62%);
+}
+
+.vega-bindings input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+.vega-bindings input[name='Action']{ 
+  background:#4C78A8; 
+  border-color:#4C78A8; 
+}
+.vega-bindings input[name='Adventure']{ 
+  background:#9ECAE9; 
+  border-color:#9ECAE9; 
+}
+.vega-bindings input[name='SciFi']{
+   background:#439894;
+  border-color:#439894;
+}
+.vega-bindings input[name='Comedy']{
+  background:#F58517;
+  border-color:#F58517;
+}
+.vega-bindings input[name='Drama']{
+   background:#FFBE79;
+  border-color:#FFBE79; 
+}
+.vega-bindings input[name='Fantasy']{
+  background:#55A24B;
+  border-color:#55A24B;
+}
+.vega-bindings input[name='Horror']{
+  background:#88D27A;
+  border-color:#88D27A;
+}
+.vega-bindings input[name='Mystery']{
+  background:#B79A20;
+  border-color:#B79A20;
+}
+.vega-bindings input[name='Romance']{
+  background:#F2CF5C;
+  border-color:#F2CF5C;
+}
+.vega-bindings input[name='SliceOfLife']{
+  background:#83BCB6;
+  border-color:#83BCB6;
+}
+.vega-bindings input[name='Sports']{
+  background:#E45756;
+  border-color:#E45756;
+}
+
+.vg-tooltip {
+  background-color: #008EF3 !important;
+  color: white !important;
+  border-radius: 0.5rem !important;   
+  border: 0.125rem solid white !important; 
+  padding: 0.5rem !important;   
+  font-size: 0.7rem !important;          
+}
+.vg-tooltip table {
+  color: white !important;
+}
+.vg-tooltip td,
+.vg-tooltip th {
+  color: white !important;
+  padding: 0.1rem 0.1rem !important;  
+}
+.vg-tooltip .key {
+  color: white !important;
+  font-weight: bold !important;
+}
+.vg-tooltip .value {
+  color: white !important;
+}
+
 /* Visualization labels */
 
 label {
@@ -817,12 +918,15 @@ svg {
 }
 
 @media (max-width: 76.313rem) {
+  /*header styling */
   .headerTitle h1 {
     font-size: 4rem;
   }
 }
 
 @media (max-width: 71.125rem) {
+
+  /* Vis styling */
   #controls {
     flex-direction: column;
     justify-content: flex-start;
@@ -830,6 +934,8 @@ svg {
 }
 
 @media (max-width: 68.063rem) {
+
+  /* page content styling */
   .mainContainer {
     overflow-x: hidden;
   }
@@ -894,15 +1000,9 @@ svg {
     padding: 0.5rem;
   }
 
-  /* part 3*/
 
   /* part 4 */
 
-  /*
-  figcaption {
-    width: 90vw;
-  }
-  */
 
   .part4 p {
     width: auto;
@@ -957,10 +1057,14 @@ svg {
     max-width: 23rem;
   }
 
+  /* part 8*/
+
   .part8 h2 {
     font-size: 2.5rem;
     line-height: 4rem;
   }
+
+  /* misc styling */
 
   .detailsContent p {
     margin-top: 0.5rem;
@@ -971,6 +1075,8 @@ svg {
 }
 
 @media (max-width: 52.5rem) {
+
+  /* part 4 */
   .part2 picture {
     margin-top: 3vh;
   }
@@ -980,9 +1086,20 @@ svg {
 }
 
 @media (max-width: 51rem) {
-  /* part 2*/
+  /* Total styling */
+  .paddingWrapper.flexTitle {
+    margin: 0 6rem;
+  }
 
-  .part2 img {
+  /*Header styling */
+  .headerTitle h1 {
+    font-size: 3rem;
+  }
+
+  /* part 4 */
+  
+  .part4 h3 {
+    font-size: 1.1rem;
   }
 
   /* part 5 */
@@ -999,15 +1116,7 @@ svg {
     margin-top: 1rem;
   }
 
-  .paddingWrapper.flexTitle {
-    margin: 0 6rem;
-  }
-
-  .headerTitle h1 {
-    font-size: 3rem;
-  }
-
-  .visStats h3 {
+    .visStats h3 {
     font-size: 2rem;
   }
 
@@ -1022,13 +1131,11 @@ svg {
   .visStats {
     gap: 0.5rem;
   }
-
-  .part4 h3 {
-    font-size: 1.1rem;
-  }
 }
 
 @media (max-width: 58.625rem) {
+
+  /*Visualization styling */
   .vega-bind-name {
     font-size: 1rem;
   }
@@ -1041,6 +1148,8 @@ svg {
     margin: 0;
   }
 
+
+  /*Question section styling*/
   .part9 h3,
   .part9a h3,
   .part10 h3,
@@ -1052,6 +1161,7 @@ svg {
 }
 
 @media (max-width: 43rem) {
+  /*Total styling*/
 
   .part3 h2,
   .part4 h2,
@@ -1153,23 +1263,25 @@ svg {
 }
 
 @media (max-width: 40.563rem) {
+  /*Visual stats*/
   .visStats p {
     font-size: 1.1rem;
   }
 }
 
 @media (max-width: 37.813rem) {
+  /*Header*/
   .headerTitle h1 {
     font-size: 2.5rem;
   }
 }
 
 @media (max-width: 35.563rem) {
+
+  /*Total styling*/
   .paddingWrapper, .paddingWrapper.flexTitle {
     margin: 0 2rem;
   }
-
-  /*some screens dont need this*/
 
   .part1 h2,
   .part2 h2 {
@@ -1238,7 +1350,6 @@ svg {
     margin-top: 1rem;
   }
 
-  /*part 4*/
 
   /*part 5*/
 
@@ -1299,6 +1410,8 @@ svg {
 }
 
 @media (max-width: 28.688rem) {
+
+  /*header */
   .headerTitle h1 {
     font-size: 2rem;
   }
@@ -1477,70 +1590,6 @@ svg {
 }
 
 
-.vega-bindings input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 1.125rem;
-  height: 1.125rem;
-  margin-right: 0.375rem;
-  border-radius: 3px;
-  border: 2px solid #888; /* fallback border */
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-}
 
-/* checkmark styling */
-.vega-bindings input[type="checkbox"]::after {
-  content: "";
-  position: absolute;
-  width: 60%;
-  height: 60%;
-  top: 20%;
-  left: 20%;
-  display: none;
-  background: white;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 0, 80% 0, 43% 62%);
-}
 
-.vega-bindings input[type="checkbox"]:checked::after {
-  display: block;
-}
-
-.vega-bindings input[name='Action']      { background:#4C78A8; border-color:#4C78A8; }
-.vega-bindings input[name='Adventure']   { background:#9ECAE9; border-color:#9ECAE9; }
-.vega-bindings input[name='SciFi']       { background:#439894; border-color:#439894; }
-.vega-bindings input[name='Comedy']      { background:#F58517; border-color:#F58517; }
-.vega-bindings input[name='Drama']       { background:#FFBE79; border-color:#FFBE79; }
-.vega-bindings input[name='Fantasy']     { background:#55A24B; border-color:#55A24B; }
-.vega-bindings input[name='Horror']      { background:#88D27A; border-color:#88D27A; }
-.vega-bindings input[name='Mystery']     { background:#B79A20; border-color:#B79A20; }
-.vega-bindings input[name='Romance']     { background:#F2CF5C; border-color:#F2CF5C; }
-.vega-bindings input[name='SliceOfLife'] { background:#83BCB6; border-color:#83BCB6; }
-.vega-bindings input[name='Sports']      { background:#E45756; border-color:#E45756; }
-
-.vg-tooltip {
-  background-color: #008EF3 !important;
-  color: white !important;
-  border-radius: 0.5rem !important;   
-  border: 0.125rem solid white !important; 
-  padding: 0.5rem !important;   
-  font-size: 0.7rem !important;          
-}
-.vg-tooltip table {
-  color: white !important;
-}
-.vg-tooltip td,
-.vg-tooltip th {
-  color: white !important;
-  padding: 0.1rem 0.1rem !important;  
-}
-.vg-tooltip .key {
-  color: white !important;
-  font-weight: bold !important;
-}
-.vg-tooltip .value {
-  color: white !important;
-}
 
