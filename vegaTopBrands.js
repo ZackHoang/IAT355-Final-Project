@@ -48,13 +48,6 @@ let topVODBrands = {
           field: "brand",
           type: "ordinal",
           axis: null,
-          // axis: {
-          //   title: null,
-          //   labelColor: "white",
-          //   labelFontSize: 18,
-          //   titleFontSize: 18,
-          //   domain: false,
-          // },
           scale: {
             padding: 0.2,
           },
