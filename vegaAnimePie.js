@@ -1,3 +1,9 @@
+//To create the modern version of the animePieChart, compared to the old version, chatGPT was used
+//In the prompt, along side the entirety of vegaAnimePie(old).js in the unused folder, I also added 'is there a way for the input to autofill for the closest anime title (e.g. you search tri and it fills in trigun or somethign if you click off)'
+//ChatGPT then explained how vega does not have a built in fuzzy autocomplete, but there is a way to do it by combining javascript and Vega-Lite
+//it gave an example code block of fetching dataset titles, and having autocomplete in input
+//I then asked for it to combine that into the vegalite in one js file, which then I worked off of
+
 (async function() {
   let animeTitles = [];
   const response = await fetch("./data/anime-dataset-2023-user-gender-none-removed.csv");
